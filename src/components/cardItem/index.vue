@@ -3,7 +3,7 @@
     <div class="cardCode">code</div>
     <h2 class="cardTitle"><span>タイトル</span></h2>
     <router-link
-      :to="{name:'code',params:{id: 1}}"
+      :to="{name:'code',params:{id: 1, currentHeader: 'cardItem'}}"
       class="cardLink"
     >
       <span>MORE</span>
