@@ -1,7 +1,8 @@
 <template>
   <article class="card">
-    <div class="codeArea"></div>
-    <h2 class="cardTitle"><span></span></h2>
+    <div class="cardCode">code</div>
+    <h2 class="cardTitle"><span>タイトル</span></h2>
+    <a href="#" class="cardLink"><span>MORE</span></a>
   </article>
 </template>
 
@@ -12,5 +13,136 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.card {
+  position: relative;
+  display: block;
+  width: (100% / 3);
+  padding: 10px 10px 25px;
+  border-color: #333;
+  border-right: 1px solid;
+  border-bottom: 1px solid;
+  &:nth-of-type(-n + 3) {
+    border-top: 1px solid;
+  }
+  &:nth-of-type(3n + 1) {
+    border-left: 1px solid;
+  }
+  &::before {
+    content: '';
+    background: #636569;
+    z-index: 1;
+    position: absolute;
+    right: 45px;
+    bottom: 35px;
+    width: calc(100% - 40px);
+    height: calc(100% - 20px);
+    margin: -25px;
+    border-radius: 10px;
+    clip-path: inset(40px 0 0 40px round 10px);
+    transition: clip-path 0.3s ease 0.1s;
+  }
+  &:hover {
+    &::before {
+      transition-delay: 0;
+      clip-path: inset(0 0 0 0 round 10px);
+    }
+  }
+}
+.cardCode {
+  position: relative;
+  z-index: 2;
+  width: calc(100% - 60px);
+  height: 200px;
+  margin: 20px 0 10px 30px;
+  padding: 10px;
+  background: #fff;
+  border: 2px solid #2c2e31;
+  overflow: auto;
+  border-radius: 6px;
+}
+.cardTitle {
+  position: relative;
+  z-index: 2;
+  display: inline-block;
+  max-width: calc(100% - 110px);
+  margin-left: 45px;
+  padding-right: 20px;
+  color: #fff;
+  &::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: -10px;
+    position: absolute;
+    z-index: -1;
+    background: rgba(#2c2e31, 0.5);
+    transform: skew(-15deg);
+  }
+  > span {
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+}
 
+$btnSize: 40px;
+$btnColor: #2c2e31;
+$btnBack: #fff;
+$btnSize2: 150px;
+$textColor: #333;
+$actionTime: .4s;
+
+.cardLink {
+  position: absolute;
+  right: 40px;
+  bottom: 27px;
+  z-index: 2;
+  width: $btnSize;
+  height: $btnSize;
+  border: 2px solid $btnColor;
+  background: $btnBack;
+  transition: width $actionTime;
+  border-radius: ($btnSize / 2);
+  overflow: hidden;
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    display: block;
+    top: calc(50% - 6px);
+    right: 17px;
+    width: 2px;
+    height: 12px;
+    background: $btnColor;
+    transition: transform $actionTime;
+  }
+  &::after {
+    transform: rotate(90deg);
+  }
+  > span {
+    font-size: 15px;
+    font-weight: bold;
+    opacity: 0;
+    padding: 0 20px;
+    transition: opacity ($actionTime / 2);
+    line-height: ($btnSize - 4);
+    color: $textColor;
+  }
+  &:hover,
+  &:focus {
+    width: $btnSize2;
+    &::before {
+      transform: rotate(90deg);
+    }
+    &::after {
+      transform: rotate(180deg);
+    }
+    > span {
+      opacity: 1;
+      transition: opacity ($actionTime / 2) ($actionTime / 4);
+    }
+  }
+}
 </style>
