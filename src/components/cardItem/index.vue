@@ -1,6 +1,8 @@
 <template>
   <article class="card">
-    <div class="cardCode">code</div>
+    <div class="cardCode">
+      <component :is="code" />
+    </div>
     <h2 class="cardTitle"><span>タイトル</span></h2>
     <router-link
       :to="{name:'code',params:{id: 1, currentHeader: 'cardItem'}}"
@@ -14,6 +16,7 @@
 <script>
 export default {
   name: 'cardItem',
+  props: ['code']
 }
 </script>
 

@@ -1,8 +1,8 @@
 <template>
   <div class="list">
-    <card-item />
-    <card-item />
-    <card-item />
+    <card-item code="code3" />
+    <card-item code="code2" />
+    <card-item code="code1" />
   </div>
 </template>
 
@@ -12,6 +12,11 @@ export default {
   name: 'Home',
   components: {
     cardItem
+  },
+  data() {
+    return {
+      id: 1
+    }
   }
 }
 </script>
