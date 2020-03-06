@@ -2,7 +2,12 @@
   <article class="card">
     <div class="cardCode">code</div>
     <h2 class="cardTitle"><span>タイトル</span></h2>
-    <a href="#" class="cardLink"><span>MORE</span></a>
+    <router-link
+      :to="{name:'code',params:{id: 1}}"
+      class="cardLink"
+    >
+      <span>MORE</span>
+    </router-link>
   </article>
 </template>
 
