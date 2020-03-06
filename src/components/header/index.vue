@@ -3,10 +3,16 @@
     <div class="globalLogo">ロゴ</div>
     <nav class="globalNav">
       <ul class="globalNavList">
-        <li class="globalNavItem"><a href="#" class="globalNavLink">メニュー1</a></li>
-        <li class="globalNavItem"><a href="#" class="globalNavLink">メニュー2</a></li>
-        <li class="globalNavItem"><a href="#" class="globalNavLink">メニュー3</a></li>
-        <li class="globalNavItem"><a href="#" class="globalNavLink">メニュー4</a></li>
+        <li class="globalNavItem">
+          <router-link to="/" class="globalNavLink">
+            Home
+          </router-link>
+        </li>
+        <li class="globalNavItem">
+          <router-link to="/foo" class="globalNavLink">
+            Foo
+          </router-link>
+        </li>
       </ul>
     </nav>
   </header>
@@ -42,6 +48,9 @@ export default {
 
 }
 .globalNavLink {
-
+  color: #0ff;
+  &.router-link-exact-active {
+    color: #f00;
+  }
 }
 </style>
