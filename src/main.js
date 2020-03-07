@@ -7,12 +7,6 @@ require('@/assets/scss/main.scss');
 
 Vue.config.productionTip = false
 
-new Vue({
-  router,
-  store,
-  render: h => h(App),
-}).$mount('#app')
-
 const files = require.context('./components/snippets', true, /\.vue$/);
 const components = {};
 files.keys().forEach(key => {
@@ -23,3 +17,9 @@ files.keys().forEach(key => {
 Object.keys(components).forEach(key => {
   Vue.component(key, components[key]);
 });
+
+new Vue({
+  router,
+  store,
+  render: h => h(App),
+}).$mount('#app')
