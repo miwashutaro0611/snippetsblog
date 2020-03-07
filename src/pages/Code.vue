@@ -5,6 +5,7 @@
     <div class="codeWrap">
       <component :is="$route.params.code.link" />
     </div>
+    <div class="codePen" v-html="$route.params.code.codepen"></div>
   </div>
 </template>
 
@@ -20,5 +21,8 @@ export default {
   padding: 20px;
   border: 2px solid #ddd;
   border-radius: 5px;
+}
+.codePen {
+  margin-top: 20px;
 }
 </style>
