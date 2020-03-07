@@ -25,8 +25,6 @@ export default {
 
 <style lang="scss" scoped>
 .list {
-  max-width: 1100px;
-  margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
 }

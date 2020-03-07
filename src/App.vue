@@ -1,7 +1,9 @@
 <template>
   <div id="app">
     <global-header />
-    <router-view/>
+    <div class="globalWrapper">
+      <router-view/>
+    </div>
     <global-footer />
   </div>
 </template>
@@ -25,5 +27,10 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: $gray;
+}
+.globalWrapper {
+  width: calc(100% - 40px);
+  max-width: 1100px;
+  margin: 0 auto;
 }
 </style>

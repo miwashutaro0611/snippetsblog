@@ -10,7 +10,7 @@
         params:
         {
           id: code.id,
-          currentHeader: 'cardItem'
+          code: code
         }
       }"
       class="cardLink"
