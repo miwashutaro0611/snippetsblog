@@ -1,11 +1,18 @@
 <template>
   <article class="card">
     <div class="cardCode">
-      <component :is="code" />
+      <component :is="code.link" />
     </div>
-    <h2 class="cardTitle"><span>タイトル</span></h2>
+    <h2 class="cardTitle"><span>{{code.title}}</span></h2>
     <router-link
-      :to="{name:'code',params:{id: 1, currentHeader: 'cardItem'}}"
+      :to="{
+        name:'code',
+        params:
+        {
+          id: code.id,
+          currentHeader: 'cardItem'
+        }
+      }"
       class="cardLink"
     >
       <span>MORE</span>
@@ -105,7 +112,7 @@ $actionTime: .4s;
 .cardLink {
   position: absolute;
   right: 40px;
-  bottom: 27px;
+  bottom: 30px;
   z-index: 2;
   width: $btnSize;
   height: $btnSize;

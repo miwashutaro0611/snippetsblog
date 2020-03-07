@@ -1,9 +1,6 @@
 <template>
   <div class="list">
-    <card-item code="code3" />
-    <card-item code="code2" />
-    <card-item code="code1" />
-    <p>{{snippets[0].code}}</p>
+    <card-item v-for="snippet in rSnippets" :code="snippet" :key="snippet.id"></card-item>
   </div>
 </template>
 
@@ -15,15 +12,13 @@ export default {
   components: {
     cardItem
   },
-  data() {
-    return {
-      id: 1
-    }
-  },
   computed: {
     ...mapState({
       snippets: 'snippets'
-    })
+    }),
+    rSnippets() {
+        return this.snippets.slice().reverse();
+    },
   }
 }
 </script>

@@ -2,16 +2,19 @@
   <div id="app">
     <global-header />
     <router-view/>
+    <global-footer />
   </div>
 </template>
 
 <script>
 import GlobalHeader from './components/header/'
+import GlobalFooter from './components/footer/'
 
 export default {
   name: 'App',
   components: {
-    GlobalHeader
+    GlobalHeader,
+    GlobalFooter
   }
 }
 </script>

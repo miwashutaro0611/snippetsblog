@@ -2,18 +2,21 @@ export const state = {
   message: 'hello vuex',
   snippets: [
     {
-      title: 'code1',
-      link: '',
+      id: 1,
+      title: 'Ranking Icon',
+      link: 'code1',
       codepen: ''
     },
     {
-      title: 'code2',
-      link: '',
+      id: 2,
+      title: 'Title Animetion',
+      link: 'code2',
       codepen: ''
     },
     {
-      title: 'code3',
-      link: '',
+      id: 3,
+      title: 'MoreView Card',
+      link: 'code3',
       codepen: ''
     }
   ]
