@@ -3,15 +3,13 @@
     <div class="cardCode">
       <component :is="code.link" />
     </div>
-    <h2 class="cardTitle"><span>{{code.title}}</span></h2>
+    <h2 class="cardTitle">
+      <span>{{code.title}}</span>
+    </h2>
     <router-link
       :to="{
         name:'code',
-        params:
-        {
-          id: code.id,
-          code: code
-        }
+        params: { id: code.id }
       }"
       class="cardLink"
     >

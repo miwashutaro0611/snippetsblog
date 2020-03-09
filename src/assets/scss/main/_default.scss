@@ -1,3 +1,17 @@
+body {
+  font-size: (16 / $fontSizeDefault * 100%);
+  font-family: $fontFamilyDefault;
+  text-rendering: optimizeLegibility;
+}
+
+main {
+  display: block;
+}
+
+button {
+  cursor: pointer;
+}
+
 a {
   text-decoration: none;
 }

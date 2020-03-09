@@ -41,7 +41,8 @@ export default {
   margin: 0 auto;
 }
 .globalLogo {
-
+  font-size: 15px;
+  @include MixinFontSize(32);
 }
 .globalNav {
   
