@@ -12,17 +12,29 @@ export default new Router({
     {
       path: '/',
       name: 'home',
-      component: Home
+      component: Home,
+      beforeEnter: (to, from, next) => {
+        console.log('route(home):beforeEnter');
+        next();
+      }
     },
     {
       path: '/foo',
       name: 'foo',
-      component: Foo
+      component: Foo,
+      beforeEnter: (to, from, next) => {
+        console.log('route(foo):beforeEnter');
+        next();
+      }
     },
     {
       path: '/code/:id',
       name: 'code',
-      component: Code
+      component: Code,
+      beforeEnter: (to, from, next) => {
+        console.log('route(Code):beforeEnter');
+        next();
+      }
     }
   ]
 })
