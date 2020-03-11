@@ -40,7 +40,7 @@ export default {
 		this.$router.afterEach(() => {
 			setTimeout( () => {
 				this.isOpen = true;
-			}, 800);
+			}, 1000);
 		})
   },
   methods: {
@@ -74,20 +74,49 @@ export default {
   display: block;
   width:  100%;
   height: 100%;
-  background: #333;
-  z-index: 99999;
+  background: #555;
+  z-index: 10;
   transform: scaleX(0);
-  transition: transform .3s;
+  transition: transform .5s;
   transform-origin: right;
   pointer-events: none;
+  &::before,
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: scaleX(0);
+  }
+  &::before {
+    z-index: 11;
+    background: #777;
+    transition: transform .5s .2s;
+  }
+  &::after {
+    z-index: 12;
+    background: #333;
+    transition: transform .5s .5s;
+  }
   &.is-paging {
     transform-origin: left;
     transform: scaleX(1);
+    &::before {
+      transform-origin: left;
+      transform: scaleX(1);
+    }
+    &::after {
+      transform-origin: left;
+      transform: scaleX(1);
+    }
   }
 }
 
 .v-enter-active, .v-leave-active {
-  transition: opacity .8s;
+  transition: opacity 0.5s;
 }
 .v-enter, .v-leave-to {
   opacity: 0;
