@@ -39,6 +39,8 @@ export default {
 		})
 		this.$router.afterEach(() => {
 			setTimeout( () => {
+        const scrollElem = document.scrollingElement || document.documentElement
+        scrollElem.scrollTop = 0
 				this.isOpen = true;
 			}, 1000);
 		})
@@ -62,8 +64,8 @@ export default {
 }
 
 .mask {
-  position: absolute;
-  top:  0;
+  position: fixed;
+  top: 0;
   left: 0;
   display: block;
   width:  100%;

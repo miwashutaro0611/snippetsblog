@@ -5,7 +5,7 @@
       @mouseover="logoAnimeHide"
       @mouseleave="logoAnimeShow"
     >
-      <span class="globalLogoIcons">
+      <span class="globalLogoIcons" area-hidden="true">
         <span class="globalLogoIcon"></span>
         <span class="globalLogoIcon"></span>
       </span>
