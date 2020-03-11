@@ -9,11 +9,6 @@
               Home
             </router-link>
           </li>
-          <li class="globalNavItem">
-            <router-link to="/foo" class="globalNavLink">
-              Foo
-            </router-link>
-          </li>
         </ul>
       </nav>
     </div>
