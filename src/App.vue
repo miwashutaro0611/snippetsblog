@@ -55,12 +55,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: $gray;
-}
 .globalWrapper {
   width: calc(100% - 40px);
   max-width: 1100px;
@@ -101,17 +95,11 @@ export default {
     background: #333;
     transition: transform .5s .5s;
   }
-  &.is-paging {
+  &.is-paging,
+  &.is-paging::before,
+  &.is-paging::after {
     transform-origin: left;
     transform: scaleX(1);
-    &::before {
-      transform-origin: left;
-      transform: scaleX(1);
-    }
-    &::after {
-      transform-origin: left;
-      transform: scaleX(1);
-    }
   }
 }
 

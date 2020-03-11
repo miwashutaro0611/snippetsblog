@@ -1,7 +1,16 @@
 body {
   font-size: (16 / $fontSizeDefault * 100%);
   font-family: $fontFamilyDefault;
+  color: #333;
+  letter-spacing: 0.05em;
   text-rendering: optimizeLegibility;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 600;
 }
 
 main {
@@ -13,5 +22,6 @@ button {
 }
 
 a {
+  color: inherit;
   text-decoration: none;
 }

@@ -1,7 +1,7 @@
 <template>
   <header class="globalHeader">
     <div class="globalHeaderInner">
-      <div class="globalLogo">ロゴ</div>
+      <logo />
       <nav class="globalNav">
         <ul class="globalNavList">
           <li class="globalNavItem">
@@ -21,8 +21,12 @@
 </template>
 
 <script>
+import Logo from '../logo/'
 export default {
   name: 'header',
+  components: {
+    Logo
+  }
 }
 </script>
 
