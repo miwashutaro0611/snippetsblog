@@ -5,7 +5,7 @@
     <div class="codeWrap">
       <component :is="snippets[$route.params.id - 1].link" />
     </div>
-    <div class="codePen" v-html="snippets[$route.params.id - 1].codepen"></div>
+    <div class="codePen" v-if="snippets[$route.params.id - 1].codepen" v-html="snippets[$route.params.id - 1].codepen"></div>
   </div>
 </template>
 
