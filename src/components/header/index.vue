@@ -23,7 +23,7 @@
 <script>
 import Logo from '../logo/'
 export default {
-  name: 'header',
+  name: 'globalHeader',
   components: {
     Logo
   }
@@ -33,7 +33,7 @@ export default {
 <style lang="scss" scoped>
 .globalHeader {
   margin-bottom: 40px;
-  padding: 10px 40px;
+  padding: 20px 40px;
   border-bottom: 1px solid #ddd;
 }
 .globalHeaderInner {

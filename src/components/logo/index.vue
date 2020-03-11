@@ -1,31 +1,100 @@
 <template>
-  <router-link to="/" class="globalLogo">
-    <span class="globalLogoIcons">
-      <span class="globalLogoIcon"></span>
-      <span class="globalLogoIcon"></span>
-    </span>
-    <p class="globalLogoText">
-      <span
-        class="globalLogoTextInner"
-        v-for="logoText in logoTitle"
-        :key="logoText.id"
-      >
-        {{logoText}}
+  <router-link to="/">
+    <div
+      class="globalLogo"
+      @mouseover="logoAnimeHide"
+      @mouseleave="logoAnimeShow"
+    >
+      <span class="globalLogoIcons">
+        <span class="globalLogoIcon"></span>
+        <span class="globalLogoIcon"></span>
       </span>
-    </p>
+      <p class="globalLogoText">
+        <span
+          class="globalLogoTextInner"
+          ref="LogoTextInner"
+          v-for="logoText in logoTitleAry"
+          :key="logoText.id"
+        >
+          {{logoText}}
+        </span>
+        <span class="globalLogoTextLine" ref="LogoTextLine"></span>
+      </p>
+    </div>
   </router-link>
 </template>
 
 <script>
+import { TweenMax } from 'gsap'
 export default {
   name: 'logo',
   data() {
     return {
-      logoTitle: 'SnippetsBlog@Miwa'
+      logoTitle: 'SnippetsBlog@Miwa',
+      logoTitleAry: ''
     }
   },
   mounted() {
-    this.logoTitle = this.logoTitle.split('')
+    this.logoTitleAry = this.logoTitle.split('')
+    const elemLine = this.$refs.LogoTextLine
+    TweenMax.set(elemLine, {
+      scaleX: 0
+    })
+  },
+  methods: {
+    logoAnimeHide() {
+      const elemText = this.$refs.LogoTextInner
+      const elemLine = this.$refs.LogoTextLine
+      const elemTextLength = this.$refs.LogoTextInner.length
+      TweenMax.to(elemLine, 0.5, {
+        scaleX: 1
+      })
+      for(let i = 0; i < elemTextLength; i++) {
+        TweenMax.to(elemText[i], 0.4, {
+          y: 10,
+          opacity: 0,
+          delay: 0.03 * i + 0.5,
+        })
+      }
+      TweenMax.to(elemLine, 0.5, {
+        y: 20,
+        delay: 0.03 * elemTextLength + 1,
+      })
+      for(let i = 0; i < elemTextLength; i++) {
+        TweenMax.to(elemText[i], 0.4, {
+          y: 0,
+          opacity: 1,
+          delay: 0.03 * elemTextLength + 1 + 0.03 * i + 0.5,
+        })
+      }
+    },
+    logoAnimeShow() {
+      const elemText = this.$refs.LogoTextInner
+      const elemLine = this.$refs.LogoTextLine
+      const elemTextLength = this.$refs.LogoTextInner.length
+      TweenMax.to(elemLine, 0.5, {
+        y: 0,
+      })
+      for(let i = 0; i < elemTextLength; i++) {
+        TweenMax.to(elemText[i], 0.4, {
+          y: -10,
+          opacity: 0,
+          delay: 0.03 * i + 0.5
+        })
+      }
+      TweenMax.to(elemLine, 0.5, {
+        y: 0,
+        scaleX: 0,
+        delay: 0.03 * elemTextLength + 1,
+      })
+      for(let i = 0; i < elemTextLength; i++) {
+        TweenMax.to(elemText[i], 0.4, {
+          y: 0,
+          opacity: 1,
+          delay: 0.03 * elemTextLength + 1 + 0.03 * i + 0.5,
+        })
+      }
+    }
   }
 }
 </script>
@@ -41,15 +110,6 @@ $logoTime: 2s;
     .globalLogoIcon::before,
     .globalLogoIcon::after {
       animation-play-state: paused;
-    }
-    .globalLogoText {
-      &::after {
-        transform: scaleX(1);
-      }
-    }
-    .globalLogoTextInner {
-      transform: translateY(10px);
-      opacity: 0;
     }
   }
 }
@@ -105,31 +165,19 @@ $logoTime: 2s;
   margin-left: 15px;
   padding: 0 5px;
   font-weight: 600;
-  &::after {
-    content: "";
-    position: absolute;
-    top: calc(50% - 2px);
-    left: 0;
-    width: 100%;
-    height: 4px;
-    background: #000;
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform .5s;
-  }
 }
 .globalLogoTextInner {
-  $defaultTime: .5;
-  $animeTime: 0.03;
   display: inline-block;
   padding: 0 1px;
-  transform: translateY(0);
-  transition: all .5s;
-  @for $i from 1 through 20 {
-    &:nth-of-type(#{$i}) {
-      transition-delay: #{$defaultTime + $i * $animeTime}s;
-    }
-  }
+}
+.globalLogoTextLine {
+  position: absolute;
+  top: calc(50% - 2px);
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: #000;
+  transform-origin: left;
 }
 @keyframes lineAnime {
   0% {
