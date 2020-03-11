@@ -14,7 +14,6 @@ export default new Router({
       name: 'home',
       component: Home,
       beforeEnter: (to, from, next) => {
-        console.log('route(home):beforeEnter');
         next();
       }
     },
@@ -23,7 +22,6 @@ export default new Router({
       name: 'foo',
       component: Foo,
       beforeEnter: (to, from, next) => {
-        console.log('route(foo):beforeEnter');
         next();
       }
     },
@@ -32,7 +30,6 @@ export default new Router({
       name: 'code',
       component: Code,
       beforeEnter: (to, from, next) => {
-        console.log('route(Code):beforeEnter');
         next();
       }
     }
