@@ -106,11 +106,11 @@ $logoTime: 2s;
   }
   &::before,
   &::after {
-    content: '';
     position: absolute;
+    display: block;
     width: 0;
     height: 0;
-    display: block;
+    content: '';
   }
   &::before {
     top: 0;
@@ -120,8 +120,8 @@ $logoTime: 2s;
     animation: lineAnime $logoTime both infinite alternate;
   }
   &::after {
-    bottom: 0;
     right: 0;
+    bottom: 0;
     border-bottom: 2px solid transparent;
     border-left: 2px solid transparent;
     animation: lineAnime2 $logoTime both infinite alternate;
@@ -141,13 +141,13 @@ $logoTime: 2s;
 }
 .globalLogoText {
   position: relative;
-  font-size: 15px;
-  margin-left: 5px;
   padding: 0 5px;
+  margin-left: 5px;
+  font-size: 15px;
   font-weight: 600;
   @include sm {
-    font-size: 25px;
     margin-left: 15px;
+    font-size: 25px;
   }
 }
 .globalLogoTextInner {
@@ -165,62 +165,62 @@ $logoTime: 2s;
 }
 @keyframes lineAnime {
   0% {
-    border-color: transparent;
     width: 0;
     height: 0;
+    border-color: transparent;
   }
   10% {
-    border-color: transparent;
     width: 0;
     height: 0;
+    border-color: transparent;
   }
   11% {
     border-color: $logoBorderColor;
   }
   30% {
-    border-color: $logoBorderColor;
     width: 100%;
     height: 0;
+    border-color: $logoBorderColor;
   }
   50% {
-    border-color: $logoBorderColor;
     width: 100%;
     height: 100%;
+    border-color: $logoBorderColor;
   }
   100% {
-    border-color: $logoBorderColor;
     width: 100%;
     height: 100%;
+    border-color: $logoBorderColor;
   }
 }
 @keyframes lineAnime2 {
   0% {
-    border-color: transparent;
     width: 0;
     height: 0;
+    border-color: transparent;
   }
   50% {
-    border-color: transparent;
     width: 0;
     height: 0;
+    border-color: transparent;
   }
   51% {
     border-color: $logoBorderColor;
   }
   70% {
-    border-color: $logoBorderColor;
     width: 100%;
     height: 0;
+    border-color: $logoBorderColor;
   }
   90% {
-    border-color: $logoBorderColor;
     width: 100%;
     height: 100%;
+    border-color: $logoBorderColor;
   }
   100% {
-    border-color: $logoBorderColor;
     width: 100%;
     height: 100%;
+    border-color: $logoBorderColor;
   }
 }
 </style>

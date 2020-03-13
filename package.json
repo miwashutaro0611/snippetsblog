@@ -5,7 +5,8 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "stylelint": "stylelint --fix ./**/*.{scss,vue}"
   },
   "dependencies": {
     "core-js": "^3.6.4",
@@ -28,6 +29,12 @@
     "node-sass": "^4.13.1",
     "prettier": "^1.19.1",
     "sass-loader": "^8.0.2",
+    "stylelint": "^13.2.1",
+    "stylelint-config-recess-order": "^2.0.3",
+    "stylelint-declaration-block-no-ignored-properties": "^2.3.0",
+    "stylelint-no-unsupported-browser-features": "^4.0.0",
+    "stylelint-prettier": "^1.1.2",
+    "stylelint-scss": "^3.14.2",
     "vue-template-compiler": "^2.6.11",
     "vuex": "^3.1.2"
   },
@@ -41,6 +48,10 @@
   "lint-staged": {
     "*.{js,jsx,vue}": [
       "vue-cli-service lint",
+      "git add"
+    ],
+    "*.{scss,vue}": [
+      "stylelint --fix",
       "git add"
     ]
   }

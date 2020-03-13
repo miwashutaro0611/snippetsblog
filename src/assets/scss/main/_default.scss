@@ -7,13 +7,13 @@
 }
 
 body {
-  font-size: (16 / $fontSizeDefault * 100%);
   font-family: $fontFamilyDefault;
+  font-size: (16 / $fontSizeDefault * 100%);
   color: var(--color-body);
-  background: var(--color-background-body);
   letter-spacing: 0.05em;
+  background: var(--color-background-body);
+  transition: 0.3s;
   text-rendering: optimizeLegibility;
-  transition: .3s;
 }
 
 h1,

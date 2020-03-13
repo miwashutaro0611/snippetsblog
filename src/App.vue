@@ -67,24 +67,24 @@ export default {
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 10;
   display: block;
   width: 100%;
   height: 100%;
-  background: #555;
-  z-index: 10;
-  transform: scaleX(0);
-  transition: transform 0.5s;
-  transform-origin: right;
   pointer-events: none;
+  background: #555;
+  transition: transform 0.5s;
+  transform: scaleX(0);
+  transform-origin: right;
   &::before,
   &::after {
-    content: '';
-    display: block;
     position: absolute;
     top: 0;
     left: 0;
+    display: block;
     width: 100%;
     height: 100%;
+    content: '';
     transform: scaleX(0);
   }
   &::before {
@@ -100,8 +100,8 @@ export default {
   &.is-paging,
   &.is-paging::before,
   &.is-paging::after {
-    transform-origin: left;
     transform: scaleX(1);
+    transform-origin: left;
   }
 }
 
