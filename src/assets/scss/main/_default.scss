@@ -1,7 +1,18 @@
+:root {
+  --color-background-body: #ffffff;
+  --color-body: #545454;
+}
+
+[data-mode='dark'] {
+  --color-background-body: #15202b;
+  --color-body: #ffffff;
+}
+
 body {
   font-size: (16 / $fontSizeDefault * 100%);
   font-family: $fontFamilyDefault;
-  color: #333;
+  color: var(--color-body);
+  background: var(--color-background-body);
   letter-spacing: 0.05em;
   text-rendering: optimizeLegibility;
 }

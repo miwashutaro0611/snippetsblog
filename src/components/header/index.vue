@@ -2,25 +2,28 @@
   <header class="globalHeader">
     <div class="globalHeaderInner">
       <logo />
-      <nav class="globalNav">
+      <toggle-button />
+      <!-- <nav class="globalNav">
         <ul class="globalNavList">
           <li class="globalNavItem">
-            <router-link to="/" class="globalNavLink">
-              Home
+            <router-link to="/about" class="globalNavLink">
+              About
             </router-link>
           </li>
         </ul>
-      </nav>
+      </nav> -->
     </div>
   </header>
 </template>
 
 <script>
 import Logo from '../logo/'
+import toggleButton from '../toggleButton/'
 export default {
   name: 'globalHeader',
   components: {
-    Logo
+    Logo,
+    toggleButton
   }
 }
 </script>

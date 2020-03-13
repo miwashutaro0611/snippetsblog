@@ -45,7 +45,7 @@ export const state = {
     },
     {
       id: 6,
-      title: 'Icon HOverAnimation',
+      title: 'Icon HoverAnimation',
       link: 'code6',
       referencLink: {
         name: '',
