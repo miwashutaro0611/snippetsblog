@@ -30,10 +30,10 @@ export default {
   width: 100%;
   min-height: 300px;
   padding: 20px;
-  border: 2px solid #2c2e31;
-  background: #fff;
-  border-radius: 5px;
   overflow: auto;
+  background: #fff;
+  border: 2px solid #2c2e31;
+  border-radius: 5px;
 }
 .codePen {
   margin-top: 20px;
