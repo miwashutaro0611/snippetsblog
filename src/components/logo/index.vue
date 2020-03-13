@@ -176,7 +176,7 @@ $logoTime: 2s;
   left: 0;
   width: 100%;
   height: 4px;
-  background: #000;
+  background: var(--color-body);
   transform-origin: left;
 }
 @keyframes lineAnime {
