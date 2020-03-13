@@ -39,7 +39,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$width: 60px;
+$width: 50px;
 $height: 30px;
 .toggleSwitch {
   position: relative;
@@ -59,7 +59,7 @@ $height: 30px;
     +label{
       background-color: #4BD865;
       &:after{
-        left: $width / 2 + 5;
+        left: $width / 2;
       }
     }
   }

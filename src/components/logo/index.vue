@@ -3,7 +3,6 @@
     <div
       class="globalLogo"
       @mouseover="logoAnimeHide"
-      @mouseleave="logoAnimeShow"
     >
       <span class="globalLogoIcons" area-hidden="true">
         <span class="globalLogoIcon"></span>
@@ -67,33 +66,14 @@ export default {
           delay: 0.03 * elemTextLength + 1 + 0.03 * i + 0.5,
         })
       }
-    },
-    logoAnimeShow() {
-      const elemText = this.$refs.LogoTextInner
-      const elemLine = this.$refs.LogoTextLine
-      const elemTextLength = this.$refs.LogoTextInner.length
       TweenMax.to(elemLine, 0.5, {
-        y: 0,
-      })
-      for(let i = 0; i < elemTextLength; i++) {
-        TweenMax.to(elemText[i], 0.4, {
-          y: -10,
-          opacity: 0,
-          delay: 0.03 * i + 0.5
-        })
-      }
-      TweenMax.to(elemLine, 0.5, {
-        y: 0,
         scaleX: 0,
-        delay: 0.03 * elemTextLength + 1,
+        delay: 0.03 * elemTextLength + 1 + 0.03 * elemTextLength + 0.5 + 0.4,
+      }),
+      TweenMax.to(elemLine, 0, {
+        y: 0,
+        delay: 0.03 * elemTextLength + 1 + 0.03 * elemTextLength + 0.5 + 0.4 + 0.5,
       })
-      for(let i = 0; i < elemTextLength; i++) {
-        TweenMax.to(elemText[i], 0.4, {
-          y: 0,
-          opacity: 1,
-          delay: 0.03 * elemTextLength + 1 + 0.03 * i + 0.5,
-        })
-      }
     }
   }
 }
@@ -116,14 +96,22 @@ $logoTime: 2s;
 .globalLogoIcons {
   position: relative;
   display: block;
-  width: $logoSize;
-  height: $logoSize;
+  width: ($logoSize * 3 / 4);
+  height: ($logoSize * 3 / 4);
+  @include sm {
+    width: $logoSize;
+    height: $logoSize;
+  }
 }
 .globalLogoIcon {
   position: absolute;
   display: block;
-  width: ($logoSize * 3 / 4);
-  height: ($logoSize * 3 / 4);
+  width: ($logoSize * 3 / 4 * 3 / 4);
+  height: ($logoSize * 3 / 4 * 3 / 4);
+  @include sm {
+    width: ($logoSize * 3 / 4);
+    height: ($logoSize * 3 / 4);
+  }
   &::before,
   &::after {
     content: "";
@@ -161,10 +149,14 @@ $logoTime: 2s;
 }
 .globalLogoText {
   position: relative;
-  font-size: 25px;
-  margin-left: 15px;
+  font-size: 15px;
+  margin-left: 5px;
   padding: 0 5px;
   font-weight: 600;
+  @include sm {
+    font-size: 25px;
+    margin-left: 15px;
+  }
 }
 .globalLogoTextInner {
   display: inline-block;
@@ -195,18 +187,18 @@ $logoTime: 2s;
   }
   30% {
     border-color: $logoBorderColor;
-    width: ($logoSize * 3 / 4);
+    width: 100%;
     height: 0;
   }
   50% {
     border-color: $logoBorderColor;
-    width: ($logoSize * 3 / 4);
-    height: ($logoSize * 3 / 4);
+    width: 100%;
+    height: 100%;
   }
   100% {
     border-color: $logoBorderColor;
-    width: ($logoSize * 3 / 4);
-    height: ($logoSize * 3 / 4);
+    width: 100%;
+    height: 100%;
   }
 }
 @keyframes lineAnime2 {
@@ -225,18 +217,18 @@ $logoTime: 2s;
   }
   70% {
     border-color: $logoBorderColor;
-    width: ($logoSize * 3 / 4);
+    width: 100%;
     height: 0;
   }
   90% {
     border-color: $logoBorderColor;
-    width: ($logoSize * 3 / 4);
-    height: ($logoSize * 3 / 4);
+    width: 100%;
+    height: 100%;
   }
   100% {
     border-color: $logoBorderColor;
-    width: ($logoSize * 3 / 4);
-    height: ($logoSize * 3 / 4);
+    width: 100%;
+    height: 100%;
   }
 }
 </style>

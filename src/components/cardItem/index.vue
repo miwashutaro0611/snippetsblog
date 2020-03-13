@@ -29,16 +29,52 @@ export default {
 .card {
   position: relative;
   display: block;
-  width: (100% / 3);
+  width: 100%;
   padding: 10px 10px 25px;
   border-color: #333;
   border-right: 1px solid;
   border-bottom: 1px solid;
-  &:nth-of-type(-n + 3) {
+  &:first-of-type {
     border-top: 1px solid;
   }
-  &:nth-of-type(3n + 1) {
+  @include sm(max) {
     border-left: 1px solid;
+  }
+  @include smOnly {
+    width: (100% / 2);
+    &:nth-of-type(-n + 2) {
+      border-top: 1px solid;
+    }
+    &:nth-of-type(2n + 1) {
+      border-left: 1px solid;
+    }
+  }
+  @include mdOnly {
+    width: (100% / 3);
+    &:nth-of-type(-n + 3) {
+      border-top: 1px solid;
+    }
+    &:nth-of-type(3n + 1) {
+      border-left: 1px solid;
+    }
+  }
+  @include lgOnly {
+    width: (100% / 4);
+    &:nth-of-type(-n + 4) {
+      border-top: 1px solid;
+    }
+    &:nth-of-type(4n + 1) {
+      border-left: 1px solid;
+    }
+  }
+  @include xlg {
+    width: (100% / 5);
+    &:nth-of-type(-n + 5) {
+      border-top: 1px solid;
+    }
+    &:nth-of-type(5n + 1) {
+      border-left: 1px solid;
+    }
   }
   &::before {
     content: '';
@@ -112,13 +148,16 @@ $actionTime: .4s;
   right: 40px;
   bottom: 30px;
   z-index: 2;
-  width: $btnSize;
+  width: $btnSize2;
   height: $btnSize;
   border: 2px solid $btnColor;
   background: $btnBack;
   transition: width $actionTime;
   border-radius: ($btnSize / 2);
   overflow: hidden;
+  @include sm {
+    width: $btnSize;
+  }
   &::before,
   &::after {
     content: '';
@@ -137,11 +176,14 @@ $actionTime: .4s;
   > span {
     font-size: 15px;
     font-weight: bold;
-    opacity: 0;
+    opacity: 1;
     padding: 0 20px;
     transition: opacity ($actionTime / 2);
     line-height: ($btnSize - 4);
     color: $textColor;
+    @include sm {
+      opacity: 0;
+    }
   }
   &:hover,
   &:focus {

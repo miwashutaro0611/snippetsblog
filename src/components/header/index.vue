@@ -31,7 +31,7 @@ export default {
 <style lang="scss" scoped>
 .globalHeader {
   margin-bottom: 40px;
-  padding: 20px 40px;
+  padding: 20px 0;
   border-bottom: 1px solid #ddd;
 }
 .globalHeaderInner {
@@ -39,7 +39,6 @@ export default {
   align-items: center;
   justify-content: space-between;
   width: calc(100% - 40px);
-  max-width: 1100px;
   margin: 0 auto;
 }
 .globalLogo {

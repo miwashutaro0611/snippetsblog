@@ -59,7 +59,7 @@ export default {
 <style lang="scss" scoped>
 .globalWrapper {
   width: calc(100% - 40px);
-  max-width: 1100px;
+  // max-width: 1100px;
   margin: 0 auto;
 }
 
