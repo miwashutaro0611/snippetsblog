@@ -31,7 +31,6 @@ export default {
       if(mode) {
         document.documentElement.setAttribute('data-mode', 'dark')
       } else {
-        console.log('false')
         document.documentElement.setAttribute('data-mode', 'light')
       }
     }
