@@ -13,6 +13,7 @@ body {
   background: var(--color-background-body);
   letter-spacing: 0.05em;
   text-rendering: optimizeLegibility;
+  transition: .3s;
 }
 
 h1,
