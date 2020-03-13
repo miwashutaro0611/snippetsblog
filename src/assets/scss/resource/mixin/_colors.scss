@@ -1,9 +1,9 @@
 @mixin colorsLight {
   --color-background-body: #ffffff;
-  --color-body: #f00;
+  --color-body: #545454;
 }
 
 @mixin colorsDark {
-  --color-background-body: #00f;
+  --color-background-body: #15202b;
   --color-body: #ffffff;
 }
