@@ -1,0 +1,9 @@
+@mixin colorsLight {
+  --color-background-body: #ffffff;
+  --color-body: #f00;
+}
+
+@mixin colorsDark {
+  --color-background-body: #00f;
+  --color-body: #ffffff;
+}

@@ -1,11 +1,9 @@
-:root {
-  --color-background-body: #ffffff;
-  --color-body: #545454;
+[data-mode='light'] {
+  @include colorsLight;
 }
 
 [data-mode='dark'] {
-  --color-background-body: #15202b;
-  --color-body: #ffffff;
+  @include colorsDark;
 }
 
 body {

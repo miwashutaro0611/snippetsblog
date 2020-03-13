@@ -19,11 +19,19 @@ export default {
       darkmode: window.matchMedia('(prefers-color-scheme: dark)').matches
     }
   },
+  created() {
+    if(this.darkmode) {
+      document.documentElement.setAttribute('data-mode', 'dark')
+    } else {
+      document.documentElement.setAttribute('data-mode', 'light')
+    }
+  },
   methods: {
     modeChange(mode) {
       if(mode) {
         document.documentElement.setAttribute('data-mode', 'dark')
       } else {
+        console.log('false')
         document.documentElement.setAttribute('data-mode', 'light')
       }
     }
