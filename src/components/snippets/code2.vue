@@ -1,29 +1,18 @@
 <template>
   <div>
-    <button
-      type="button"
-      class="button"
-      @click="onClick(true)"
-    >
+    <button type="button" class="button" @click="onClick(true)">
       START
     </button>
-    <button
-      type="button"
-      class="button"
-      @click="onClick(false)"
-    >
+    <button type="button" class="button" @click="onClick(false)">
       DELETE
     </button>
     <h2 class="title">
       <span class="cmnTitle">
         <span class="cmnTitle__inner">
-          <span
-            class="word"
-            :class="{'wordActive': isBool}"
-          >
+          <span class="word" :class="{ wordActive: isBool }">
             TITLENAME
           </span>
-          <span class="bar" :class="{'barActive': isBool}"></span>
+          <span class="bar" :class="{ barActive: isBool }" />
         </span>
       </span>
     </h2>
@@ -48,8 +37,8 @@ export default {
 
 <style lang="scss" scoped>
 $BAR_COLOR: #191919;
-$EASE_BAR: cubic-bezier(.205,.01,.075,.995);
-$EASE_TITLE: cubic-bezier(.205,.01,.075,.995);
+$EASE_BAR: cubic-bezier(0.205, 0.01, 0.075, 0.995);
+$EASE_TITLE: cubic-bezier(0.205, 0.01, 0.075, 0.995);
 
 .button {
   border: 1px solid #000;
@@ -82,13 +71,13 @@ $EASE_TITLE: cubic-bezier(.205,.01,.075,.995);
 .word {
   display: inline-block;
   position: relative;
-  clip-path: polygon(0 -20%,0 -20%,0 120%,0 120%);
+  clip-path: polygon(0 -20%, 0 -20%, 0 120%, 0 120%);
 }
 
 .wordActive {
   transform: none;
-  clip-path: polygon(0 -20%,100% -20%,100% 120%,0 120%);
-  transition: -webkit-clip-path 1.2s $EASE_TITLE .6s,clip-path 1.2s $EASE_TITLE .6s,transform 1s $EASE_TITLE .4s;
+  clip-path: polygon(0 -20%, 100% -20%, 100% 120%, 0 120%);
+  transition: -webkit-clip-path 1.2s $EASE_TITLE 0.6s, clip-path 1.2s $EASE_TITLE 0.6s, transform 1s $EASE_TITLE 0.4s;
   background-color: white;
 }
 
@@ -107,6 +96,6 @@ $EASE_TITLE: cubic-bezier(.205,.01,.075,.995);
 .barActive {
   left: 100%;
   right: 0;
-  transition: left 1.2s $EASE_BAR .4s,right 1.2s $EASE_BAR;
+  transition: left 1.2s $EASE_BAR 0.4s, right 1.2s $EASE_BAR;
 }
 </style>

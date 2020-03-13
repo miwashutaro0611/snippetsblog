@@ -1,12 +1,6 @@
 <template>
   <div class="toggleSwitch">
-    <input
-      id="toggle"
-      class="toggleSwitch-input"
-      type="checkbox"
-      v-model="darkmode"
-      @change="modeChange(darkmode)"
-    />
+    <input id="toggle" class="toggleSwitch-input" type="checkbox" v-model="darkmode" @change="modeChange(darkmode)" />
     <label for="toggle" class="toggleSwitch-label" />
   </div>
 </template>
@@ -20,7 +14,7 @@ export default {
     }
   },
   created() {
-    if(this.darkmode) {
+    if (this.darkmode) {
       document.documentElement.setAttribute('data-mode', 'dark')
     } else {
       document.documentElement.setAttribute('data-mode', 'light')
@@ -28,7 +22,7 @@ export default {
   },
   methods: {
     modeChange(mode) {
-      if(mode) {
+      if (mode) {
         document.documentElement.setAttribute('data-mode', 'dark')
       } else {
         document.documentElement.setAttribute('data-mode', 'light')
@@ -56,9 +50,9 @@ $height: 30px;
   opacity: 0;
   cursor: pointer;
   &:checked {
-    +label{
-      background-color: #4BD865;
-      &:after{
+    + label {
+      background-color: #4bd865;
+      &:after {
         left: $width / 2;
       }
     }

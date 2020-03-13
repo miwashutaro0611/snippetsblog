@@ -1,8 +1,8 @@
 <template>
   <div class="globalLogo">
     <span class="globalLogoIcons">
-      <span class="globalLogoIcon"></span>
-      <span class="globalLogoIcon"></span>
+      <span class="globalLogoIcon" />
+      <span class="globalLogoIcon" />
     </span>
   </div>
 </template>
@@ -40,7 +40,7 @@ $logoTime: 2s;
   height: ($logoSize * 3 / 4);
   &::before,
   &::after {
-    content: "";
+    content: '';
     position: absolute;
     width: 0;
     height: 0;

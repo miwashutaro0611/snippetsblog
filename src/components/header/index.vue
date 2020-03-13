@@ -46,7 +46,6 @@ export default {
   @include MixinFontSize(32);
 }
 .globalNav {
-  
 }
 .globalNavList {
   display: flex;
@@ -56,7 +55,6 @@ export default {
   & + & {
     margin-left: 10px;
   }
-
 }
 .globalNavLink {
   color: #0ff;

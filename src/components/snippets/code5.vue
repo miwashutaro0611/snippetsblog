@@ -6,23 +6,23 @@
 
 <script>
 export default {
-  name: 'code5',
+  name: 'code5'
 }
 </script>
 
 <style lang="scss" scoped>
-$svgImage: "https://contents-one.co.jp/assets/imgs/assets/icn_btn_arrow-navy.svg";
+$svgImage: 'https://contents-one.co.jp/assets/imgs/assets/icn_btn_arrow-navy.svg';
 
 $baseColor: #285c76;
 $subColor: #fff;
 
-$btnMaxSize:  480px;
-$borderSize:  1px;
+$btnMaxSize: 480px;
+$borderSize: 1px;
 $btnPaddingSize: 22px;
-$circleSize :42px;
+$circleSize: 42px;
 
 $easeTime: 0.275s;
-$easeAction: cubic-bezier(.785,.135,.15,.86);
+$easeAction: cubic-bezier(0.785, 0.135, 0.15, 0.86);
 
 .button {
   display: block;
@@ -47,7 +47,8 @@ $easeAction: cubic-bezier(.785,.135,.15,.86);
     z-index: 2;
   }
 
-  &::before,&::after {
+  &::before,
+  &::after {
     content: '';
     position: absolute;
   }

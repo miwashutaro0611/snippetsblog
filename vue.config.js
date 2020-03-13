@@ -5,5 +5,7 @@ module.exports = {
         prependData: '@import "./src/assets/scss/resource.scss";'
       }
     }
-  }
-};
+  },
+
+  lintOnSave: false
+}

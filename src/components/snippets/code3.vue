@@ -11,7 +11,7 @@
 
 <script>
 export default {
-  name: 'code3',
+  name: 'code3'
 }
 </script>
 

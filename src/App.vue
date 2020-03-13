@@ -3,9 +3,9 @@
     <global-header />
     <div class="globalWrapper">
       <transition mode="out-in">
-        <router-view/>
+        <router-view />
       </transition>
-      <span class="mask" :class="className"></span>
+      <span class="mask" :class="className" />
     </div>
     <global-footer />
   </div>
@@ -29,28 +29,28 @@ export default {
   },
   watch: {
     isOpen() {
-      this.isOpen ? this.remove() : this.paging();
+      this.isOpen ? this.remove() : this.paging()
     }
   },
-  mounted () {
-		this.$router.beforeEach((to, from, next) => {
-			this.isOpen = false;
-			next();
-		})
-		this.$router.afterEach(() => {
-			setTimeout( () => {
+  mounted() {
+    this.$router.beforeEach((to, from, next) => {
+      this.isOpen = false
+      next()
+    })
+    this.$router.afterEach(() => {
+      setTimeout(() => {
         const scrollElem = document.scrollingElement || document.documentElement
         scrollElem.scrollTop = 0
-				this.isOpen = true;
-			}, 1000);
-		})
+        this.isOpen = true
+      }, 1000)
+    })
   },
   methods: {
     paging() {
-      this.className = 'is-paging';
+      this.className = 'is-paging'
     },
     remove() {
-      this.className = '';
+      this.className = ''
     }
   }
 }
@@ -68,12 +68,12 @@ export default {
   top: 0;
   left: 0;
   display: block;
-  width:  100%;
+  width: 100%;
   height: 100%;
   background: #555;
   z-index: 10;
   transform: scaleX(0);
-  transition: transform .5s;
+  transition: transform 0.5s;
   transform-origin: right;
   pointer-events: none;
   &::before,
@@ -90,12 +90,12 @@ export default {
   &::before {
     z-index: 11;
     background: #777;
-    transition: transform .5s .2s;
+    transition: transform 0.5s 0.2s;
   }
   &::after {
     z-index: 12;
     background: #333;
-    transition: transform .5s .5s;
+    transition: transform 0.5s 0.5s;
   }
   &.is-paging,
   &.is-paging::before,
@@ -105,10 +105,12 @@ export default {
   }
 }
 
-.v-enter-active, .v-leave-active {
+.v-enter-active,
+.v-leave-active {
   transition: opacity 0.5s;
 }
-.v-enter, .v-leave-to {
+.v-enter,
+.v-leave-to {
   opacity: 0;
 }
 </style>

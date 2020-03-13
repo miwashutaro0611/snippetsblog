@@ -1,23 +1,15 @@
 <template>
   <router-link to="/">
-    <div
-      class="globalLogo"
-      @mouseover="logoAnimeHide"
-    >
+    <div class="globalLogo" @mouseover="logoAnimeHide">
       <span class="globalLogoIcons" area-hidden="true">
-        <span class="globalLogoIcon"></span>
-        <span class="globalLogoIcon"></span>
+        <span class="globalLogoIcon" />
+        <span class="globalLogoIcon" />
       </span>
       <p class="globalLogoText">
-        <span
-          class="globalLogoTextInner"
-          ref="LogoTextInner"
-          v-for="logoText in logoTitleAry"
-          :key="logoText.id"
-        >
-          {{logoText}}
+        <span class="globalLogoTextInner" ref="LogoTextInner" v-for="logoText in logoTitleAry" :key="logoText.id">
+          {{ logoText }}
         </span>
-        <span class="globalLogoTextLine" ref="LogoTextLine"></span>
+        <span class="globalLogoTextLine" ref="LogoTextLine" />
       </p>
     </div>
   </router-link>
@@ -48,32 +40,32 @@ export default {
       TweenMax.to(elemLine, 0.5, {
         scaleX: 1
       })
-      for(let i = 0; i < elemTextLength; i++) {
+      for (let i = 0; i < elemTextLength; i++) {
         TweenMax.to(elemText[i], 0.4, {
           y: 10,
           opacity: 0,
-          delay: 0.03 * i + 0.5,
+          delay: 0.03 * i + 0.5
         })
       }
       TweenMax.to(elemLine, 0.5, {
         y: 20,
-        delay: 0.03 * elemTextLength + 1,
+        delay: 0.03 * elemTextLength + 1
       })
-      for(let i = 0; i < elemTextLength; i++) {
+      for (let i = 0; i < elemTextLength; i++) {
         TweenMax.to(elemText[i], 0.4, {
           y: 0,
           opacity: 1,
-          delay: 0.03 * elemTextLength + 1 + 0.03 * i + 0.5,
+          delay: 0.03 * elemTextLength + 1 + 0.03 * i + 0.5
         })
       }
       TweenMax.to(elemLine, 0.5, {
         scaleX: 0,
-        delay: 0.03 * elemTextLength + 1 + 0.03 * elemTextLength + 0.5 + 0.4,
+        delay: 0.03 * elemTextLength + 1 + 0.03 * elemTextLength + 0.5 + 0.4
       }),
-      TweenMax.to(elemLine, 0, {
-        y: 0,
-        delay: 0.03 * elemTextLength + 1 + 0.03 * elemTextLength + 0.5 + 0.4 + 0.5,
-      })
+        TweenMax.to(elemLine, 0, {
+          y: 0,
+          delay: 0.03 * elemTextLength + 1 + 0.03 * elemTextLength + 0.5 + 0.4 + 0.5
+        })
     }
   }
 }
@@ -114,7 +106,7 @@ $logoTime: 2s;
   }
   &::before,
   &::after {
-    content: "";
+    content: '';
     position: absolute;
     width: 0;
     height: 0;

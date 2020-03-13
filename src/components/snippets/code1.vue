@@ -1,7 +1,7 @@
 <template>
   <a class="wrap" href="#">
     <div class="image">
-      <img src="https://source.unsplash.com/80x80/?dog" alt="">
+      <img src="https://source.unsplash.com/80x80/?dog" alt="" />
       <div class="ranking">1</div>
     </div>
   </a>
@@ -9,7 +9,7 @@
 
 <script>
 export default {
-  name: 'code1',
+  name: 'code1'
 }
 </script>
 
@@ -71,5 +71,4 @@ $textColor: #fff;
     border-color: transparent $rightColor transparent transparent;
   }
 }
-
 </style>

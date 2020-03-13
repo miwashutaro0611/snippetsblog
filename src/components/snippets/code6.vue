@@ -1,14 +1,14 @@
 <template>
   <a href="" class="link">
     <span class="icon">
-      <span class="square" v-for="n in 9" :key="n.id"></span>
+      <span class="square" v-for="n in 9" :key="n.id" />
     </span>
   </a>
 </template>
 
 <script>
 export default {
-  name: 'code6',
+  name: 'code6'
 }
 </script>
 

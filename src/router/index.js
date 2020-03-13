@@ -13,7 +13,7 @@ export default new Router({
       name: 'home',
       component: Home,
       beforeEnter: (to, from, next) => {
-        next();
+        next()
       }
     },
     {
@@ -21,7 +21,7 @@ export default new Router({
       name: 'code',
       component: Code,
       beforeEnter: (to, from, next) => {
-        next();
+        next()
       }
     }
   ]

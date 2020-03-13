@@ -20,7 +20,7 @@
 
 <script>
 export default {
-  name: 'code7',
+  name: 'code7'
 }
 </script>
 
@@ -36,14 +36,15 @@ a {
   margin-bottom: 20px;
 }
 
-.button { // 基本的にいらない系
+.button {
+  // 基本的にいらない系
   font-size: 11px;
   letter-spacing: 2.5px;
   margin: 0 200px;
 }
 
 //variable, mixin
-$arrow-image: "//cdn.shopify.com/s/files/1/1703/6729/t/1/assets/btn-home-arrow.svg?77";
+$arrow-image: '//cdn.shopify.com/s/files/1/1703/6729/t/1/assets/btn-home-arrow.svg?77';
 $height: 50px;
 
 // code
@@ -55,9 +56,9 @@ $height: 50px;
   padding: 0 20px;
   background-size: 200% 100%;
   background-image: linear-gradient(to right, #000 50%, transparent 50%);
-  transition: background-position .2s;
+  transition: background-position 0.2s;
   &::before {
-    content: "";
+    content: '';
     display: block;
     background: #000;
     position: absolute;
@@ -66,7 +67,7 @@ $height: 50px;
     height: $height;
   }
   &::after {
-    content: "";
+    content: '';
     display: block;
     background-color: #fff;
     -webkit-mask-image: url($arrow-image);
@@ -79,7 +80,7 @@ $height: 50px;
   }
   el {
     &::after {
-      content: "";
+      content: '';
       display: block;
       background: #000;
       position: absolute;
@@ -192,7 +193,7 @@ $height: 50px;
     }
     el {
       &::after {
-        content: "";
+        content: '';
         right: -60px;
         background: #fff;
       }

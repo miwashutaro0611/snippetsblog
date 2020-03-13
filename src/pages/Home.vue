@@ -1,11 +1,11 @@
 <template>
   <div class="list">
-    <card-item v-for="snippet in rSnippets" :code="snippet" :key="snippet.id"></card-item>
+    <card-item v-for="snippet in rSnippets" :code="snippet" :key="snippet.id" />
   </div>
 </template>
 
 <script>
-import { mapState } from 'vuex';
+import { mapState } from 'vuex'
 import cardItem from '../components/cardItem/'
 export default {
   name: 'Home',
@@ -17,8 +17,8 @@ export default {
       snippets: 'snippets'
     }),
     rSnippets() {
-        return this.snippets.slice().reverse();
-    },
+      return this.snippets.slice().reverse()
+    }
   }
 }
 </script>

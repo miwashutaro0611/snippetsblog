@@ -4,11 +4,11 @@
       <component :is="code.link" />
     </div>
     <h2 class="cardTitle">
-      <span>{{code.title}}</span>
+      <span>{{ code.title }}</span>
     </h2>
     <router-link
       :to="{
-        name:'code',
+        name: 'code',
         params: { id: code.id }
       }"
       class="cardLink"
@@ -118,7 +118,7 @@ export default {
   padding-right: 20px;
   color: #fff;
   &::after {
-    content: "";
+    content: '';
     width: 100%;
     height: 100%;
     top: 0;
@@ -141,7 +141,7 @@ $btnColor: #2c2e31;
 $btnBack: #fff;
 $btnSize2: 150px;
 $textColor: #333;
-$actionTime: .4s;
+$actionTime: 0.4s;
 
 .cardLink {
   position: absolute;
