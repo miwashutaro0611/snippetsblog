@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>{{ snippets[$route.params.id - 1].title }}</h1>
+    <h1 class="codeTitle">{{ snippets[$route.params.id - 1].title }}</h1>
     <p>{{ snippets[$route.params.id - 1].id }}</p>
     <div class="codeWrap">
       <component :is="snippets[$route.params.id - 1].link" />
@@ -26,11 +26,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.codeTitle {
+  font-family: $fontFamilyCourgette;
+}
 .codeWrap {
   width: 100%;
   min-height: 300px;
   padding: 20px;
-  overflow: auto;
+  overflow-x: auto;
   background: #fff;
   border: 2px solid #2c2e31;
   border-radius: 5px;

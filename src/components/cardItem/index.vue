@@ -30,58 +30,26 @@ export default {
   position: relative;
   display: block;
   width: 100%;
-  padding: 10px 10px 25px;
+  padding: 10px 0 25px;
   border-color: #333;
-  border-right: 1px solid;
-  border-bottom: 1px solid;
-  &:first-of-type {
-    border-top: 1px solid;
-  }
-  @include sm(max) {
-    border-left: 1px solid;
-  }
-  @include smOnly {
+  @include sm {
     width: (100% / 2);
-    &:nth-of-type(-n + 2) {
-      border-top: 1px solid;
-    }
-    &:nth-of-type(2n + 1) {
-      border-left: 1px solid;
-    }
   }
-  @include mdOnly {
+  @include md {
     width: (100% / 3);
-    &:nth-of-type(-n + 3) {
-      border-top: 1px solid;
-    }
-    &:nth-of-type(3n + 1) {
-      border-left: 1px solid;
-    }
   }
-  @include lgOnly {
+  @include lg {
     width: (100% / 4);
-    &:nth-of-type(-n + 4) {
-      border-top: 1px solid;
-    }
-    &:nth-of-type(4n + 1) {
-      border-left: 1px solid;
-    }
   }
   @include xlg {
     width: (100% / 5);
-    &:nth-of-type(-n + 5) {
-      border-top: 1px solid;
-    }
-    &:nth-of-type(5n + 1) {
-      border-left: 1px solid;
-    }
   }
   &::before {
     position: absolute;
-    right: 45px;
+    right: 35px;
     bottom: 35px;
     z-index: 1;
-    width: calc(100% - 40px);
+    width: calc(100% - 20px);
     height: calc(100% - 20px);
     margin: -25px;
     content: '';
@@ -117,6 +85,7 @@ export default {
   max-width: calc(100% - 220px);
   padding-right: 20px;
   margin-left: 45px;
+  font-family: $fontFamilyCourgette;
   color: var(--color-default-reverse);
   @include sm {
     max-width: calc(100% - 110px);

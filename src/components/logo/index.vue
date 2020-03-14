@@ -80,6 +80,7 @@ $logoTime: 2s;
 .globalLogo {
   display: flex;
   align-items: center;
+  font-family: $fontFamilyCourgette;
   @include sm {
     &:hover {
       .globalLogoIcon::before,
