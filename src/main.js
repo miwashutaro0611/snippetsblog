@@ -1,4 +1,6 @@
 import Vue from 'vue'
+import VueAnalytics from 'vue-analytics'
+
 import App from './App.vue'
 import router from './router'
 import store from './store'
@@ -17,6 +19,11 @@ files.keys().forEach((key) => {
 // 読み込んだvueファイルをグローバルコンポーネントとして登録
 Object.keys(components).forEach((key) => {
   Vue.component(key, components[key])
+})
+
+Vue.use(VueAnalytics, {
+  id: 'UA-142599010-2',
+  router
 })
 
 new Vue({
