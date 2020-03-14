@@ -22,7 +22,8 @@ export default {
   data() {
     return {
       logoTitle: 'SnippetsBlog@Miwa',
-      logoTitleAry: ''
+      logoTitleAry: '',
+      width: window.innerWidth
     }
   },
   mounted() {
@@ -34,6 +35,7 @@ export default {
   },
   methods: {
     logoAnimeHide() {
+      if (this.width < 768) return
       const elemText = this.$refs.LogoTextInner
       const elemLine = this.$refs.LogoTextLine
       const elemTextLength = this.$refs.LogoTextInner.length
@@ -78,10 +80,12 @@ $logoTime: 2s;
 .globalLogo {
   display: flex;
   align-items: center;
-  &:hover {
-    .globalLogoIcon::before,
-    .globalLogoIcon::after {
-      animation-play-state: paused;
+  @include sm {
+    &:hover {
+      .globalLogoIcon::before,
+      .globalLogoIcon::after {
+        animation-play-state: paused;
+      }
     }
   }
 }

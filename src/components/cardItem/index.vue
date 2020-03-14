@@ -114,10 +114,13 @@ export default {
   position: relative;
   z-index: 2;
   display: inline-block;
-  max-width: calc(100% - 110px);
+  max-width: calc(100% - 220px);
   padding-right: 20px;
   margin-left: 45px;
   color: var(--color-default-reverse);
+  @include sm {
+    max-width: calc(100% - 110px);
+  }
   &::after {
     position: absolute;
     top: 0;
@@ -147,7 +150,7 @@ $actionTime: 0.4s;
 .cardLink {
   position: absolute;
   right: 40px;
-  bottom: 30px;
+  bottom: 24px;
   z-index: 2;
   width: $btnSize2;
   height: $btnSize;
@@ -157,6 +160,7 @@ $actionTime: 0.4s;
   border-radius: ($btnSize / 2);
   transition: width $actionTime;
   @include sm {
+    bottom: 30px;
     width: $btnSize;
   }
   &::before,
