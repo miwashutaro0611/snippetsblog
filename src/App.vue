@@ -23,9 +23,23 @@ export default {
   },
   data() {
     return {
-      className: 'is-open',
-      isOpen: true
+      className: '',
+      isOpen: true,
+      consoleClass: `
+        font-size: 22px;
+        color: #0f4c81;
+      `,
+      consoleClass2: `
+        font-size: 14px;
+      `
     }
+  },
+  created() {
+    console.log(
+      `\n%cThanks for visiting\n%c\n訪問ありがとうございます。こちら@jackmiwamiwaのスニペットブログになります。PWAにも対応しておりますので、ぜひアプリでもご覧ください。\n各種リンクはこちらを参考にしてください。\n\nTwitter: https://twitter.com/jackmiwamiwa/\nGitHub: https://github.com/miwashutaro0611/\nQiita: https://qiita.com/miwashutaro0611/\nlapras: https://github.com/miwashutaro0611/\nhatena: https://jackswim3411.hatenablog.com/\nnote: https://note.com/jackblog/\nWantedly: https://www.wantedly.com/users/24578098/\n`,
+      this.consoleClass,
+      this.consoleClass2
+    )
   },
   watch: {
     isOpen() {

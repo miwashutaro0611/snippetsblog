@@ -2,17 +2,17 @@
   <div>
     <div class="btn-wrap">
       <a href="#" class=" button button1">
-        <el><span>button</span></el>
+        <em><span>button</span></em>
       </a>
     </div>
     <div class="btn-wrap">
       <a href="#" class=" button button2">
-        <el><span>button</span></el>
+        <em><span>button</span></em>
       </a>
     </div>
     <div class="btn-wrap">
       <a href="#" class=" button button3">
-        <el><span>button</span></el>
+        <em><span>button</span></em>
       </a>
     </div>
   </div>
@@ -37,10 +37,10 @@ a {
 }
 
 .button {
+  margin: 0 200px;
   // 基本的にいらない系
   font-size: 11px;
   letter-spacing: 2.5px;
-  margin: 0 200px;
 }
 
 //variable, mixin
@@ -52,44 +52,44 @@ $height: 50px;
 .button {
   position: relative;
   height: $height;
-  line-height: $height;
   padding: 0 20px;
-  background-size: 200% 100%;
+  line-height: $height;
   background-image: linear-gradient(to right, #000 50%, transparent 50%);
+  background-size: 200% 100%;
   transition: background-position 0.2s;
   &::before {
-    content: '';
-    display: block;
-    background: #000;
     position: absolute;
     top: 0;
+    display: block;
     width: 80px;
     height: $height;
+    content: '';
+    background: #000;
   }
   &::after {
-    content: '';
-    display: block;
-    background-color: #fff;
-    -webkit-mask-image: url($arrow-image);
     position: absolute;
     top: 50%;
-    transform: translateY(-50%);
+    display: block;
     width: 55px;
     height: 8px;
+    content: '';
+    background-color: #fff;
     transition: all 0.3s ease;
+    transform: translateY(-50%);
+    -webkit-mask-image: url($arrow-image);
   }
-  el {
+  em {
     &::after {
-      content: '';
-      display: block;
-      background: #000;
       position: absolute;
+      top: 50%;
+      display: block;
       width: 60px;
       height: 1px;
-      top: 50%;
-      transition: all 0.3s ease;
       font-size: 1px;
       line-height: 1px;
+      content: '';
+      background: #000;
+      transition: all 0.3s ease;
     }
     span {
       color: #fff;
@@ -97,7 +97,7 @@ $height: 50px;
   }
   &:hover {
     opacity: 1;
-    el {
+    em {
       span {
         color: #000;
       }
@@ -112,7 +112,7 @@ $height: 50px;
   &::after {
     left: -55px;
   }
-  el {
+  em {
     &::after {
       right: -80px;
     }
@@ -127,10 +127,10 @@ $height: 50px;
       margin-left: 0px;
       background: #000;
     }
-    el {
+    em {
       &::after {
-        left: -60px;
         right: initial;
+        left: -60px;
         background: #fff;
       }
     }
@@ -144,7 +144,7 @@ $height: 50px;
   &::after {
     right: -55px;
   }
-  el {
+  em {
     &::after {
       left: -80px;
     }
@@ -159,10 +159,10 @@ $height: 50px;
       margin-left: 0px;
       background-color: #000;
     }
-    el {
+    em {
       &::after {
-        left: initial;
         right: -60px;
+        left: initial;
         background: #fff;
       }
     }
@@ -176,7 +176,7 @@ $height: 50px;
   &::after {
     right: -55px;
   }
-  el {
+  em {
     &::after {
       content: none;
     }
@@ -191,10 +191,10 @@ $height: 50px;
       margin-left: 0px;
       background-color: #000;
     }
-    el {
+    em {
       &::after {
-        content: '';
         right: -60px;
+        content: '';
         background: #fff;
       }
     }
