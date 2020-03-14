@@ -1,5 +1,9 @@
 # miwa-snippets
 
+## site
+
+https://snippetsblog-miwa.netlify.com/
+
 ## Project setup
 ```
 yarn install
