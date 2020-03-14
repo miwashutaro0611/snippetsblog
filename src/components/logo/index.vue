@@ -73,7 +73,7 @@ export default {
 
 <style lang="scss" scoped>
 $logoSize: 40px;
-$logoBorderColor: #444;
+$logoBorderColor: var(--color-default);
 $logoTime: 2s;
 .globalLogo {
   display: flex;

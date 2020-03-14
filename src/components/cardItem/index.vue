@@ -77,18 +77,18 @@ export default {
     }
   }
   &::before {
-    content: '';
-    background: #636569;
-    z-index: 1;
     position: absolute;
     right: 45px;
     bottom: 35px;
+    z-index: 1;
     width: calc(100% - 40px);
     height: calc(100% - 20px);
     margin: -25px;
+    content: '';
+    background: var(--color-card-mask);
     border-radius: 10px;
-    clip-path: inset(40px 0 0 40px round 10px);
     transition: clip-path 0.3s ease 0.1s;
+    clip-path: inset(40px 0 0 40px round 10px);
   }
   &:hover {
     &::before {
@@ -102,37 +102,38 @@ export default {
   z-index: 2;
   width: calc(100% - 60px);
   height: 200px;
-  margin: 20px 0 10px 30px;
   padding: 10px;
+  margin: 20px 0 10px 30px;
+  overflow: auto;
   background: #fff;
   border: 2px solid #2c2e31;
-  overflow: auto;
   border-radius: 6px;
+  box-shadow: 0 5px 5px #0007;
 }
 .cardTitle {
   position: relative;
   z-index: 2;
   display: inline-block;
   max-width: calc(100% - 110px);
-  margin-left: 45px;
   padding-right: 20px;
-  color: #fff;
+  margin-left: 45px;
+  color: var(--color-default-reverse);
   &::after {
-    content: '';
-    width: 100%;
-    height: 100%;
+    position: absolute;
     top: 0;
     left: -10px;
-    position: absolute;
     z-index: -1;
-    background: rgba(#2c2e31, 0.5);
+    width: 100%;
+    height: 100%;
+    content: '';
+    background: var(--color-card-title);
     transform: skew(-15deg);
   }
   > span {
     display: block;
     overflow: hidden;
-    white-space: nowrap;
     text-overflow: ellipsis;
+    white-space: nowrap;
   }
 }
 
@@ -150,23 +151,23 @@ $actionTime: 0.4s;
   z-index: 2;
   width: $btnSize2;
   height: $btnSize;
-  border: 2px solid $btnColor;
-  background: $btnBack;
-  transition: width $actionTime;
-  border-radius: ($btnSize / 2);
   overflow: hidden;
+  background: $btnBack;
+  border: 2px solid $btnColor;
+  border-radius: ($btnSize / 2);
+  transition: width $actionTime;
   @include sm {
     width: $btnSize;
   }
   &::before,
   &::after {
-    content: '';
     position: absolute;
-    display: block;
     top: calc(50% - 6px);
     right: 17px;
+    display: block;
     width: 2px;
     height: 12px;
+    content: '';
     background: $btnColor;
     transition: transform $actionTime;
   }
@@ -174,13 +175,13 @@ $actionTime: 0.4s;
     transform: rotate(90deg);
   }
   > span {
+    padding: 0 20px;
     font-size: 15px;
     font-weight: bold;
-    opacity: 1;
-    padding: 0 20px;
-    transition: opacity ($actionTime / 2);
     line-height: ($btnSize - 4);
     color: $textColor;
+    opacity: 1;
+    transition: opacity ($actionTime / 2);
     @include sm {
       opacity: 0;
     }

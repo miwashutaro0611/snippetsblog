@@ -73,7 +73,6 @@ export default {
 <style lang="scss" scoped>
 .globalWrapper {
   width: calc(100% - 40px);
-  // max-width: 1100px;
   margin: 0 auto;
 }
 
@@ -86,7 +85,7 @@ export default {
   width: 100%;
   height: 100%;
   pointer-events: none;
-  background: #555;
+  background: var(--color-page-mask3);
   transition: transform 0.5s;
   transform: scaleX(0);
   transform-origin: right;
@@ -103,12 +102,12 @@ export default {
   }
   &::before {
     z-index: 11;
-    background: #777;
+    background: var(--color-page-mask2);
     transition: transform 0.5s 0.2s;
   }
   &::after {
     z-index: 12;
-    background: #333;
+    background: var(--color-page-mask3);
     transition: transform 0.5s 0.5s;
   }
   &.is-paging,
