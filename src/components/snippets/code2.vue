@@ -41,22 +41,23 @@ $EASE_BAR: cubic-bezier(0.205, 0.01, 0.075, 0.995);
 $EASE_TITLE: cubic-bezier(0.205, 0.01, 0.075, 0.995);
 
 .button {
-  border: 1px solid #000;
   padding: 5px;
+  border: 1px solid #000;
   & + & {
     margin-left: 10px;
   }
 }
 
 .title {
+  margin: 30px 0 0 0;
+  overflow: hidden;
   font-size: 1.6rem;
   font-weight: 400;
-  margin: 30px 0 0 0;
   line-height: 1;
-  overflow: hidden;
+  color: #000;
+  text-align: center;
   text-overflow: ellipsis;
   white-space: nowrap;
-  text-align: center;
 }
 
 .cmnTitle {
@@ -64,38 +65,38 @@ $EASE_TITLE: cubic-bezier(0.205, 0.01, 0.075, 0.995);
 }
 
 .cmnTitle__inner {
-  display: inline-block;
   position: relative;
+  display: inline-block;
 }
 
 .word {
-  display: inline-block;
   position: relative;
+  display: inline-block;
   clip-path: polygon(0 -20%, 0 -20%, 0 120%, 0 120%);
 }
 
 .wordActive {
+  background-color: white;
+  transition: -webkit-clip-path 1.2s $EASE_TITLE 0.6s, clip-path 1.2s $EASE_TITLE 0.6s, transform 1s $EASE_TITLE 0.4s;
   transform: none;
   clip-path: polygon(0 -20%, 100% -20%, 100% 120%, 0 120%);
-  transition: -webkit-clip-path 1.2s $EASE_TITLE 0.6s, clip-path 1.2s $EASE_TITLE 0.6s, transform 1s $EASE_TITLE 0.4s;
-  background-color: white;
 }
 
 .bar {
-  background-color: $BAR_COLOR;
-  display: block;
   position: absolute;
   top: 0;
+  right: 100%;
   bottom: 0;
+  left: 0;
+  display: block;
   height: 1px;
   margin: auto 0;
-  left: 0;
-  right: 100%;
+  background-color: $BAR_COLOR;
 }
 
 .barActive {
-  left: 100%;
   right: 0;
+  left: 100%;
   transition: left 1.2s $EASE_BAR 0.4s, right 1.2s $EASE_BAR;
 }
 </style>
