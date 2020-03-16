@@ -31,13 +31,14 @@ export default {
   width: 100%;
   min-height: 300px;
   padding: 20px;
+  margin-top: 15px;
   overflow-x: auto;
   background: #fff;
   border: 2px solid #2c2e31;
   border-radius: 5px;
 }
 .codePen {
-  margin-top: 20px;
+  margin-top: 30px;
 }
 .topLinkBtn {
   position: relative;
