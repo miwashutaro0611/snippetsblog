@@ -19,6 +19,9 @@ export default {
     ...mapState({
       snippets: 'snippets'
     })
+  },
+  title() {
+    return this.snippets[this.$route.params.id - 1].title
   }
 }
 </script>

@@ -4,6 +4,7 @@ import VueAnalytics from 'vue-analytics'
 import App from './App.vue'
 import router from './router'
 import store from './store'
+import titleMixin from './mixins/title'
 import './registerServiceWorker'
 
 require('@/assets/scss/main.scss')
@@ -25,6 +26,8 @@ Vue.use(VueAnalytics, {
   id: 'UA-142599010-2',
   router
 })
+
+Vue.mixin(titleMixin)
 
 new Vue({
   router,
