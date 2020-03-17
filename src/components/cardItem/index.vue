@@ -55,7 +55,7 @@ export default {
     content: '';
     background: var(--color-card-mask);
     border-radius: 10px;
-    transition: clip-path 0.3s ease 0.1s;
+    transition: clip-path 0.3s ease 0.1s, background 0.3s;
     clip-path: inset(40px 0 0 40px round 10px);
   }
   &:hover {
@@ -87,6 +87,7 @@ export default {
   margin-left: 45px;
   font-family: $fontFamilyCourgette;
   color: var(--color-default-reverse);
+  transition: 0.3s;
   @include sm {
     max-width: calc(100% - 110px);
   }
@@ -99,6 +100,7 @@ export default {
     height: 100%;
     content: '';
     background: var(--color-card-title);
+    transition: 0.3s;
     transform: skew(-15deg);
   }
   > span {
