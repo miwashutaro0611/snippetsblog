@@ -48,7 +48,7 @@ export const state = {
       referencLink: {
         name: '株式会社コンテンツワン',
         url: 'https://contents-one.co.jp/',
-        image: ''
+        image: 'contents-one.png'
       },
       codepen:
         '<iframe height="265" style="width: 100%;" scrolling="no" title="gOYKvdj" src="https://codepen.io/miwashutaro0611/embed/gOYKvdj?height=265&theme-id=light&default-tab=css,result" frameborder="no" allowtransparency="true" allowfullscreen="true">See the Pen <a href="https://codepen.io/miwashutaro0611/pen/gOYKvdj">gOYKvdj</a> by miwa_shuntaro(<a href="https://codepen.io/miwashutaro0611">@miwashutaro0611</a>) on <a href="https://codepen.io">CodePen</a>.</iframe>'

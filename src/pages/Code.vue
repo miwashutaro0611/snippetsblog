@@ -4,15 +4,18 @@
     <div class="codeWrap">
       <component :is="snippets[$route.params.id - 1].link" />
     </div>
-    <div class="referencLink" v-if="snippets[$route.params.id - 1].referencLink.name">
-      <div class="referencLinkContent">
-        <p>{{ snippets[$route.params.id - 1].referencLink.name }}</p>
-        <a :href="snippets[$route.params.id - 1].referencLink.url" target="_blank">{{
-          snippets[$route.params.id - 1].referencLink.url
-        }}</a>
-      </div>
-      <div class="referencLinkImage" />
-    </div>
+    <section class="referencLink" v-if="snippets[$route.params.id - 1].referencLink.name">
+      <h2 class="referencLinkTitle">Reference link</h2>
+      <a class="referencLinkContent" :href="snippets[$route.params.id - 1].referencLink.url" target="_blank">
+        <div class="referencLinkText">
+          <p>{{ snippets[$route.params.id - 1].referencLink.name }}</p>
+          <span>{{ snippets[$route.params.id - 1].referencLink.url }}</span>
+        </div>
+        <div class="referencLinkImage">
+          <img :src="referencImage()" :alt="snippets[$route.params.id - 1].referencLink.name" />
+        </div>
+      </a>
+    </section>
     <div class="codePen" v-html="snippets[$route.params.id - 1].codepen" />
     <router-link to="/" class="topLinkBtn">
       GO TO LIST
@@ -31,6 +34,13 @@ export default {
   },
   title() {
     return this.snippets[this.$route.params.id - 1].title
+  },
+  methods: {
+    referencImage() {
+      return require(`@/assets/img/code/${this.snippets[this.$route.params.id - 1].id}/${
+        this.snippets[this.$route.params.id - 1].referencLink.image
+      }`)
+    }
   }
 }
 </script>
@@ -49,18 +59,41 @@ export default {
   border: 2px solid #2c2e31;
   border-radius: 5px;
 }
-.referencLink {
-  display: flex;
+.referencLinkTitle {
+  margin-top: 20px;
+  font-family: $fontFamilyCourgette;
 }
 .referencLinkContent {
-  flex-basis: 100%;
+  display: block;
+  padding: 20px;
+  margin-top: 15px;
+  color: #333;
+  background: #fff;
+  border: 2px solid #000;
+  border-radius: 5px;
+  @include sm {
+    display: flex;
+    align-items: center;
+  }
+}
+.referencLinkText {
+  @include sm {
+    flex-basis: 100%;
+  }
 }
 .referencLinkImage {
-  flex-basis: 200px;
-  flex-shrink: 1;
+  margin-top: 15px;
+  @include sm {
+    flex-basis: 200px;
+    flex-shrink: 1;
+    margin-top: 0;
+  }
+  img {
+    vertical-align: bottom;
+  }
 }
 .codePen {
-  margin-top: 30px;
+  margin-top: 40px;
 }
 .topLinkBtn {
   position: relative;
