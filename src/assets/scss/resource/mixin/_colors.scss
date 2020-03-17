@@ -8,6 +8,7 @@
   --color-page-mask1: #555;
   --color-page-mask2: #777;
   --color-page-mask3: #333;
+  --color-btn-mask: #ffffff80;
 }
 
 @mixin colorsDark {
@@ -20,4 +21,5 @@
   --color-page-mask1: #ccc;
   --color-page-mask2: #999;
   --color-page-mask3: #aaa;
+  --color-btn-mask: #00000080;
 }

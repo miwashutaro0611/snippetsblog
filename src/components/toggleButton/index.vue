@@ -1,7 +1,10 @@
 <template>
   <div class="toggleSwitch">
     <input id="toggle" class="toggleSwitch-input" type="checkbox" v-model="darkmode" @change="modeChange(darkmode)" />
-    <label for="toggle" class="toggleSwitch-label" />
+    <label for="toggle" class="toggleSwitch-label">
+      <font-awesome-icon v-if="darkmode" icon="moon" class="toggleSwitch-label-icon" />
+      <font-awesome-icon v-else icon="sun" class="toggleSwitch-label-icon" />
+    </label>
   </div>
 </template>
 
@@ -33,52 +36,38 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$width: 50px;
-$height: 30px;
 .toggleSwitch {
-  position: relative;
-  width: $width;
-  height: $height;
 }
 .toggleSwitch-input {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 5;
-  opacity: 0;
-  cursor: pointer;
+  display: none;
   &:checked {
-    + label {
-      background-color: #4bd865;
-      &:after {
-        left: $width / 2;
+    & + label {
+      .toggleSwitch-label-icon {
+        transform: translateX(20px);
       }
     }
   }
 }
 .toggleSwitch-label {
-  width: $width;
-  height: $height;
-  background: #ccc;
   position: relative;
-  display: inline-block;
-  border-radius: 46px;
-  transition: 0.4s;
-  box-sizing: border-box;
-  &:after {
-    content: '';
-    position: absolute;
-    width: $height;
-    height: $height;
-    border-radius: 100%;
-    left: 0;
-    top: 0;
-    z-index: 2;
-    background: #fff;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-    transition: 0.4s;
-  }
+  display: block;
+  width: 70px;
+  height: 40px;
+  padding: 0 10px;
+  line-height: 38px;
+  cursor: pointer;
+  border: 2px solid var(--color-default);
+  border-radius: 20px;
+  transition: 0.3s;
+}
+.toggleSwitch-label-icon {
+  position: absolute;
+  top: 8px;
+  left: 10px;
+  width: 20px;
+  height: 20px;
+  color: var(--color-default);
+  transition: 0.3s;
+  transform: translateX(0);
 }
 </style>

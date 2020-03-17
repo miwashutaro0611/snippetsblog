@@ -36,7 +36,7 @@ export default {
   },
   created() {
     console.log(
-      `\n%cThanks for visiting\n%c\n訪問ありがとうございます。こちら@jackmiwamiwaのスニペットブログになります。PWAにも対応しておりますので、ぜひアプリでもご覧ください。\n各種リンクはこちらを参考にしてください。\n\nTwitter: https://twitter.com/jackmiwamiwa/\nGitHub: https://github.com/miwashutaro0611/\nQiita: https://qiita.com/miwashutaro0611/\nlapras: https://github.com/miwashutaro0611/\nhatena: https://jackswim3411.hatenablog.com/\nnote: https://note.com/jackblog/\nWantedly: https://www.wantedly.com/users/24578098/\n`,
+      `\n%cThanks for visiting\n%c\n訪問ありがとうございます。こちら@jackmiwamiwaのスニペットブログになります。PWAにも対応しておりますので、ぜひアプリでもご覧ください。\nTwitterやはてブなども行なっておりますので、ぜひそちらもご覧ください。\n\nTwitter: https://twitter.com/jackmiwamiwa/\nGitHub: https://github.com/miwashutaro0611/\nQiita: https://qiita.com/miwashutaro0611/\nlapras: https://github.com/miwashutaro0611/\nhatena: https://jackswim3411.hatenablog.com/\nnote: https://note.com/jackblog/\nWantedly: https://www.wantedly.com/users/24578098/\n`,
       this.consoleClass,
       this.consoleClass2
     )
@@ -78,7 +78,7 @@ export default {
 
 .mask {
   position: fixed;
-  top: 0;
+  top: 0px;
   left: 0;
   z-index: 10;
   display: block;
@@ -89,8 +89,8 @@ export default {
   transition: transform 0.5s;
   transform: scaleX(0);
   transform-origin: right;
-  &::before,
-  &::after {
+  &::after,
+  &::before {
     position: absolute;
     top: 0;
     left: 0;
@@ -125,5 +125,8 @@ export default {
 .v-enter,
 .v-leave-to {
   opacity: 0;
+}
+.tete {
+  color: #ff0;
 }
 </style>

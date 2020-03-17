@@ -31,9 +31,16 @@ export default {
     const elemLine = this.$refs.LogoTextLine
     TweenMax.set(elemLine, {
       scaleX: 0
-    })
+    }),
+      window.addEventListener('resize', this.setWidth)
+  },
+  beforeDestroy() {
+    window.removeEventListener('resize', this.setWidth)
   },
   methods: {
+    setWidth() {
+      this.width = window.innerWidth
+    },
     logoAnimeHide() {
       if (this.width < 768) return
       const elemText = this.$refs.LogoTextInner
@@ -80,6 +87,7 @@ $logoTime: 2s;
 .globalLogo {
   display: flex;
   align-items: center;
+  font-family: $fontFamilyCourgette;
   @include sm {
     &:hover {
       .globalLogoIcon::before,
