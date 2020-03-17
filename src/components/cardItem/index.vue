@@ -118,7 +118,7 @@ $actionTime: 0.4s;
 
 .cardLink {
   position: absolute;
-  right: 40px;
+  right: 30px;
   bottom: 24px;
   z-index: 2;
   width: $btnSize2;

@@ -4,6 +4,15 @@
     <div class="codeWrap">
       <component :is="snippets[$route.params.id - 1].link" />
     </div>
+    <div class="referencLink" v-if="snippets[$route.params.id - 1].referencLink.name">
+      <div class="referencLinkContent">
+        <p>{{ snippets[$route.params.id - 1].referencLink.name }}</p>
+        <a :href="snippets[$route.params.id - 1].referencLink.url" target="_blank">{{
+          snippets[$route.params.id - 1].referencLink.url
+        }}</a>
+      </div>
+      <div class="referencLinkImage" />
+    </div>
     <div class="codePen" v-html="snippets[$route.params.id - 1].codepen" />
     <router-link to="/" class="topLinkBtn">
       GO TO LIST
@@ -39,6 +48,16 @@ export default {
   background: #fff;
   border: 2px solid #2c2e31;
   border-radius: 5px;
+}
+.referencLink {
+  display: flex;
+}
+.referencLinkContent {
+  flex-basis: 100%;
+}
+.referencLinkImage {
+  flex-basis: 200px;
+  flex-shrink: 1;
 }
 .codePen {
   margin-top: 30px;
