@@ -3,9 +3,9 @@ export default {
     let { title } = this.$options
     if (title) {
       title = typeof title === 'function' ? title.call(this) : title
-      document.title = `miwa-snippets - ${title}`
+      document.title = `SnippetsBlog@Miwa - ${title}`
     } else {
-      document.title = 'miwa-snippets'
+      document.title = 'SnippetsBlog@Miwa'
     }
   }
 }
