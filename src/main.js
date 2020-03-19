@@ -28,12 +28,10 @@ Object.keys(components).forEach((key) => {
 library.add(faMoon, faSun)
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
-if (process.env.NODE_ENV === 'production') {
-  Vue.use(VueAnalytics, {
-    id: 'UA-142599010-2',
-    router
-  })
-}
+Vue.use(VueAnalytics, {
+  id: 'UA-142599010-2',
+  router
+})
 
 Vue.mixin(titleMixin)
 
