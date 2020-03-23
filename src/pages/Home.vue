@@ -39,8 +39,10 @@ export default {
     rSnippets() {
       let current = this.currentPage * this.parPage
       let start = current - this.parPage
-      return this.snippets.slice(start, current)
-      // return this.snippets.slice().reverse()
+      return this.snippets
+        .slice()
+        .reverse()
+        .slice(start, current)
     },
     getPageCount() {
       return Math.ceil(this.snippets.length / this.parPage)
