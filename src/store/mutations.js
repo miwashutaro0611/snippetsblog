@@ -1,5 +1,4 @@
 export const state = {
-  message: 'hello vuex',
   snippets: [
     {
       id: 1,
