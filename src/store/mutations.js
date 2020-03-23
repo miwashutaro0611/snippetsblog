@@ -76,6 +76,18 @@ export const state = {
       },
       codepen:
         '<iframe height="265" style="width: 100%;" scrolling="no" title="vPjggY" src="https://codepen.io/miwashutaro0611/embed/vPjggY?height=265&theme-id=light&default-tab=css,result" frameborder="no" allowtransparency="true" allowfullscreen="true">See the Pen <a href="https://codepen.io/miwashutaro0611/pen/vPjggY">vPjggY</a> by miwa_shuntaro(<a href="https://codepen.io/miwashutaro0611">@miwashutaro0611</a>) on <a href="https://codepen.io">CodePen</a>.</iframe>'
+    },
+    {
+      id: 8,
+      title: 'Password Strength',
+      link: 'code8',
+      referencLink: {
+        name: '',
+        url: '',
+        image: ''
+      },
+      codepen:
+        '<iframe height="265" style="width: 100%;" scrolling="no" title="パスワード強弱判定2" src="https://codepen.io/miwashutaro0611/embed/wvaEXgy?height=265&theme-id=light&default-tab=js,result" frameborder="no" allowtransparency="true" allowfullscreen="true">See the Pen <a href="https://codepen.io/miwashutaro0611/pen/wvaEXgy">パスワード強弱判定2</a> by miwa_shuntaro(<a href="https://codepen.io/miwashutaro0611">@miwashutaro0611</a>) on <a href="https://codepen.io">CodePen</a>.</iframe>'
     }
   ]
 }
