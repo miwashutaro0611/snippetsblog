@@ -88,6 +88,18 @@ export const state = {
       },
       codepen:
         '<iframe height="265" style="width: 100%;" scrolling="no" title="パスワード強弱判定2" src="https://codepen.io/miwashutaro0611/embed/wvaEXgy?height=265&theme-id=light&default-tab=js,result" frameborder="no" allowtransparency="true" allowfullscreen="true">See the Pen <a href="https://codepen.io/miwashutaro0611/pen/wvaEXgy">パスワード強弱判定2</a> by miwa_shuntaro(<a href="https://codepen.io/miwashutaro0611">@miwashutaro0611</a>) on <a href="https://codepen.io">CodePen</a>.</iframe>'
+    },
+    {
+      id: 9,
+      title: 'cromier',
+      link: 'code9',
+      referencLink: {
+        name: 'Cromier: Italian Sneakers',
+        url: 'https://www.cromier.it/it/',
+        image: 'cromier.png'
+      },
+      codepen:
+        '<iframe height="265" style="width: 100%;" scrolling="no" title="cromier" src="https://codepen.io/miwashutaro0611/embed/QWbodeV?height=265&theme-id=light&default-tab=css,result" frameborder="no" allowtransparency="true" allowfullscreen="true">See the Pen <a href="https://codepen.io/miwashutaro0611/pen/QWbodeV">cromier</a> by miwa_shuntaro(<a href="https://codepen.io/miwashutaro0611">@miwashutaro0611</a>) on <a href="https://codepen.io">CodePen</a>.</iframe>'
     }
   ]
 }
