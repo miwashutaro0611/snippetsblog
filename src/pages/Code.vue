@@ -11,9 +11,9 @@
           <p>{{ snippets[$route.params.id - 1].referencLink.name }}</p>
           <span>{{ snippets[$route.params.id - 1].referencLink.url }}</span>
         </div>
-        <div class="referencLinkImage">
+        <!-- <div class="referencLinkImage">
           <img :src="referencImage()" :alt="snippets[$route.params.id - 1].referencLink.name" />
-        </div>
+        </div> -->
       </a>
     </section>
     <div class="codePen" v-html="snippets[$route.params.id - 1].codepen" />
