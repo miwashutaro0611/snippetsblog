@@ -112,6 +112,18 @@ export const state = {
       },
       codepen:
         '<iframe height="265" style="width: 100%;" scrolling="no" title="QWbaxgp" src="https://codepen.io/miwashutaro0611/embed/QWbaxgp?height=265&theme-id=light&default-tab=js,result" frameborder="no" allowtransparency="true" allowfullscreen="true">See the Pen <a href="https://codepen.io/miwashutaro0611/pen/QWbaxgp">QWbaxgp</a> by miwa_shuntaro(<a href="https://codepen.io/miwashutaro0611">@miwashutaro0611</a>) on <a href="https://codepen.io">CodePen</a>.</iframe>'
+    },
+    {
+      id: 11,
+      title: 'Loading Circle',
+      link: 'code11',
+      referencLink: {
+        name: '',
+        url: '',
+        image: ''
+      },
+      codepen:
+        '<iframe height="265" style="width: 100%;" scrolling="no" title="loading-circle" src="https://codepen.io/miwashutaro0611/embed/BaoNOZG?height=265&theme-id=light&default-tab=css,result" frameborder="no" allowtransparency="true" allowfullscreen="true" loading="lazy">See the Pen <a href="https://codepen.io/miwashutaro0611/pen/BaoNOZG">loading-circle</a> by miwa_shuntaro(<a href="https://codepen.io/miwashutaro0611">@miwashutaro0611</a>) on <a href="https://codepen.io">CodePen</a>.</iframe>'
     }
   ]
 }
