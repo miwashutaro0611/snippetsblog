@@ -25,7 +25,6 @@ export default {
   },
   methods: {
     onTouchMove(e) {
-      console.log(e)
       e.preventDefault()
       const touchObject = e.changedTouches[0]
       const width = e.target.offsetWidth
@@ -66,15 +65,15 @@ $iconLineSize: 4px;
   justify-content: center;
   width: $size;
   height: $size;
-  border: none;
-  border-radius: 50%;
   cursor: pointer;
   background: $iconBackColor;
+  border: none;
+  border-radius: 50%;
   &::before {
-    content: '';
     display: block;
     width: ($size / 2);
     height: ($size / 2);
+    content: '';
     background: linear-gradient(
       $iconLineColor,
       $iconLineColor $iconLineSize,
