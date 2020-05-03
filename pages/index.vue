@@ -20,18 +20,6 @@ export default {
     rSnippets() {
       return this.snippets.slice().reverse()
     }
-  },
-  head() {
-    return {
-      title: `${this.snippets[3].title}のページですーーー`,
-      meta: [
-        {
-          hid: 'description',
-          name: 'description',
-          content: 'ここにページの説明文が入ります'
-        }
-      ]
-    }
   }
 }
 </script>

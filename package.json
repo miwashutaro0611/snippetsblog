@@ -1,5 +1,6 @@
 {
   "name": "miwa-snippets",
+  "description": "miwaが作ったスニペットを紹介するサイトです。",
   "version": "1.0.0",
   "private": true,
   "scripts": {
