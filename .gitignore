@@ -1,10 +1,8 @@
+.nuxt
+
 .DS_Store
 node_modules
 /dist
-
-# local env files
-.env.local
-.env.*.local
 
 # Log files
 npm-debug.log*
@@ -19,3 +17,4 @@ yarn-error.log*
 *.njsproj
 *.sln
 *.sw?
+sw.*
