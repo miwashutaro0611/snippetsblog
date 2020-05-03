@@ -9,7 +9,7 @@
 
 <script>
 export default {
-  name: 'code1'
+  name: 'Code1'
 }
 </script>
 
@@ -45,30 +45,30 @@ $textColor: #fff;
   padding-top: 4px;
   font-size: 12px;
   font-style: italic;
-  background: linear-gradient(to right, $leftColor 50%, $rightColor 50%);
   color: $textColor;
   text-align: center;
+  background: linear-gradient(to right, $leftColor 50%, $rightColor 50%);
   &::before,
   &::after {
-    content: '';
     position: absolute;
     z-index: 2;
     display: block;
     width: 0;
     height: 0;
+    content: '';
     border-style: solid;
   }
   &::before {
     bottom: -5px;
     left: 0;
-    border-width: 5px 10px 0 0;
     border-color: $leftColor transparent transparent transparent;
+    border-width: 5px 10px 0 0;
   }
   &::after {
-    bottom: -5px;
     right: 0;
-    border-width: 0 10px 5px 0;
+    bottom: -5px;
     border-color: transparent $rightColor transparent transparent;
+    border-width: 0 10px 5px 0;
   }
 }
 </style>

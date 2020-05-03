@@ -1,14 +1,14 @@
 <template>
   <a href="" class="link">
     <span class="icon">
-      <span class="square" v-for="n in 9" :key="n.id" />
+      <span v-for="n in 9" :key="n.id" class="square" />
     </span>
   </a>
 </template>
 
 <script>
 export default {
-  name: 'code6'
+  name: 'Code6'
 }
 </script>
 
@@ -83,13 +83,13 @@ export default {
     }
 
     &:nth-child(8) {
-      bottom: 0;
       right: 13px;
+      bottom: 0;
     }
 
     &:nth-child(9) {
-      bottom: 0;
       right: 0;
+      bottom: 0;
     }
   }
 }

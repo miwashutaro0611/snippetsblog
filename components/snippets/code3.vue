@@ -11,7 +11,7 @@
 
 <script>
 export default {
-  name: 'code3'
+  name: 'Code3'
 }
 </script>
 
@@ -32,12 +32,12 @@ $overlay-duration: 0.3s; // オーバーレイの動く時間
 }
 @mixin overlay {
   position: absolute;
-  width: 100%;
-  height: 100%;
   z-index: 2;
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100%;
+  height: 100%;
   background: #0008;
   span {
     display: inline-block;
@@ -56,11 +56,11 @@ $overlay-duration: 0.3s; // オーバーレイの動く時間
 }
 .more {
   position: relative;
-  @include box;
-  @include hvoerAction;
-  background: url($image);
   color: $text-color;
   cursor: pointer;
+  background: url($image);
+  @include box;
+  @include hvoerAction;
 }
 .overlay {
   @include overlay;
@@ -70,8 +70,8 @@ $overlay-duration: 0.3s; // オーバーレイの動く時間
   transition: opacity $overlay-duration $overlay-ease;
   span {
     opacity: 0;
-    transform: translate3d($text-move, 0, 0);
     transition: all $text-duration $text-ease;
+    transform: translate3d($text-move, 0, 0);
     @for $i from 1 through $text-length {
       &:nth-child(#{$i}) {
         transition-delay: $i * $text-delay;

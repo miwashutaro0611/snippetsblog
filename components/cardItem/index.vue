@@ -6,22 +6,21 @@
     <h2 class="cardTitle">
       <span>{{ code.title }}</span>
     </h2>
-    <router-link
-      :to="{
-        name: 'code',
-        params: { id: code.id }
-      }"
-      class="cardLink"
-    >
+    <nuxt-link :to="to(code.id)" class="cardLink">
       <span>MORE</span>
-    </router-link>
+    </nuxt-link>
   </article>
 </template>
 
 <script>
 export default {
-  name: 'cardItem',
-  props: ['code']
+  name: 'CardItem',
+  props: ['code'],
+  methods: {
+    to(id) {
+      return `code/${id}`
+    }
+  }
 }
 </script>
 
@@ -73,6 +72,7 @@ export default {
   padding: 10px;
   margin: 20px 0 10px 30px;
   overflow: auto;
+  color: #333;
   background: #fff;
   border: 2px solid #2c2e31;
   border-radius: 6px;

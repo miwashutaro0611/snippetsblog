@@ -5,10 +5,10 @@
     </div>
     <div class="resultText" :style="textColorStyle">{{ scoreText }}</div>
     <input
+      v-model="textValue"
       type="text"
       placeholder="ここにテキスト"
       maxlength="20"
-      v-model="textValue"
       @keyup="scoreChangeText(textValue)"
     />
   </div>
@@ -16,7 +16,7 @@
 
 <script>
 export default {
-  name: 'code8',
+  name: 'Code8',
   data() {
     return {
       textValue: '',
@@ -64,7 +64,7 @@ export default {
       this.score = 0
     },
     repeatScore(password) {
-      let passLength = password.length
+      const passLength = password.length
       this.score += passLength * 4
       this.score += (this.textRepeat(1, password) - passLength) * 1
       this.score += (this.textRepeat(2, password) - passLength) * 1
@@ -72,13 +72,13 @@ export default {
       this.score += (this.textRepeat(4, password) - passLength) * 1
     },
     textRepeat(pLen, password) {
-      let passLength = password.length
+      const passLength = password.length
       let res = ''
       for (let i = 0; i < passLength; i++) {
         let repeated = true
         let j
         for (j = 0; j < pLen && j + i + pLen < passLength; j++) {
-          repeated = repeated && password.charAt(j + i) == password.charAt(j + i + pLen)
+          repeated = repeated && password.charAt(j + i) === password.charAt(j + i + pLen)
         }
         if (j < pLen) repeated = false
         if (repeated) {
@@ -102,7 +102,7 @@ export default {
       }
     },
     setStyle(password) {
-      let passLength = password.length
+      const passLength = password.length
       this.score = this.score > 100 ? 100 : this.score
       this.passBarStyle.transform = `scaleX(${this.score / 100})`
       if (passLength < 6) {
@@ -121,7 +121,7 @@ export default {
         this.scoreText = this.contentStyleList[3].text
         this.textColorStyle.color = this.contentStyleList[3].color
         this.passBarStyle.background = this.contentStyleList[3].color
-      } else if (this.score == 100) {
+      } else if (this.score === 100) {
         this.scoreText = this.contentStyleList[4].text
         this.textColorStyle.color = '#333'
         this.passBarStyle.background = this.contentStyleList[4].color
@@ -138,17 +138,17 @@ $barHeight: 8px;
 .resultWrap {
   width: $barWidth;
   height: $barHeight;
+  overflow: hidden;
   background: #e4e4e4;
   border-radius: $barHeight / 2;
-  overflow: hidden;
 }
 
 .resultWrapInner {
   width: 100%;
   height: 100%;
+  transition: transform 0.3s ease;
   transform: scaleX(0);
   transform-origin: left;
-  transition: transform 0.3s ease;
 }
 
 .resultText {

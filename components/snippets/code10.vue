@@ -3,7 +3,7 @@
     <p>テキスト</p>
     <button type="button" @click="modalOpen">モーダルを開く</button>
     <transition name="fade">
-      <div class="p-modal" v-if="!isHide">
+      <div v-if="!isHide" class="p-modal">
         <div class="p-modal_over_lay" @click="modalClose" />
         <div class="p-modal_content">
           <p>ああああ</p>
@@ -17,7 +17,7 @@
 
 <script>
 export default {
-  name: 'code10',
+  name: 'Code10',
   data() {
     return {
       isHide: true

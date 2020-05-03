@@ -8,13 +8,13 @@
     </div>
     <div class="contentWrapper" />
     <div id="id3" class="contentWrapper" />
-    <button type="button" class="buttonIcon" @touchmove="onTouchMove($event)" @click="onClick" :style="buttonStyle" />
+    <button type="button" class="buttonIcon" :style="buttonStyle" @touchmove="onTouchMove($event)" @click="onClick" />
   </div>
 </template>
 
 <script>
 export default {
-  name: 'code12',
+  name: 'Code12',
   data() {
     return {
       text: 'リンクエリアです。アイコンをクリックするとここの名前が変わります',

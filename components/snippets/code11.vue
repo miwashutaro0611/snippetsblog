@@ -4,7 +4,7 @@
 
 <script>
 export default {
-  name: 'code11'
+  name: 'Code11'
 }
 </script>
 
@@ -16,21 +16,21 @@ $topLineColor: #699ada;
 $animeTime: 1s;
 
 .loading-circle {
+  position: relative;
   width: $circleSize;
   height: $circleSize;
-  border-radius: 50%;
-  position: relative;
   border: $borderSize solid $backLineColor;
+  border-radius: 50%;
   &::after {
-    content: '';
     position: absolute;
-    width: calc(100% + #{$borderSize} * 2);
-    height: calc(100% + #{$borderSize} * 2);
     top: -$borderSize;
     left: -$borderSize;
-    border-radius: 50%;
+    width: calc(100% + #{$borderSize} * 2);
+    height: calc(100% + #{$borderSize} * 2);
+    content: '';
     border: $borderSize solid transparent;
     border-top-color: $topLineColor;
+    border-radius: 50%;
     animation: loading-circle-animation $animeTime infinite;
   }
 }

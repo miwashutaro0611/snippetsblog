@@ -21,7 +21,7 @@
 
 <script>
 export default {
-  name: 'code2',
+  name: 'Code2',
   data() {
     return {
       isBool: false

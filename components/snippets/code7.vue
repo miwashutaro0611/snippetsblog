@@ -1,17 +1,17 @@
 <template>
   <div>
     <div class="btn-wrap">
-      <a href="#" class=" button button1">
+      <a href="#" class="button button1">
         <em><span>button</span></em>
       </a>
     </div>
     <div class="btn-wrap">
-      <a href="#" class=" button button2">
+      <a href="#" class="button button2">
         <em><span>button</span></em>
       </a>
     </div>
     <div class="btn-wrap">
-      <a href="#" class=" button button3">
+      <a href="#" class="button button3">
         <em><span>button</span></em>
       </a>
     </div>
@@ -20,7 +20,7 @@
 
 <script>
 export default {
-  name: 'code7'
+  name: 'Code7'
 }
 </script>
 

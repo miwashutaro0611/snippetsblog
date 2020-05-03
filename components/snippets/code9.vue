@@ -11,7 +11,7 @@
 
 <script>
 export default {
-  name: 'code9',
+  name: 'Code9',
   data() {
     return {
       textValue: 'R'

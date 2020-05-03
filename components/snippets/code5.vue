@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: 'code5'
+  name: 'Code5'
 }
 </script>
 
@@ -25,55 +25,55 @@ $easeTime: 0.275s;
 $easeAction: cubic-bezier(0.785, 0.135, 0.15, 0.86);
 
 .button {
+  position: relative;
   display: block;
   width: calc(100% - 20px);
   max-width: $btnMaxSize;
-  margin: 50px auto 0;
-  border: $borderSize solid $baseColor;
-  background: $baseColor;
-  color: $subColor;
-  overflow: hidden;
-  position: relative;
   padding: $btnPaddingSize 45px;
-  border-radius: $btnPaddingSize * 2;
+  margin: 50px auto 0;
+  overflow: hidden;
   font-weight: 400;
   line-height: 1;
-  letter-spacing: 0.1em;
+  color: $subColor;
   text-align: center;
+  letter-spacing: 0.1em;
+  background: $baseColor;
+  border: $borderSize solid $baseColor;
+  border-radius: $btnPaddingSize * 2;
 
   > span {
     position: relative;
-    margin-right: -30px;
     z-index: 2;
+    margin-right: -30px;
   }
 
   &::before,
   &::after {
-    content: '';
     position: absolute;
+    content: '';
   }
 
   &::before {
-    background: url($svgImage) no-repeat center;
     top: calc(50% - 3.5px);
     left: 24px;
+    z-index: 1;
     width: 19px;
     height: 7px;
-    z-index: 1;
-    will-change: transform;
+    background: url($svgImage) no-repeat center;
     transition: transform $easeTime $easeAction ($easeTime * 2 / 10);
+    will-change: transform;
   }
 
   &::after {
-    background: $subColor;
     top: calc(50% - (#{$circleSize} / 2));
     left: 12px;
     width: $circleSize;
     height: $circleSize;
+    background: $subColor;
     border-radius: 50%;
     box-shadow: 0 1px 5px 2px rgba(0, 0, 0, 0.2);
-    will-change: top, left, width, height, border-radius;
     transition: all $easeTime $easeAction 0s;
+    will-change: top, left, width, height, border-radius;
   }
 
   &:hover {
@@ -85,11 +85,11 @@ $easeAction: cubic-bezier(0.785, 0.135, 0.15, 0.86);
     }
 
     &::after {
-      background: $subColor;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
+      background: $subColor;
       border-radius: 0;
     }
   }

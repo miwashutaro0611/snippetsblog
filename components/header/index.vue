@@ -3,24 +3,15 @@
     <div class="globalHeaderInner">
       <logo />
       <toggle-button />
-      <!-- <nav class="globalNav">
-        <ul class="globalNavList">
-          <li class="globalNavItem">
-            <router-link to="/about" class="globalNavLink">
-              About
-            </router-link>
-          </li>
-        </ul>
-      </nav> -->
     </div>
   </header>
 </template>
 
 <script>
-import Logo from '../logo/'
-import toggleButton from '../toggleButton/'
+import Logo from '~/components/logo/'
+import toggleButton from '~/components/toggleButton/'
 export default {
-  name: 'globalHeader',
+  name: 'GlobalHeader',
   components: {
     Logo,
     toggleButton
@@ -30,8 +21,8 @@ export default {
 
 <style lang="scss" scoped>
 .globalHeader {
-  margin-bottom: 40px;
   padding: 20px 0;
+  margin-bottom: 40px;
   border-bottom: 1px solid #ddd;
 }
 .globalHeaderInner {

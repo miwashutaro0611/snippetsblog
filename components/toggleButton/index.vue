@@ -1,22 +1,31 @@
 <template>
   <div class="toggleSwitch">
-    <input id="toggle" class="toggleSwitch-input" type="checkbox" v-model="darkmode" @change="modeChange(darkmode)" />
+    <input id="toggle" v-model="darkmode" class="toggleSwitch-input" type="checkbox" @change="modeChange(darkmode)" />
     <label for="toggle" class="toggleSwitch-label">
-      <font-awesome-icon v-if="darkmode" icon="moon" class="toggleSwitch-label-icon" />
-      <font-awesome-icon v-else icon="sun" class="toggleSwitch-label-icon" />
+      <fa v-if="darkmode" :icon="faMoon" class="toggleSwitch-label-icon" />
+      <fa v-else :icon="faSun" class="toggleSwitch-label-icon" />
     </label>
   </div>
 </template>
 
 <script>
+import { faMoon, faSun } from '@fortawesome/free-solid-svg-icons'
 export default {
-  name: 'toggleButton',
+  name: 'ToggleButton',
   data() {
     return {
       darkmode: window.matchMedia('(prefers-color-scheme: dark)').matches
     }
   },
-  created() {
+  computed: {
+    faMoon() {
+      return faMoon
+    },
+    faSun() {
+      return faSun
+    }
+  },
+  mounted() {
     if (this.darkmode) {
       document.documentElement.setAttribute('data-mode', 'dark')
     } else {

@@ -6,10 +6,10 @@
         <span class="globalLogoIcon" />
       </span>
       <p class="globalLogoText">
-        <span class="globalLogoTextInner" ref="LogoTextInner" v-for="logoText in logoTitleAry" :key="logoText.id">
+        <span v-for="logoText in logoTitleAry" ref="LogoTextInner" :key="logoText.id" class="globalLogoTextInner">
           {{ logoText }}
         </span>
-        <span class="globalLogoTextLine" ref="LogoTextLine" />
+        <span ref="LogoTextLine" class="globalLogoTextLine" />
       </p>
     </div>
   </router-link>
@@ -18,7 +18,7 @@
 <script>
 import { TweenMax } from 'gsap'
 export default {
-  name: 'logo',
+  name: 'Logo',
   data() {
     return {
       logoTitle: 'SnippetsBlog@Miwa',
@@ -31,8 +31,8 @@ export default {
     const elemLine = this.$refs.LogoTextLine
     TweenMax.set(elemLine, {
       scaleX: 0
-    }),
-      window.addEventListener('resize', this.setWidth)
+    })
+    window.addEventListener('resize', this.setWidth)
   },
   beforeDestroy() {
     window.removeEventListener('resize', this.setWidth)
@@ -70,11 +70,11 @@ export default {
       TweenMax.to(elemLine, 0.5, {
         scaleX: 0,
         delay: 0.03 * elemTextLength + 1 + 0.03 * elemTextLength + 0.5 + 0.4
-      }),
-        TweenMax.to(elemLine, 0, {
-          y: 0,
-          delay: 0.03 * elemTextLength + 1 + 0.03 * elemTextLength + 0.5 + 0.4 + 0.5
-        })
+      })
+      TweenMax.to(elemLine, 0, {
+        y: 0,
+        delay: 0.03 * elemTextLength + 1 + 0.03 * elemTextLength + 0.5 + 0.4 + 0.5
+      })
     }
   }
 }
