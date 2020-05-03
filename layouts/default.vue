@@ -1,9 +1,9 @@
 <template>
-  <div id="app">
+  <div>
     <global-header />
     <div class="globalWrapper">
-      <transition mode="out-in">
-        <router-view />
+      <transition name="layout" mode="out-in">
+        <nuxt />
       </transition>
       <span class="mask" :class="className" />
     </div>
@@ -12,11 +12,10 @@
 </template>
 
 <script>
-import GlobalHeader from './components/header/'
-import GlobalFooter from './components/footer/'
-
+import GlobalHeader from '~/components/header/'
+import GlobalFooter from '~/components/footer/'
 export default {
-  name: 'App',
+  name: 'Layout',
   components: {
     GlobalHeader,
     GlobalFooter
@@ -34,17 +33,17 @@ export default {
       `
     }
   },
+  watch: {
+    isOpen() {
+      this.isOpen ? this.remove() : this.paging()
+    }
+  },
   created() {
     console.log(
       `\n%cThanks for visiting\n%c\n訪問ありがとうございます。こちら@jackmiwamiwaのスニペットブログになります。PWAにも対応しておりますので、ぜひアプリでもご覧ください。\nTwitterやはてブなども行なっておりますので、ぜひそちらもご覧ください。\n\nTwitter: https://twitter.com/jackmiwamiwa/\nGitHub: https://github.com/miwashutaro0611/\nQiita: https://qiita.com/miwashutaro0611/\nlapras: https://github.com/miwashutaro0611/\nhatena: https://jackswim3411.hatenablog.com/\nnote: https://note.com/jackblog/\nWantedly: https://www.wantedly.com/users/24578098/\n`,
       this.consoleClass,
       this.consoleClass2
     )
-  },
-  watch: {
-    isOpen() {
-      this.isOpen ? this.remove() : this.paging()
-    }
   },
   mounted() {
     this.$router.beforeEach((to, from, next) => {
@@ -53,8 +52,6 @@ export default {
     })
     this.$router.afterEach(() => {
       setTimeout(() => {
-        const scrollElem = document.scrollingElement || document.documentElement
-        scrollElem.scrollTop = 0
         this.isOpen = true
       }, 1000)
     })
@@ -117,16 +114,18 @@ export default {
     transform-origin: left;
   }
 }
+.layout-enter-active,
+.layout-leave-active {
+  transition: opacity 0.5s 0.5s;
+}
 
-.v-enter-active,
-.v-leave-active {
-  transition: opacity 0.5s;
+.layout-enter-to,
+.layout-leave {
+  opacity: 1;
 }
-.v-enter,
-.v-leave-to {
+
+.layout-enter,
+.layout-leave-to {
   opacity: 0;
-}
-.tete {
-  color: #ff0;
 }
 </style>
