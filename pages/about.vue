@@ -1,5 +1,8 @@
 <template>
-  <p>about</p>
+  <div>
+    <p>about</p>
+    <nuxt-link to="/">TOPへ</nuxt-link>
+  </div>
 </template>
 
 <script>

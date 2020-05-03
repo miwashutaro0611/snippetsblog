@@ -4,22 +4,22 @@
     <div class="codeWrap">
       <component :is="snippets[$route.params.id - 1].link" />
     </div>
-    <section class="referencLink" v-if="snippets[$route.params.id - 1].referencLink.name">
+    <section v-if="snippets[$route.params.id - 1].referencLink.name" class="referencLink">
       <h2 class="referencLinkTitle">Reference link</h2>
       <a class="referencLinkContent" :href="snippets[$route.params.id - 1].referencLink.url" target="_blank">
         <div class="referencLinkText">
           <p>{{ snippets[$route.params.id - 1].referencLink.name }}</p>
           <span>{{ snippets[$route.params.id - 1].referencLink.url }}</span>
         </div>
-        <!-- <div class="referencLinkImage">
+        <div class="referencLinkImage">
           <img :src="referencImage()" :alt="snippets[$route.params.id - 1].referencLink.name" />
-        </div> -->
+        </div>
       </a>
     </section>
     <div class="codePen" v-html="snippets[$route.params.id - 1].codepen" />
-    <router-link to="/" class="topLinkBtn">
+    <nuxt-link to="/" class="topLinkBtn">
       GO TO LIST
-    </router-link>
+    </nuxt-link>
   </div>
 </template>
 
@@ -27,19 +27,25 @@
 import { mapState } from 'vuex'
 export default {
   name: 'Code',
+  validate({ params }) {
+    // 数値でなければならない
+    return /^\d+$/.test(params.id)
+  },
   computed: {
     ...mapState({
       snippets: 'snippets'
     })
   },
-  title() {
-    return this.snippets[this.$route.params.id - 1].title
-  },
   methods: {
     referencImage() {
-      return require(`@/assets/img/code/${this.snippets[this.$route.params.id - 1].id}/${
+      return require(`~/assets/img/code/${this.snippets[this.$route.params.id - 1].id}/${
         this.snippets[this.$route.params.id - 1].referencLink.image
       }`)
+    }
+  },
+  head() {
+    return {
+      title: this.snippets[this.$route.params.id - 1].title
     }
   }
 }
@@ -55,6 +61,7 @@ export default {
   padding: 20px;
   margin-top: 15px;
   overflow-x: auto;
+  color: #333;
   background: #fff;
   border: 2px solid #2c2e31;
   border-radius: 5px;
