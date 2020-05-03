@@ -120,23 +120,25 @@ $logoTime: 2s;
   &::after {
     position: absolute;
     display: block;
-    width: 0;
-    height: 0;
+    width: ($logoSize * 3 / 4);
+    height: ($logoSize * 3 / 4);
     content: '';
   }
   &::before {
     top: 0;
     left: 0;
+    border-color: $logoBorderColor;
     border-top: 2px solid transparent;
     border-right: 2px solid transparent;
-    animation: lineAnime $logoTime both infinite alternate;
+    // animation: lineAnime $logoTime both infinite alternate;
   }
   &::after {
     right: 0;
     bottom: 0;
+    border-color: $logoBorderColor;
     border-bottom: 2px solid transparent;
     border-left: 2px solid transparent;
-    animation: lineAnime2 $logoTime both infinite alternate;
+    // animation: lineAnime2 $logoTime both infinite alternate;
   }
   &:nth-child(1) {
     top: 0;
