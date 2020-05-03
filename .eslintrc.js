@@ -7,17 +7,15 @@ module.exports = {
   parserOptions: {
     parser: 'babel-eslint'
   },
-  extends: ['plugin:vue/essential', 'eslint:recommended', '@vue/prettier'],
-  plugins: ['prettier'],
-  // add your custom rules here
-  rules: {
-    'vue/html-self-closing': [
-      'error',
-      {
-        html: {
-          void: 'always'
-        }
-      }
-    ]
-  }
+  extends: [
+    'prettier',
+    'prettier/vue',
+    'eslint:recommended',
+    'plugin:nuxt/recommended',
+    'plugin:prettier/recommended'
+  ],
+  parser: 'vue-eslint-parser',
+  plugins: [
+    'prettier'
+  ]
 }
