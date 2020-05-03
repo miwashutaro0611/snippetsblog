@@ -120,24 +120,23 @@ $logoTime: 2s;
   &::after {
     position: absolute;
     display: block;
-    width: ($logoSize * 3 / 4);
-    height: ($logoSize * 3 / 4);
+    width: 100%;
+    height: 100%;
     content: '';
+    border: 2px solid $logoBorderColor;
   }
   &::before {
     top: 0;
     left: 0;
-    border-color: $logoBorderColor;
-    border-top: 2px solid transparent;
-    border-right: 2px solid transparent;
+    // border-top: 2px solid transparent;
+    // border-right: 2px solid transparent;
     // animation: lineAnime $logoTime both infinite alternate;
   }
   &::after {
     right: 0;
     bottom: 0;
-    border-color: $logoBorderColor;
-    border-bottom: 2px solid transparent;
-    border-left: 2px solid transparent;
+    // border-bottom: 2px solid transparent;
+    // border-left: 2px solid transparent;
     // animation: lineAnime2 $logoTime both infinite alternate;
   }
   &:nth-child(1) {
@@ -147,10 +146,10 @@ $logoTime: 2s;
   &:nth-child(2) {
     right: 0;
     bottom: 0;
-    &::before,
-    &::after {
-      animation-delay: ($logoTime / 4);
-    }
+    // &::before,
+    // &::after {
+    //   animation-delay: ($logoTime / 4);
+    // }
   }
 }
 .globalLogoText {
