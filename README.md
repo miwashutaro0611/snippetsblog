@@ -4,25 +4,19 @@
 
 https://snippetsblog-miwa.netlify.com/
 
-## Project setup
-```
-yarn install
-```
+## Build Setup
 
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
+``` bash
+# install dependencies
+$ yarn install
 
-### Compiles and minifies for production
-```
-yarn build
-```
+# serve with hot reload at localhost:3000
+$ yarn dev
 
-### Lints and fixes files
-```
-yarn lint
-```
+# build for production and launch server
+$ yarn build
+$ yarn start
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+# generate static project
+$ yarn generate
+```
