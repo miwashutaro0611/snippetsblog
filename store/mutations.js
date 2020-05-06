@@ -136,6 +136,18 @@ export const state = {
       },
       codepen:
         '<iframe height="265" style="width: 100%;" scrolling="no" title="PoPzOQY" src="https://codepen.io/miwashutaro0611/embed/PoPzOQY?height=265&theme-id=light&default-tab=css,result" frameborder="no" allowtransparency="true" allowfullscreen="true" loading="lazy">See the Pen <a href="https://codepen.io/miwashutaro0611/pen/PoPzOQY">PoPzOQY</a> by miwa_shuntaro(<a href="https://codepen.io/miwashutaro0611">@miwashutaro0611</a>) on <a href="https://codepen.io">CodePen</a>.</iframe>'
+    },
+    {
+      id: 13,
+      title: 'CardContent',
+      link: 'code13',
+      referencLink: {
+        name: '大成紙器製作所',
+        url: 'https://www.taisei-shiki.jp/',
+        image: 'taisei-shiki.png'
+      },
+      codepen:
+        '<iframe height="265" style="width: 100%;" scrolling="no" title="card-content" src="https://codepen.io/miwashutaro0611/embed/NWGyWWo?height=265&theme-id=light&default-tab=css,result" frameborder="no" allowtransparency="true" allowfullscreen="true">See the Pen <a href="https://codepen.io/miwashutaro0611/pen/NWGyWWo">card-content</a> by miwa_shuntaro(<a href="https://codepen.io/miwashutaro0611">@miwashutaro0611</a>) on <a href="https://codepen.io">CodePen</a>.</iframe>'
     }
   ]
 }
