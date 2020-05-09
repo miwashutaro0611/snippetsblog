@@ -62,12 +62,12 @@ export default {
       {
         hid: 'og:url',
         property: 'og:url',
-        content: 'SnippetsBlog@Miwa',
+        content: 'https://snippetsblog-miwa.netlify.com/',
       },
       {
         hid: 'og:title',
         property: 'og:title',
-        content: 'https://snippetsblog-miwa.netlify.com/',
+        content: 'SnippetsBlog@Miwa',
       },
       {
         hid: 'og:image',
