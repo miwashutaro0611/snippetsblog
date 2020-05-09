@@ -12,7 +12,7 @@ export default {
   name: 'Code14',
   mounted() {
     window.particlesJS('particles', particlesData.data)
-  }
+  },
 }
 </script>
 

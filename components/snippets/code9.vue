@@ -14,9 +14,9 @@ export default {
   name: 'Code9',
   data() {
     return {
-      textValue: 'R'
+      textValue: 'R',
     }
-  }
+  },
 }
 </script>
 

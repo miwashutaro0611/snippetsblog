@@ -24,14 +24,14 @@ export default {
   name: 'Code2',
   data() {
     return {
-      isBool: false
+      isBool: false,
     }
   },
   methods: {
     onClick(bool) {
       this.isBool = bool
-    }
-  }
+    },
+  },
 }
 </script>
 

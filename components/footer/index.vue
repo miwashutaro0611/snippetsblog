@@ -8,7 +8,7 @@
 
 <script>
 export default {
-  name: 'GlobalFooter'
+  name: 'GlobalFooter',
 }
 </script>
 

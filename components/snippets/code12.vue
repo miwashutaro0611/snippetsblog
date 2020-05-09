@@ -19,8 +19,8 @@ export default {
     return {
       text: 'リンクエリアです。アイコンをクリックするとここの名前が変わります',
       buttonStyle: {
-        transform: 'translate(calc(100vw - 100px - 60px), 20px)'
-      }
+        transform: 'translate(calc(100vw - 100px - 60px), 20px)',
+      },
     }
   },
   methods: {
@@ -48,8 +48,8 @@ export default {
     },
     onClick() {
       this.text = 'クリックされました'
-    }
-  }
+    },
+  },
 }
 </script>
 

@@ -23,14 +23,14 @@ export default {
     return {
       logoTitle: 'SnippetsBlog@Miwa',
       logoTitleAry: '',
-      width: window.innerWidth
+      width: window.innerWidth,
     }
   },
   mounted() {
     this.logoTitleAry = this.logoTitle.split('')
     const elemLine = this.$refs.LogoTextLine
     TweenMax.set(elemLine, {
-      scaleX: 0
+      scaleX: 0,
     })
     window.addEventListener('resize', this.setWidth)
   },
@@ -47,36 +47,36 @@ export default {
       const elemLine = this.$refs.LogoTextLine
       const elemTextLength = this.$refs.LogoTextInner.length
       TweenMax.to(elemLine, 0.5, {
-        scaleX: 1
+        scaleX: 1,
       })
       for (let i = 0; i < elemTextLength; i++) {
         TweenMax.to(elemText[i], 0.4, {
           y: 10,
           opacity: 0,
-          delay: 0.03 * i + 0.5
+          delay: 0.03 * i + 0.5,
         })
       }
       TweenMax.to(elemLine, 0.5, {
         y: 20,
-        delay: 0.03 * elemTextLength + 1
+        delay: 0.03 * elemTextLength + 1,
       })
       for (let i = 0; i < elemTextLength; i++) {
         TweenMax.to(elemText[i], 0.4, {
           y: 0,
           opacity: 1,
-          delay: 0.03 * elemTextLength + 1 + 0.03 * i + 0.5
+          delay: 0.03 * elemTextLength + 1 + 0.03 * i + 0.5,
         })
       }
       TweenMax.to(elemLine, 0.5, {
         scaleX: 0,
-        delay: 0.03 * elemTextLength + 1 + 0.03 * elemTextLength + 0.5 + 0.4
+        delay: 0.03 * elemTextLength + 1 + 0.03 * elemTextLength + 0.5 + 0.4,
       })
       TweenMax.to(elemLine, 0, {
         y: 0,
-        delay: 0.03 * elemTextLength + 1 + 0.03 * elemTextLength + 0.5 + 0.4 + 0.5
+        delay: 0.03 * elemTextLength + 1 + 0.03 * elemTextLength + 0.5 + 0.4 + 0.5,
       })
-    }
-  }
+    },
+  },
 }
 </script>
 

@@ -19,8 +19,8 @@ export default {
   methods: {
     to(id) {
       return `code/${id}`
-    }
-  }
+    },
+  },
 }
 </script>
 

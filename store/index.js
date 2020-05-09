@@ -4,7 +4,7 @@ import { state } from './mutations'
 
 const store = () =>
   new Store({
-    state
+    state,
   })
 
 export default store

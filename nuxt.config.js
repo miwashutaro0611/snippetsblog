@@ -11,13 +11,13 @@ export default {
     'nuxt-fontawesome',
     '@nuxtjs/pwa',
     '@nuxtjs/google-analytics',
-    'nuxt-webfontloader'
+    'nuxt-webfontloader',
   ],
   styleResources: {
-    scss: ['~/assets/scss/resource.scss']
+    scss: ['~/assets/scss/resource.scss'],
   },
   fontawesome: {
-    component: 'fa'
+    component: 'fa',
   },
   manifest: {
     name: 'SnippetsBlog@Miwa',
@@ -32,22 +32,22 @@ export default {
       {
         src: '/img/icons/icon-144x144.png',
         sizes: '144x144',
-        type: 'image/png'
+        type: 'image/png',
       },
       {
         src: '/img/icons/icon-192x192.png',
         sizes: '192x192',
-        type: 'image/png'
-      }
-    ]
+        type: 'image/png',
+      },
+    ],
   },
   googleAnalytics: {
-    id: 'UA-142599010-2'
+    id: 'UA-142599010-2',
   },
   webfontloader: {
     google: {
-      families: ['Courgette&display=swap']
-    }
+      families: ['Courgette&display=swap'],
+    },
   },
   head: {
     title: 'SnippetsBlog@Miwa',
@@ -57,48 +57,48 @@ export default {
       {
         hid: 'description',
         name: 'description',
-        content: process.env.npm_package_description || ''
+        content: process.env.npm_package_description || '',
       },
       {
         hid: 'og:url',
         property: 'og:url',
-        content: 'SnippetsBlog@Miwa'
+        content: 'SnippetsBlog@Miwa',
       },
       {
         hid: 'og:title',
         property: 'og:title',
-        content: 'https://snippetsblog-miwa.netlify.com/'
+        content: 'https://snippetsblog-miwa.netlify.com/',
       },
       {
         hid: 'og:image',
         property: 'og:image',
-        content: 'https://snippetsblog-miwa.netlify.com/ogp.png'
+        content: 'https://snippetsblog-miwa.netlify.com/ogp.png',
       },
       {
         hid: 'twitter:card',
         name: 'twitter:card',
-        content: 'summary_large_image'
+        content: 'summary_large_image',
       },
       {
         hid: 'twitter:site',
         name: 'twitter:site',
-        content: '@jackmiwamiwa'
+        content: '@jackmiwamiwa',
       },
       {
         hid: 'twitter:image',
         name: 'twitter:image',
-        content: 'https://snippetsblog-miwa.netlify.com/ogp.png'
+        content: 'https://snippetsblog-miwa.netlify.com/ogp.png',
       },
       {
         hid: 'note:card',
         property: 'note:card',
-        content: 'summary_large_image'
-      }
+        content: 'summary_large_image',
+      },
     ],
     link: [
       { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
-      { rel: 'apple-touch-icon', href: '/img/icons/icon-144x144.png' }
-    ]
+      { rel: 'apple-touch-icon', href: '/img/icons/icon-144x144.png' },
+    ],
   },
   plugins: ['@/plugins/code-snippets'],
   build: {
@@ -106,16 +106,16 @@ export default {
       scss: {
         implementation: Sass,
         sassOptions: {
-          fiber: Fiber
-        }
-      }
-    }
+          fiber: Fiber,
+        },
+      },
+    },
   },
   generate: {
     routes() {
       return codeNumberFile.ids.map((id) => {
         return `code/${id}`
       })
-    }
-  }
+    },
+  },
 }

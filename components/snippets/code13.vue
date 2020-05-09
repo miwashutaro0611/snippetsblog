@@ -24,9 +24,9 @@ export default {
   name: 'Code13',
   data() {
     return {
-      imageUrl: 'https://source.unsplash.com/400x400/?dog'
+      imageUrl: 'https://source.unsplash.com/400x400/?dog',
     }
-  }
+  },
 }
 </script>
 
