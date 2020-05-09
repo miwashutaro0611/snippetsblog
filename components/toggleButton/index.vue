@@ -14,7 +14,7 @@ export default {
   name: 'ToggleButton',
   data() {
     return {
-      darkmode: window.matchMedia('(prefers-color-scheme: dark)').matches
+      darkmode: window.matchMedia('(prefers-color-scheme: dark)').matches,
     }
   },
   computed: {
@@ -23,7 +23,7 @@ export default {
     },
     faSun() {
       return faSun
-    }
+    },
   },
   mounted() {
     if (this.darkmode) {
@@ -39,8 +39,8 @@ export default {
       } else {
         document.documentElement.setAttribute('data-mode', 'light')
       }
-    }
-  }
+    },
+  },
 }
 </script>
 

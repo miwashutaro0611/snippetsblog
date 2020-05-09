@@ -20,3 +20,7 @@ $ yarn start
 # generate static project
 $ yarn generate
 ```
+
+# eslint v7 変更点
+
+https://qiita.com/mysticatea/items/0931a7d910fcb91733ee

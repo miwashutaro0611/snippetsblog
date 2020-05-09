@@ -25,32 +25,32 @@ export default {
       contentStyleList: [
         {
           text: 'パスワードは6文字以上で入力してください',
-          color: '#f00'
+          color: '#f00',
         },
         {
           text: 'パスワード強度：低',
-          color: '#f38f00'
+          color: '#f38f00',
         },
         {
           text: 'パスワード強度：中',
-          color: '#7dbb3d'
+          color: '#7dbb3d',
         },
         {
           text: 'パスワード強度：高',
-          color: '#3573ff'
+          color: '#3573ff',
         },
         {
           text: 'パスワード強度：超高',
-          color: '#3573ff'
-        }
+          color: '#3573ff',
+        },
       ],
       textColorStyle: {
-        color: '#333'
+        color: '#333',
       },
       passBarStyle: {
         transform: 'scaleX(0)',
-        background: '#f00'
-      }
+        background: '#f00',
+      },
     }
   },
   methods: {
@@ -126,8 +126,8 @@ export default {
         this.textColorStyle.color = '#333'
         this.passBarStyle.background = this.contentStyleList[4].color
       }
-    }
-  }
+    },
+  },
 }
 </script>
 

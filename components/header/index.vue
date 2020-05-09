@@ -14,8 +14,8 @@ export default {
   name: 'GlobalHeader',
   components: {
     Logo,
-    toggleButton
-  }
+    toggleButton,
+  },
 }
 </script>
 

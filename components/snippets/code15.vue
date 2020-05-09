@@ -20,12 +20,12 @@ export default {
   data() {
     return {
       name: '',
-      furigana: ''
+      furigana: '',
     }
   },
   mounted() {
     AutoKana.bind('#name', '#furigana')
     AutoKana.bind('#name2', '#furigana2')
-  }
+  },
 }
 </script>

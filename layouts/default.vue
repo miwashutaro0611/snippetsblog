@@ -18,7 +18,7 @@ export default {
   name: 'Layout',
   components: {
     GlobalHeader,
-    GlobalFooter
+    GlobalFooter,
   },
   data() {
     return {
@@ -30,13 +30,13 @@ export default {
       `,
       consoleClass2: `
         font-size: 14px;
-      `
+      `,
     }
   },
   watch: {
     isOpen() {
       this.isOpen ? this.remove() : this.paging()
-    }
+    },
   },
   created() {
     console.log(
@@ -62,8 +62,8 @@ export default {
     },
     remove() {
       this.className = ''
-    }
-  }
+    },
+  },
 }
 </script>
 

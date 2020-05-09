@@ -33,21 +33,21 @@ export default {
   },
   computed: {
     ...mapState({
-      snippets: 'snippets'
-    })
+      snippets: 'snippets',
+    }),
   },
   methods: {
     referencImage() {
       return require(`~/assets/img/code/${this.snippets[this.$route.params.id - 1].id}/${
         this.snippets[this.$route.params.id - 1].referencLink.image
       }`)
-    }
+    },
   },
   head() {
     return {
-      title: this.snippets[this.$route.params.id - 1].title
+      title: this.snippets[this.$route.params.id - 1].title,
     }
-  }
+  },
 }
 </script>
 

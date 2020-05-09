@@ -11,16 +11,16 @@ import cardItem from '~/components/cardItem/'
 export default {
   name: 'Index',
   components: {
-    cardItem
+    cardItem,
   },
   computed: {
     ...mapState({
-      snippets: 'snippets'
+      snippets: 'snippets',
     }),
     rSnippets() {
       return this.snippets.slice().reverse()
-    }
-  }
+    },
+  },
 }
 </script>
 

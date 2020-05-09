@@ -20,7 +20,7 @@ export default {
   name: 'Code10',
   data() {
     return {
-      isHide: true
+      isHide: true,
     }
   },
   methods: {
@@ -29,8 +29,8 @@ export default {
     },
     modalClose() {
       this.isHide = true
-    }
-  }
+    },
+  },
 }
 </script>
 
