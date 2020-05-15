@@ -20,6 +20,12 @@
     <nuxt-link to="/" class="topLinkBtn">
       GO TO LIST
     </nuxt-link>
+    <nuxt-link :to="toPrev($route.params.id)" class="topLinkBtn">
+      GO TO PREV
+    </nuxt-link>
+    <nuxt-link :to="toNext($route.params.id)" class="topLinkBtn">
+      GO TO NEXT
+    </nuxt-link>
   </div>
 </template>
 
@@ -41,6 +47,14 @@ export default {
       return require(`~/assets/img/code/${this.snippets[this.$route.params.id - 1].id}/${
         this.snippets[this.$route.params.id - 1].referencLink.image
       }`)
+    },
+    toPrev(id) {
+      id = id - 1 === 0 ? this.snippets.length : id - 1
+      return `/code/${id}`
+    },
+    toNext(id) {
+      id = parseInt(id, 10) + 1 > this.snippets.length ? 1 : parseInt(id, 10) + 1
+      return `/code/${id}`
     },
   },
   head() {
