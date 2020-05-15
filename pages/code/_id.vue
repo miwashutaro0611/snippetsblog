@@ -17,15 +17,21 @@
       </a>
     </section>
     <div class="codePen" v-html="snippets[$route.params.id - 1].codepen" />
-    <nuxt-link to="/" class="topLinkBtn">
-      GO TO LIST
-    </nuxt-link>
-    <nuxt-link :to="toPrev($route.params.id)" class="topLinkBtn">
-      {{ snippets[(snippets.length + $route.params.id - 2) % snippets.length].title }}
-    </nuxt-link>
-    <nuxt-link :to="toNext($route.params.id)" class="topLinkBtn">
-      {{ snippets[(snippets.length + $route.params.id) % snippets.length].title }}
-    </nuxt-link>
+    <div class="toTopLink">
+      <nuxt-link :to="toNext($route.params.id)" class="toTopLinkNext">
+        <span class="toTopLinkArrow toTopLinkNextArrow">Next</span>
+        <span class="toTopLinkTitle">{{ snippets[(snippets.length + $route.params.id) % snippets.length].title }}</span>
+      </nuxt-link>
+      <nuxt-link to="/" class="toTopLinkBtn">
+        GO TO LIST
+      </nuxt-link>
+      <nuxt-link :to="toPrev($route.params.id)" class="toTopLinkPrev">
+        <span class="toTopLinkArrow toTopLinkPrevArrow">Prev</span>
+        <span class="toTopLinkTitle">{{
+          snippets[(snippets.length + $route.params.id - 2) % snippets.length].title
+        }}</span>
+      </nuxt-link>
+    </div>
   </div>
 </template>
 
@@ -49,11 +55,12 @@ export default {
       }`)
     },
     toPrev(id) {
-      id = (this.snippets.length + id - 1) % this.snippets.length
+      const linkId = (this.snippets.length + id - 1) % this.snippets.length
+      id = linkId === 0 ? this.snippets.length : linkId
       return `/code/${id}`
     },
     toNext(id) {
-      id = (this.snippets.length + id + 1) % this.snippets.length
+      id = (this.snippets.length + parseInt(id, 10) + 1) % this.snippets.length
       return `/code/${id}`
     },
   },
@@ -116,15 +123,64 @@ export default {
 .codePen {
   margin-top: 40px;
 }
-.topLinkBtn {
+.toTopLink {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 40px;
+}
+.toTopLinkPrev {
+  text-align: right;
+  > span {
+    display: block;
+    font-weight: bold;
+  }
+}
+.toTopLinkNext {
+  > span {
+    display: block;
+    font-weight: bold;
+  }
+}
+.toTopLinkPrevArrow {
+  padding-right: 20px;
+  &::after {
+    right: 8px;
+    transform: rotate(45deg);
+  }
+}
+.toTopLinkNextArrow {
+  padding-left: 20px;
+  &::after {
+    left: 8px;
+    transform: rotate(-135deg);
+  }
+}
+.toTopLinkArrow {
+  position: relative;
+  font-size: 14px;
+  &::after {
+    position: absolute;
+    top: 8px;
+    display: block;
+    width: 6px;
+    height: 6px;
+    content: '';
+    border-top: 2px solid var(--color-default);
+    border-right: 2px solid var(--color-default);
+  }
+}
+.toTopLinkTitle {
+  font-family: $fontFamilyCourgette;
+  font-size: 18px;
+}
+.toTopLinkBtn {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: calc(100% - 20px);
-  max-width: 300px;
+  width: 240px;
   height: 60px;
-  margin: 40px auto 0;
   overflow: hidden;
   font-weight: bold;
   text-align: center;
@@ -132,9 +188,6 @@ export default {
   border: 2px solid var(--color-default);
   border-radius: 30px;
   transition: all 0.2s ease-in-out;
-  @include sm {
-    margin-top: 40px;
-  }
   &::before {
     position: absolute;
     top: 0;
