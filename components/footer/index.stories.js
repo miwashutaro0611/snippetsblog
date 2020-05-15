@@ -5,7 +5,7 @@ export default {
   component: FooterComp,
 }
 
-export const FooterContent = () => ({
+export const Footer = () => ({
   components: { FooterComp },
   template: `
   <footer-comp />

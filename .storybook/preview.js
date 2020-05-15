@@ -1,7 +1,11 @@
 import { configure, addParameters, addDecorator } from '@storybook/vue'
+import Vue from 'vue'
 import { withA11y } from '@storybook/addon-a11y'
 import { themes } from '@storybook/theming';
 import Decorator from './Decorator.vue'
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faMoon, faSun } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 addDecorator(story => ({
   components: { Decorator },
@@ -15,6 +19,11 @@ addDecorator(story => ({
 }))
 
 addDecorator(withA11y)
+
+// font-awesome
+
+library.add(faMoon, faSun)
+Vue.component('fa', FontAwesomeIcon)
 
 // viewport
 
@@ -62,3 +71,5 @@ addParameters({
     light: { ...themes.normal, appBg: 'white' }
   }
 });
+
+configure(require.context('../components', true, /\.stories\.js$/), module)
