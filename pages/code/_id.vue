@@ -17,9 +17,21 @@
       </a>
     </section>
     <div class="codePen" v-html="snippets[$route.params.id - 1].codepen" />
-    <nuxt-link to="/" class="topLinkBtn">
-      GO TO LIST
-    </nuxt-link>
+    <div class="toTopLink">
+      <nuxt-link :to="toNext($route.params.id)" class="toTopLinkNext">
+        <span class="toTopLinkArrow toTopLinkNextArrow">Next</span>
+        <span class="toTopLinkTitle">{{ snippets[(snippets.length + $route.params.id) % snippets.length].title }}</span>
+      </nuxt-link>
+      <nuxt-link to="/" class="toTopLinkBtn">
+        GO TO LIST
+      </nuxt-link>
+      <nuxt-link :to="toPrev($route.params.id)" class="toTopLinkPrev">
+        <span class="toTopLinkArrow toTopLinkPrevArrow">Prev</span>
+        <span class="toTopLinkTitle">{{
+          snippets[(snippets.length + $route.params.id - 2) % snippets.length].title
+        }}</span>
+      </nuxt-link>
+    </div>
   </div>
 </template>
 
@@ -41,6 +53,15 @@ export default {
       return require(`~/assets/img/code/${this.snippets[this.$route.params.id - 1].id}/${
         this.snippets[this.$route.params.id - 1].referencLink.image
       }`)
+    },
+    toPrev(id) {
+      const linkId = (this.snippets.length + id - 1) % this.snippets.length
+      id = linkId === 0 ? this.snippets.length : linkId
+      return `/code/${id}`
+    },
+    toNext(id) {
+      id = (this.snippets.length + parseInt(id, 10) + 1) % this.snippets.length
+      return `/code/${id}`
     },
   },
   head() {
@@ -102,24 +123,114 @@ export default {
 .codePen {
   margin-top: 40px;
 }
-.topLinkBtn {
+.toTopLink {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 40px;
+}
+.toTopLinkPrev {
+  display: block;
+  width: 200px;
+  padding: 10px 15px;
+  text-align: right;
+  border: 1px solid var(--color-default);
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+  @media (hover: hover) {
+    &:hover {
+      color: var(--color-default-reverse);
+      background-color: var(--color-default);
+      .toTopLinkArrow {
+        &::after {
+          border-color: var(--color-default-reverse);
+        }
+      }
+    }
+  }
+}
+.toTopLinkNext {
+  display: block;
+  width: 200px;
+  padding: 10px 15px;
+  border: 1px solid var(--color-default);
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+  @media (hover: hover) {
+    &:hover {
+      color: var(--color-default-reverse);
+      background-color: var(--color-default);
+      .toTopLinkArrow {
+        &::after {
+          border-color: var(--color-default-reverse);
+        }
+      }
+    }
+  }
+}
+.toTopLinkPrevArrow {
+  padding-right: 16px;
+  &::after {
+    right: 5px;
+    transform: rotate(45deg);
+  }
+}
+.toTopLinkNextArrow {
+  padding-left: 16px;
+  &::after {
+    left: 5px;
+    transform: rotate(-135deg);
+  }
+}
+.toTopLinkArrow {
+  position: relative;
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+  &::after {
+    position: absolute;
+    top: 8px;
+    display: block;
+    width: 6px;
+    height: 6px;
+    content: '';
+    border-top: 2px solid var(--color-default);
+    border-right: 2px solid var(--color-default);
+    transition: all 0.3s ease-in-out;
+  }
+}
+.toTopLinkTitle {
+  display: none;
+  @include md {
+    display: block;
+    overflow: hidden;
+    font-family: $fontFamilyCourgette;
+    font-size: 18px;
+    font-weight: bold;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+.toTopLinkBtn {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: calc(100% - 20px);
-  max-width: 300px;
-  height: 60px;
-  margin: 40px auto 0;
+  width: 160px;
+  height: 50px;
   overflow: hidden;
+  font-size: 14px;
   font-weight: bold;
   text-align: center;
   letter-spacing: 0.1em;
   border: 2px solid var(--color-default);
-  border-radius: 30px;
+  border-radius: 25px;
   transition: all 0.2s ease-in-out;
-  @include sm {
-    margin-top: 40px;
+  @include md {
+    width: 240px;
+    height: 60px;
+    font-size: 16px;
+    border-radius: 30px;
   }
   &::before {
     position: absolute;
