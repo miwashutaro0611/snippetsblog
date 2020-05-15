@@ -131,16 +131,9 @@ export default {
 }
 .toTopLinkPrev {
   text-align: right;
-  > span {
-    display: block;
-    font-weight: bold;
-  }
 }
 .toTopLinkNext {
-  > span {
-    display: block;
-    font-weight: bold;
-  }
+  text-align: left;
 }
 .toTopLinkPrevArrow {
   padding-right: 20px;
@@ -158,7 +151,9 @@ export default {
 }
 .toTopLinkArrow {
   position: relative;
+  display: block;
   font-size: 14px;
+  font-weight: bold;
   &::after {
     position: absolute;
     top: 8px;
@@ -171,23 +166,35 @@ export default {
   }
 }
 .toTopLinkTitle {
-  font-family: $fontFamilyCourgette;
-  font-size: 18px;
+  display: none;
+  @include md {
+    display: block;
+    font-family: $fontFamilyCourgette;
+    font-size: 18px;
+    font-weight: bold;
+  }
 }
 .toTopLinkBtn {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 240px;
-  height: 60px;
+  width: 160px;
+  height: 50px;
   overflow: hidden;
+  font-size: 14px;
   font-weight: bold;
   text-align: center;
   letter-spacing: 0.1em;
   border: 2px solid var(--color-default);
-  border-radius: 30px;
+  border-radius: 25px;
   transition: all 0.2s ease-in-out;
+  @include md {
+    width: 240px;
+    height: 60px;
+    font-size: 16px;
+    border-radius: 30px;
+  }
   &::before {
     position: absolute;
     top: 0;
