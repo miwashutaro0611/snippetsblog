@@ -21,10 +21,10 @@
       GO TO LIST
     </nuxt-link>
     <nuxt-link :to="toPrev($route.params.id)" class="topLinkBtn">
-      GO TO PREV
+      {{ snippets[(snippets.length + $route.params.id - 2) % snippets.length].title }}
     </nuxt-link>
     <nuxt-link :to="toNext($route.params.id)" class="topLinkBtn">
-      GO TO NEXT
+      {{ snippets[(snippets.length + $route.params.id) % snippets.length].title }}
     </nuxt-link>
   </div>
 </template>
@@ -49,11 +49,11 @@ export default {
       }`)
     },
     toPrev(id) {
-      id = id - 1 === 0 ? this.snippets.length : id - 1
+      id = (this.snippets.length + id - 1) % this.snippets.length
       return `/code/${id}`
     },
     toNext(id) {
-      id = parseInt(id, 10) + 1 > this.snippets.length ? 1 : parseInt(id, 10) + 1
+      id = (this.snippets.length + id + 1) % this.snippets.length
       return `/code/${id}`
     },
   },
