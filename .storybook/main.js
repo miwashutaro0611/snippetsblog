@@ -1,4 +1,29 @@
+const {resolve} = require('path')
+const rootPath = resolve(__dirname, '../')
+
 module.exports = {
-  stories: ['../stories/**/*.stories.js'],
+  stories: ['../components/**/*.stories.js'],
   addons: ['@storybook/addon-actions', '@storybook/addon-links'],
+  webpackFinal: async (config, { configType }) => {
+    config.resolve.alias['vue'] = 'vue/dist/vue.esm.js'
+    config.resolve.alias['@'] = rootPath
+    config.resolve.alias['~'] = rootPath
+    config.module.rules.push({
+      test: /\.scss$/,
+      use: [
+        'style-loader',
+        'css-loader',
+        'sass-loader',
+        {
+          loader: 'sass-resources-loader',
+          options: {
+            resources: ['./assets/scss/resource.scss'],
+            include: resolve(__dirname, '../')
+          }
+        }
+      ],
+      include: resolve(__dirname, '../'),
+    });
+    return config;
+  },
 };
