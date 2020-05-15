@@ -1,11 +1,14 @@
 import { configure, addParameters, addDecorator } from '@storybook/vue'
 import Vue from 'vue'
 import { withA11y } from '@storybook/addon-a11y'
-import { themes } from '@storybook/theming';
+import { themes } from '@storybook/theming'
 import Decorator from './Decorator.vue'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faMoon, faSun } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import '~/plugins/code-snippets'
+
+// Decorator
 
 addDecorator(story => ({
   components: { Decorator },
