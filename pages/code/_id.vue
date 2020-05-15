@@ -130,22 +130,55 @@ export default {
   margin-top: 40px;
 }
 .toTopLinkPrev {
+  display: block;
+  width: 200px;
+  padding: 10px 15px;
   text-align: right;
+  border: 1px solid var(--color-default);
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+  @media (hover: hover) {
+    &:hover {
+      color: var(--color-default-reverse);
+      background-color: var(--color-default);
+      .toTopLinkArrow {
+        &::after {
+          border-color: var(--color-default-reverse);
+        }
+      }
+    }
+  }
 }
 .toTopLinkNext {
-  text-align: left;
+  display: block;
+  width: 200px;
+  padding: 10px 15px;
+  border: 1px solid var(--color-default);
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+  @media (hover: hover) {
+    &:hover {
+      color: var(--color-default-reverse);
+      background-color: var(--color-default);
+      .toTopLinkArrow {
+        &::after {
+          border-color: var(--color-default-reverse);
+        }
+      }
+    }
+  }
 }
 .toTopLinkPrevArrow {
-  padding-right: 20px;
+  padding-right: 16px;
   &::after {
-    right: 8px;
+    right: 5px;
     transform: rotate(45deg);
   }
 }
 .toTopLinkNextArrow {
-  padding-left: 20px;
+  padding-left: 16px;
   &::after {
-    left: 8px;
+    left: 5px;
     transform: rotate(-135deg);
   }
 }
@@ -163,15 +196,19 @@ export default {
     content: '';
     border-top: 2px solid var(--color-default);
     border-right: 2px solid var(--color-default);
+    transition: all 0.3s ease-in-out;
   }
 }
 .toTopLinkTitle {
   display: none;
   @include md {
     display: block;
+    overflow: hidden;
     font-family: $fontFamilyCourgette;
     font-size: 18px;
     font-weight: bold;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 }
 .toTopLinkBtn {
