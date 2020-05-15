@@ -18,7 +18,7 @@ export default {
   props: ['code'],
   methods: {
     to(id) {
-      return `code/${id}`
+      return `/code/${id}`
     },
   },
 }
