@@ -131,12 +131,16 @@ export default {
 }
 .toTopLinkPrev {
   display: block;
-  width: 200px;
-  padding: 10px 15px;
+  width: 100px;
+  padding: 10px 0;
   text-align: right;
-  border: 1px solid var(--color-default);
-  border-radius: 5px;
   transition: all 0.3s ease-in-out;
+  @include md {
+    width: 200px;
+    padding: 10px 15px;
+    border: 2px solid var(--color-default);
+    border-radius: 5px;
+  }
   @media (hover: hover) {
     &:hover {
       color: var(--color-default-reverse);
@@ -151,11 +155,15 @@ export default {
 }
 .toTopLinkNext {
   display: block;
-  width: 200px;
-  padding: 10px 15px;
-  border: 1px solid var(--color-default);
-  border-radius: 5px;
-  transition: all 0.3s ease-in-out;
+  width: 100px;
+  padding: 10px 0;
+  @include md {
+    width: 200px;
+    padding: 10px 15px;
+    border: 2px solid var(--color-default);
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+  }
   @media (hover: hover) {
     &:hover {
       color: var(--color-default-reverse);
