@@ -1,7 +1,7 @@
 <template>
   <router-link to="/">
     <div class="globalLogo" @mouseover="logoAnimeHide">
-      <span class="globalLogoIcons" area-hidden="true">
+      <span class="globalLogoIcons" aria-hidden="true">
         <span class="globalLogoIcon" />
         <span class="globalLogoIcon" />
       </span>
