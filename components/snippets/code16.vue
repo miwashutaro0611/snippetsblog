@@ -17,6 +17,7 @@
 </template>
 <script>
 export default {
+  name: 'Code16',
   data() {
     return {
       isBool: false,

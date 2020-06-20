@@ -17,6 +17,7 @@
 import * as AutoKana from 'vanilla-autokana'
 
 export default {
+  name: 'Code15',
   data() {
     return {
       name: '',
