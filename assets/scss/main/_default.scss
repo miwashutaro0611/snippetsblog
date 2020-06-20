@@ -29,6 +29,11 @@ main {
 
 button {
   cursor: pointer;
+  &.u-is-none_style {
+    background: none;
+    border: none;
+    appearance: none;
+  }
 }
 
 a {
