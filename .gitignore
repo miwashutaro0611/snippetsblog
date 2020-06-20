@@ -18,3 +18,4 @@ yarn-error.log*
 *.sln
 *.sw?
 sw.*
+/static/sw.js
