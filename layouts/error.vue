@@ -97,7 +97,6 @@ export default {
 <style lang="scss" scoped>
 .errorContainer {
   max-width: 1000px;
-  min-height: calc(100vh - 210px);
   margin: 0 auto;
   @include md {
     display: flex;
@@ -190,8 +189,9 @@ export default {
   width: calc(100% - 50px);
   padding: 15px 20px 20px;
   margin-top: 30px;
-  color: #bdc7cf;
-  background: #242425;
+  color: var(--color-console-message);
+  background: var(--color-console-background);
+  border: 1px solid var(--color-console-border);
 }
 .console__codeline {
   position: absolute;

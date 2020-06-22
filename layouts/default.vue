@@ -70,6 +70,7 @@ export default {
 <style lang="scss" scoped>
 .globalWrapper {
   width: calc(100% - 40px);
+  min-height: calc(100vh - 210px);
   margin: 0 auto;
 }
 
