@@ -18,7 +18,7 @@
           chromeなどでコンソールを開くと以下のように表示されますので、ぜひご確認ください。
         </p>
         <div class="console">
-          <p class="console__codeline" aria-hidden="true">app.d10a370b.js:1</p>
+          <p class="console__codeline" aria-hidden="true">app.js:1</p>
           <p class="console__title">Thanks for visiting</p>
           <p class="console__message">
             訪問ありがとうございます。こちら@jackmiwamiwaのスニペットブログになります。PWAにも対応しておりますので、ぜひアプリでもご覧ください。<br />Twitterやはてブなども行なっておりますので、ぜひそちらもご覧ください。
@@ -186,12 +186,12 @@ export default {
   }
 }
 .console {
+  position: relative;
   width: calc(100% - 50px);
   padding: 15px 20px 20px;
+  margin-top: 30px;
   color: #bdc7cf;
   background: #242425;
-  margin-top: 30px;
-  position: relative;
 }
 .console__codeline {
   position: absolute;
@@ -205,8 +205,8 @@ export default {
   color: #0f4c81;
 }
 .console__message {
-  font-size: 14px;
   margin-top: 10px;
+  font-size: 14px;
 }
 .console__list {
   margin-top: 20px;
