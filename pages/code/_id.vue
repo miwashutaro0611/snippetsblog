@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="codePage">
     <h1 class="codeTitle">{{ snippets[$route.params.id - 1].title }}</h1>
     <div class="codeWrap">
       <component :is="snippets[$route.params.id - 1].link" />
@@ -73,6 +73,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.codePage {
+  max-width: 1000px;
+  margin: 0 auto;
+}
 .codeTitle {
   font-family: $fontFamilyCourgette;
 }
