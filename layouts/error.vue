@@ -17,23 +17,54 @@
         <p class="errorContainer__left__subtext">
           chromeなどでコンソールを開くと以下のように表示されますので、ぜひご確認ください。
         </p>
-        <img class="errorContainer__left__image" src="~/assets/img/error/console.png" alt="" />
-        <!-- <pre>
-          <code>
-            Thanks for visiting訪問ありがとうございます。
-            こちら@jackmiwamiwaのスニペットブログになります。
-            PWAにも対応しておりますので、ぜひアプリでもご覧ください。
-            Twitterやはてブなども行なっておりますので、ぜひそちらもご覧ください。
-            
-            Twitter: https://twitter.com/jackmiwamiwa/
-            GitHub: https://github.com/miwashutaro0611/
-            Qiita: https://qiita.com/miwashutaro0611/
-            lapras: https://github.com/miwashutaro0611/
-            hatena: https://jackswim3411.hatenablog.com/
-            note: https://note.com/jackblog/
-            Wantedly: https://www.wantedly.com/users/24578098/
-          </code>
-        </pre> -->
+        <div class="console">
+          <p class="console__codeline" aria-hidden="true">app.d10a370b.js:1</p>
+          <p class="console__title">Thanks for visiting</p>
+          <p class="console__message">
+            訪問ありがとうございます。こちら@jackmiwamiwaのスニペットブログになります。PWAにも対応しておりますので、ぜひアプリでもご覧ください。<br />Twitterやはてブなども行なっておりますので、ぜひそちらもご覧ください。
+          </p>
+          <ul class="console__list">
+            <li class="console__item">
+              Twitter:
+              <a href="https://twitter.com/jackmiwamiwa/" title="Twitterページリンク" target="_blank"
+                >https://twitter.com/jackmiwamiwa/</a
+              >
+            </li>
+            <li class="console__item">
+              GitHub:
+              <a href="https://github.com/miwashutaro0611/" title="GitHubページリンク" target="_blank"
+                >https://github.com/miwashutaro0611/</a
+              >
+            </li>
+            <li class="console__item">
+              Qiita:
+              <a href="https://qiita.com/miwashutaro0611/" title="Qiitaページリンク" target="_blank"
+                >https://qiita.com/miwashutaro0611/</a
+              >
+            </li>
+            <li class="console__item">
+              lapras:
+              <a href="https://lapras.com/public/T7IYUQT" title="laprasページリンク" target="_blank"
+                >https://lapras.com/public/T7IYUQT</a
+              >
+            </li>
+            <li class="console__item">
+              hatena:
+              <a href="https://jackswim3411.hatenablog.com/" title="hatenaページリンク" target="_blank"
+                >https://jackswim3411.hatenablog.com/</a
+              >
+            </li>
+            <li class="console__item">
+              note:
+              <a href="https://note.com/jackblog/" title="noteページリンク" target="_blank"
+                >https://note.com/jackblog/</a
+              >
+            </li>
+            <li class="console__item">
+              Wantedly: <a href="" target="_blank">https://www.wantedly.com/users/24578098/</a>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
     <div class="errorContainer__right">
@@ -66,8 +97,8 @@ export default {
 <style lang="scss" scoped>
 .errorContainer {
   max-width: 1000px;
-  margin: 0 auto;
   min-height: calc(100vh - 210px);
+  margin: 0 auto;
   @include md {
     display: flex;
     justify-content: space-between;
@@ -92,13 +123,13 @@ export default {
   margin-top: 20px;
 }
 .errorContainer__left__link {
-  margin: 30px auto 0;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   width: 160px;
   height: 50px;
+  margin: 30px auto 0;
   overflow: hidden;
   font-size: 14px;
   font-weight: bold;
@@ -137,8 +168,8 @@ export default {
   }
 }
 .errorContainer__left__image {
-  max-width: calc(100% - 50px);
   display: block;
+  max-width: calc(100% - 50px);
   margin-top: 20px;
 }
 .errorContainer__left__hiddenfunc {
@@ -152,6 +183,41 @@ export default {
   margin: 30px auto 0;
   @include md {
     margin-top: 0;
+  }
+}
+.console {
+  width: calc(100% - 50px);
+  padding: 15px 20px 20px;
+  color: #bdc7cf;
+  background: #242425;
+  margin-top: 30px;
+  position: relative;
+}
+.console__codeline {
+  position: absolute;
+  top: 5px;
+  right: 15px;
+  font-size: 12px;
+  text-decoration: underline;
+}
+.console__title {
+  font-size: 25px;
+  color: #0f4c81;
+}
+.console__message {
+  font-size: 14px;
+  margin-top: 10px;
+}
+.console__list {
+  margin-top: 20px;
+  font-size: 14px;
+}
+.console__item {
+  a {
+    text-decoration: underline;
+    &:hover {
+      text-decoration: none;
+    }
   }
 }
 </style>

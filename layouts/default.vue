@@ -40,7 +40,7 @@ export default {
   },
   created() {
     console.log(
-      `\n%cThanks for visiting\n%c\n訪問ありがとうございます。こちら@jackmiwamiwaのスニペットブログになります。PWAにも対応しておりますので、ぜひアプリでもご覧ください。\nTwitterやはてブなども行なっておりますので、ぜひそちらもご覧ください。\n\nTwitter: https://twitter.com/jackmiwamiwa/\nGitHub: https://github.com/miwashutaro0611/\nQiita: https://qiita.com/miwashutaro0611/\nlapras: https://github.com/miwashutaro0611/\nhatena: https://jackswim3411.hatenablog.com/\nnote: https://note.com/jackblog/\nWantedly: https://www.wantedly.com/users/24578098/\n`,
+      `\n%cThanks for visiting\n%c\n訪問ありがとうございます。こちら@jackmiwamiwaのスニペットブログになります。PWAにも対応しておりますので、ぜひアプリでもご覧ください。\nTwitterやはてブなども行なっておりますので、ぜひそちらもご覧ください。\n\nTwitter: https://twitter.com/jackmiwamiwa/\nGitHub: https://github.com/miwashutaro0611/\nQiita: https://qiita.com/miwashutaro0611/\nlapras: https://lapras.com/public/T7IYUQT\nhatena: https://jackswim3411.hatenablog.com/\nnote: https://note.com/jackblog/\nWantedly: https://www.wantedly.com/users/24578098/\n`,
       this.consoleClass,
       this.consoleClass2
     )
