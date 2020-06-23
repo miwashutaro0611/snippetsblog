@@ -9,6 +9,9 @@
   --color-page-mask2: #777;
   --color-page-mask3: #333;
   --color-btn-mask: #ffffff80;
+  --color-console-message: #2f3942;
+  --color-console-background: #ffffff;
+  --color-console-border: #eee;
 }
 
 @mixin colorsDark {
@@ -22,4 +25,7 @@
   --color-page-mask2: #999;
   --color-page-mask3: #aaa;
   --color-btn-mask: #00000080;
+  --color-console-message: #bdc7cf;
+  --color-console-background: #242425;
+  --color-console-border: #333;
 }

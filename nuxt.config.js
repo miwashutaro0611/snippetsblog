@@ -116,6 +116,7 @@ export default {
     },
   },
   generate: {
+    fallback: true,
     routes() {
       return codeNumberFile.ids.map((id) => {
         return `code/${id}`
