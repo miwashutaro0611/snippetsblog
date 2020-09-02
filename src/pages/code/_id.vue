@@ -16,15 +16,32 @@
         </div>
       </a>
     </section>
-    <div class="codePen" v-html="snippets[$route.params.id - 1].codepen" />
+    <div class="codePen">
+      <iframe
+        height="265"
+        style="width: 100%;"
+        scrolling="no"
+        :title="snippets[$route.params.id - 1].codepenId"
+        :src="`https://codepen.io/miwashutaro0611/embed/${
+          snippets[$route.params.id - 1].codepenId
+        }?height=265&theme-id=default&default-tab=css,result`"
+        frameborder="no"
+        allowtransparency="true"
+        allowfullscreen="true"
+        >See the Pen
+        <a :href="`https://codepen.io/miwashutaro0611/pen/${snippets[$route.params.id - 1].codepenId}`">{{
+          snippets[$route.params.id - 1].codepenId
+        }}</a>
+        by miwa_shuntaro(<a href="https://codepen.io/miwashutaro0611">@miwashutaro0611</a>) on
+        <a href="https://codepen.io">CodePen</a>.</iframe
+      >
+    </div>
     <div class="toTopLink">
       <nuxt-link :to="toNext($route.params.id)" class="toTopLinkNext">
         <span class="toTopLinkArrow toTopLinkNextArrow">Next</span>
         <span class="toTopLinkTitle">{{ snippets[(snippets.length + $route.params.id) % snippets.length].title }}</span>
       </nuxt-link>
-      <nuxt-link to="/" class="toTopLinkBtn">
-        GO TO LIST
-      </nuxt-link>
+      <nuxt-link to="/" class="toTopLinkBtn">GO TO LIST</nuxt-link>
       <nuxt-link :to="toPrev($route.params.id)" class="toTopLinkPrev">
         <span class="toTopLinkArrow toTopLinkPrevArrow">Prev</span>
         <span class="toTopLinkTitle">{{

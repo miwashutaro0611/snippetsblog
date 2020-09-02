@@ -1,11 +1,7 @@
 <template>
   <div>
-    <button type="button" @click="onClick(true)">
-      START
-    </button>
-    <button type="button" @click="onClick(false)">
-      DELETE
-    </button>
+    <button type="button" @click="onClick(true)">START</button>
+    <button type="button" @click="onClick(false)">DELETE</button>
     <p class="hubbleTitle">
       <span class="hubbleTitle__ja">{{ jaText }}</span>
       <span class="hubbleTitle__en" :class="{ isActive: isBool }">

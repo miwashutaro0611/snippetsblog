@@ -1,17 +1,11 @@
 <template>
   <div>
-    <button type="button" class="button" @click="onClick(true)">
-      START
-    </button>
-    <button type="button" class="button" @click="onClick(false)">
-      DELETE
-    </button>
+    <button type="button" class="button" @click="onClick(true)">START</button>
+    <button type="button" class="button" @click="onClick(false)">DELETE</button>
     <h2 class="title">
       <span class="cmnTitle">
         <span class="cmnTitle__inner">
-          <span class="word" :class="{ wordActive: isBool }">
-            TITLENAME
-          </span>
+          <span class="word" :class="{ wordActive: isBool }"> TITLENAME </span>
           <span class="bar" :class="{ barActive: isBool }" />
         </span>
       </span>

@@ -9,9 +9,7 @@
         URLが変更されているため表示することができません。<br />
         エラー報告などのご連絡については製作者のTwitterのDMへお願いいたします。
       </p>
-      <nuxt-link to="/" class="errorContainer__left__link">
-        トップページへ
-      </nuxt-link>
+      <nuxt-link to="/" class="errorContainer__left__link">トップページへ</nuxt-link>
       <div class="errorContainer__left__hiddenfunc">
         <h2 class="errorContainer__left__subtitle">隠し機能について</h2>
         <p class="errorContainer__left__subtext">

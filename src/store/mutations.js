@@ -10,8 +10,7 @@ export const state = {
         url: '',
         image: '',
       },
-      codepen:
-        '<iframe height="265" style="width: 100%;" scrolling="no" title="mdyxxpo" src="https://codepen.io/miwashutaro0611/embed/mdyxxpo?height=265&theme-id=default&default-tab=css,result" frameborder="no" allowtransparency="true" allowfullscreen="true">See the Pen <a href="https://codepen.io/miwashutaro0611/pen/mdyxxpo">mdyxxpo</a> by miwa_shuntaro(<a href="https://codepen.io/miwashutaro0611">@miwashutaro0611</a>) on <a href="https://codepen.io">CodePen</a>.</iframe>',
+      codepenId: 'mdyxxpo',
     },
     {
       id: 2,
@@ -22,24 +21,21 @@ export const state = {
         url: '',
         image: '',
       },
-      codepen:
-        '<iframe height="265" style="width: 100%;" scrolling="no" title="QWwmmBN" src="https://codepen.io/miwashutaro0611/embed/QWwmmBN?height=265&theme-id=default&default-tab=css,result" frameborder="no" allowtransparency="true" allowfullscreen="true">See the Pen <a href="https://codepen.io/miwashutaro0611/pen/QWwmmBN">QWwmmBN</a> by miwa_shuntaro(<a href="https://codepen.io/miwashutaro0611">@miwashutaro0611</a>) on <a href="https://codepen.io">CodePen</a>.</iframe>',
+      codepenId: 'QWwmmBN',
     },
     {
       id: 3,
       title: 'MoreView Card',
       link: 'code3',
       referencLink: '',
-      codepen:
-        '<iframe height="265" style="width: 100%;" scrolling="no" title="カードホバー" src="https://codepen.io/miwashutaro0611/embed/zYxpqYB?height=265&theme-id=default&default-tab=css,result" frameborder="no" allowtransparency="true" allowfullscreen="true">See the Pen <a href="https://codepen.io/miwashutaro0611/pen/zYxpqYB">カードホバー</a> by miwa_shuntaro(<a href="https://codepen.io/miwashutaro0611">@miwashutaro0611</a>) on <a href="https://codepen.io">CodePen</a>.</iframe>',
+      codepenId: 'zYxpqYB',
     },
     {
       id: 4,
       title: 'Project LogoIcon',
       link: 'code4',
       referencLink: '',
-      codepen:
-        '<iframe height="265" style="width: 100%;" scrolling="no" title="poJaLPZ" src="https://codepen.io/miwashutaro0611/embed/poJaLPZ?height=265&theme-id=light&default-tab=css,result" frameborder="no" allowtransparency="true" allowfullscreen="true">See the Pen <a href="https://codepen.io/miwashutaro0611/pen/poJaLPZ">poJaLPZ</a> by miwa_shuntaro(<a href="https://codepen.io/miwashutaro0611">@miwashutaro0611</a>) on <a href="https://codepen.io">CodePen</a>.</iframe>',
+      codepenId: 'poJaLPZ',
     },
     {
       id: 5,
@@ -50,8 +46,7 @@ export const state = {
         url: 'https://contents-one.co.jp/',
         image: 'contents-one.png',
       },
-      codepen:
-        '<iframe height="265" style="width: 100%;" scrolling="no" title="gOYKvdj" src="https://codepen.io/miwashutaro0611/embed/gOYKvdj?height=265&theme-id=light&default-tab=css,result" frameborder="no" allowtransparency="true" allowfullscreen="true">See the Pen <a href="https://codepen.io/miwashutaro0611/pen/gOYKvdj">gOYKvdj</a> by miwa_shuntaro(<a href="https://codepen.io/miwashutaro0611">@miwashutaro0611</a>) on <a href="https://codepen.io">CodePen</a>.</iframe>',
+      codepenId: 'gOYKvdj',
     },
     {
       id: 6,
@@ -62,8 +57,7 @@ export const state = {
         url: '',
         image: '',
       },
-      codepen:
-        '<iframe height="265" style="width: 100%;" scrolling="no" title="drQQmz" src="https://codepen.io/miwashutaro0611/embed/drQQmz?height=265&theme-id=light&default-tab=css,result" frameborder="no" allowtransparency="true" allowfullscreen="true">See the Pen <a href="https://codepen.io/miwashutaro0611/pen/drQQmz">drQQmz</a> by miwa_shuntaro(<a href="https://codepen.io/miwashutaro0611">@miwashutaro0611</a>) on <a href="https://codepen.io">CodePen</a>.</iframe>',
+      codepenId: 'drQQmz',
     },
     {
       id: 7,
@@ -74,8 +68,7 @@ export const state = {
         url: '',
         image: '',
       },
-      codepen:
-        '<iframe height="265" style="width: 100%;" scrolling="no" title="vPjggY" src="https://codepen.io/miwashutaro0611/embed/vPjggY?height=265&theme-id=light&default-tab=css,result" frameborder="no" allowtransparency="true" allowfullscreen="true">See the Pen <a href="https://codepen.io/miwashutaro0611/pen/vPjggY">vPjggY</a> by miwa_shuntaro(<a href="https://codepen.io/miwashutaro0611">@miwashutaro0611</a>) on <a href="https://codepen.io">CodePen</a>.</iframe>',
+      codepenId: 'vPjggY',
     },
     {
       id: 8,
@@ -86,8 +79,7 @@ export const state = {
         url: '',
         image: '',
       },
-      codepen:
-        '<iframe height="265" style="width: 100%;" scrolling="no" title="パスワード強弱判定2" src="https://codepen.io/miwashutaro0611/embed/wvaEXgy?height=265&theme-id=light&default-tab=js,result" frameborder="no" allowtransparency="true" allowfullscreen="true">See the Pen <a href="https://codepen.io/miwashutaro0611/pen/wvaEXgy">パスワード強弱判定2</a> by miwa_shuntaro(<a href="https://codepen.io/miwashutaro0611">@miwashutaro0611</a>) on <a href="https://codepen.io">CodePen</a>.</iframe>',
+      codepenId: 'wvaEXgy',
     },
     {
       id: 9,
@@ -98,8 +90,7 @@ export const state = {
         url: 'https://www.cromier.it/it/',
         image: 'cromier.png',
       },
-      codepen:
-        '<iframe height="265" style="width: 100%;" scrolling="no" title="cromier" src="https://codepen.io/miwashutaro0611/embed/QWbodeV?height=265&theme-id=light&default-tab=css,result" frameborder="no" allowtransparency="true" allowfullscreen="true">See the Pen <a href="https://codepen.io/miwashutaro0611/pen/QWbodeV">cromier</a> by miwa_shuntaro(<a href="https://codepen.io/miwashutaro0611">@miwashutaro0611</a>) on <a href="https://codepen.io">CodePen</a>.</iframe>',
+      codepenId: 'QWbodeV',
     },
     {
       id: 10,
@@ -110,8 +101,7 @@ export const state = {
         url: '',
         image: '',
       },
-      codepen:
-        '<iframe height="265" style="width: 100%;" scrolling="no" title="QWbaxgp" src="https://codepen.io/miwashutaro0611/embed/QWbaxgp?height=265&theme-id=light&default-tab=js,result" frameborder="no" allowtransparency="true" allowfullscreen="true">See the Pen <a href="https://codepen.io/miwashutaro0611/pen/QWbaxgp">QWbaxgp</a> by miwa_shuntaro(<a href="https://codepen.io/miwashutaro0611">@miwashutaro0611</a>) on <a href="https://codepen.io">CodePen</a>.</iframe>',
+      codepenId: 'QWbaxgp',
     },
     {
       id: 11,
@@ -122,8 +112,7 @@ export const state = {
         url: '',
         image: '',
       },
-      codepen:
-        '<iframe height="265" style="width: 100%;" scrolling="no" title="loading-circle" src="https://codepen.io/miwashutaro0611/embed/BaoNOZG?height=265&theme-id=light&default-tab=css,result" frameborder="no" allowtransparency="true" allowfullscreen="true" loading="lazy">See the Pen <a href="https://codepen.io/miwashutaro0611/pen/BaoNOZG">loading-circle</a> by miwa_shuntaro(<a href="https://codepen.io/miwashutaro0611">@miwashutaro0611</a>) on <a href="https://codepen.io">CodePen</a>.</iframe>',
+      codepenId: 'BaoNOZG',
     },
     {
       id: 12,
@@ -134,8 +123,7 @@ export const state = {
         url: '',
         image: '',
       },
-      codepen:
-        '<iframe height="265" style="width: 100%;" scrolling="no" title="PoPzOQY" src="https://codepen.io/miwashutaro0611/embed/PoPzOQY?height=265&theme-id=light&default-tab=css,result" frameborder="no" allowtransparency="true" allowfullscreen="true" loading="lazy">See the Pen <a href="https://codepen.io/miwashutaro0611/pen/PoPzOQY">PoPzOQY</a> by miwa_shuntaro(<a href="https://codepen.io/miwashutaro0611">@miwashutaro0611</a>) on <a href="https://codepen.io">CodePen</a>.</iframe>',
+      codepenId: 'PoPzOQY',
     },
     {
       id: 13,
@@ -146,8 +134,7 @@ export const state = {
         url: 'https://www.taisei-shiki.jp/',
         image: 'taisei-shiki.png',
       },
-      codepen:
-        '<iframe height="265" style="width: 100%;" scrolling="no" title="card-content" src="https://codepen.io/miwashutaro0611/embed/NWGyWWo?height=265&theme-id=light&default-tab=css,result" frameborder="no" allowtransparency="true" allowfullscreen="true">See the Pen <a href="https://codepen.io/miwashutaro0611/pen/NWGyWWo">card-content</a> by miwa_shuntaro(<a href="https://codepen.io/miwashutaro0611">@miwashutaro0611</a>) on <a href="https://codepen.io">CodePen</a>.</iframe>',
+      codepenId: 'NWGyWWo',
     },
     {
       id: 14,
@@ -158,8 +145,7 @@ export const state = {
         url: 'https://vincentgarreau.com/particles.js/',
         image: 'particles.png',
       },
-      codepen:
-        '<iframe height="265" style="width: 100%;" scrolling="no" title="particles" src="https://codepen.io/miwashutaro0611/embed/dLmzbK?height=265&theme-id=light&default-tab=js,result" frameborder="no" allowtransparency="true" allowfullscreen="true">See the Pen <a href="https://codepen.io/miwashutaro0611/pen/dLmzbK">particles</a> by miwa_shuntaro(<a href="https://codepen.io/miwashutaro0611">@miwashutaro0611</a>) on <a href="https://codepen.io">CodePen</a>.</iframe>',
+      codepenId: 'dLmzbK',
     },
     {
       id: 15,
@@ -170,8 +156,7 @@ export const state = {
         url: '',
         image: '',
       },
-      codepen:
-        '<iframe height="265" style="width: 100%;" scrolling="no" title="ふりがな自動入力" src="https://codepen.io/miwashutaro0611/embed/rEyBKJ?height=265&theme-id=light&default-tab=js,result" frameborder="no" allowtransparency="true" allowfullscreen="true">See the Pen <a href="https://codepen.io/miwashutaro0611/pen/rEyBKJ">ふりがな自動入力</a> by miwa_shuntaro(<a href="https://codepen.io/miwashutaro0611">@miwashutaro0611</a>) on <a href="https://codepen.io">CodePen</a>.</iframe>',
+      codepenId: 'rEyBKJ',
     },
     {
       id: 16,
@@ -182,8 +167,7 @@ export const state = {
         url: '',
         image: '',
       },
-      codepen:
-        '<iframe height="265" style="width: 100%;" scrolling="no" title="mask-animation" src="https://codepen.io/miwashutaro0611/embed/GRpaBay?height=265&theme-id=light&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true">See the Pen <a href="https://codepen.io/miwashutaro0611/pen/GRpaBay">mask-animation</a> by miwa_shuntaro(<a href="https://codepen.io/miwashutaro0611">@miwashutaro0611</a>) on <a href="https://codepen.io">CodePen</a>.</iframe>',
+      codepenId: 'GRpaBay',
     },
     {
       id: 17,
@@ -194,8 +178,7 @@ export const state = {
         url: 'https://recruit.uniel.jp/',
         image: 'uniel-recruit.png',
       },
-      codepen:
-        '<iframe height="312" style="width: 100%;" scrolling="no" title="yt-button" src="https://codepen.io/miwashutaro0611/embed/qBbRvXK?height=312&theme-id=light&default-tab=css,result" frameborder="no" allowtransparency="true" allowfullscreen="true">See the Pen <a href="https://codepen.io/miwashutaro0611/pen/qBbRvXK">yt-button</a> by miwa_shuntaro(<a href="https://codepen.io/miwashutaro0611">@miwashutaro0611</a>) on <a href="https://codepen.io">CodePen</a>.</iframe>',
+      codepenId: 'qBbRvXK',
     },
     {
       id: 18,
@@ -206,8 +189,7 @@ export const state = {
         url: 'https://recruit.uniel.jp/',
         image: 'uniel-recruit.png',
       },
-      codepen:
-        '<iframe height="265" style="width: 100%;" scrolling="no" title="OutLine Button" src="https://codepen.io/miwashutaro0611/embed/rNxjbmq?height=265&theme-id=light&default-tab=css,result" frameborder="no" allowtransparency="true" allowfullscreen="true">See the Pen <a href="https://codepen.io/miwashutaro0611/pen/rNxjbmq">OutLine Button</a> by miwa_shuntaro(<a href="https://codepen.io/miwashutaro0611">@miwashutaro0611</a>) on <a href="https://codepen.io">CodePen</a>.</iframe>',
+      codepenId: 'rNxjbmq',
     },
     {
       id: 19,
@@ -218,8 +200,7 @@ export const state = {
         url: 'https://hubble-docs.com/',
         image: 'hubble-docs.png',
       },
-      codepen:
-        '<iframe height="265" style="width: 100%;" scrolling="no" title="hubbleTitle" src="https://codepen.io/miwashutaro0611/embed/zYqEaev?height=265&theme-id=light&default-tab=css,result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">See the Pen <a href="https://codepen.io/miwashutaro0611/pen/zYqEaev">hubbleTitle</a> by miwa_shuntaro(<a href="https://codepen.io/miwashutaro0611">@miwashutaro0611</a>) on <a href="https://codepen.io">CodePen</a>.</iframe>',
+      codepenId: 'zYqEaev',
     },
   ],
 }

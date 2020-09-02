@@ -1,11 +1,7 @@
 <template>
   <div>
-    <button type="button" @click="onClick(true)">
-      START
-    </button>
-    <button type="button" @click="onClick(false)">
-      DELETE
-    </button>
+    <button type="button" @click="onClick(true)">START</button>
+    <button type="button" @click="onClick(false)">DELETE</button>
     <div class="maskWrapper" :class="{ isActive: isBool }">
       <div class="mask mask1"></div>
       <div class="mask mask2"></div>
