@@ -2,9 +2,7 @@
   <div>
     <global-header />
     <div class="globalWrapper">
-      <transition name="layout" mode="out-in">
-        <nuxt />
-      </transition>
+      <nuxt />
       <span class="mask" :class="className" />
     </div>
     <global-footer />
@@ -115,18 +113,18 @@ export default {
     transform-origin: left;
   }
 }
-.layout-enter-active,
-.layout-leave-active {
-  transition: opacity 0.5s 0.5s;
+.page-enter-active,
+.page-leave-active {
+  transition: opacity 0.5s;
 }
 
-.layout-enter-to,
-.layout-leave {
+.page-enter-to,
+.page-leave {
   opacity: 1;
 }
 
-.layout-enter,
-.layout-leave-to {
+.page-enter,
+.page-leave-to {
   opacity: 0;
 }
 </style>

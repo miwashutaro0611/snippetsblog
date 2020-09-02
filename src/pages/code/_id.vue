@@ -41,9 +41,7 @@
         <span class="toTopLinkArrow toTopLinkNextArrow">Next</span>
         <span class="toTopLinkTitle">{{ snippets[(snippets.length + $route.params.id) % snippets.length].title }}</span>
       </nuxt-link>
-      <nuxt-link to="/" class="toTopLinkBtn">
-        GO TO LIST
-      </nuxt-link>
+      <nuxt-link to="/" class="toTopLinkBtn">GO TO LIST</nuxt-link>
       <nuxt-link :to="toPrev($route.params.id)" class="toTopLinkPrev">
         <span class="toTopLinkArrow toTopLinkPrevArrow">Prev</span>
         <span class="toTopLinkTitle">{{

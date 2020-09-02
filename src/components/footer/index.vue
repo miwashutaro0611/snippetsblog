@@ -1,8 +1,6 @@
 <template>
   <footer class="globalFooter">
-    <small class="globalFooterCopy">
-      © 2020, Shuntaro Miwa
-    </small>
+    <small class="globalFooterCopy"> © 2020, Shuntaro Miwa </small>
   </footer>
 </template>
 
