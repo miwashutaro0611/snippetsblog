@@ -202,5 +202,16 @@ export const state = {
       },
       codepenId: 'zYqEaev',
     },
+    {
+      id: 20,
+      title: 'Nakamura Linkcard',
+      link: 'code20',
+      referencLink: {
+        name: '株式会社中村建材工業所 | ノンスリップタイル、テラゾー製品、施設の階段などの企画・製造・保守',
+        url: 'https://nakamurakenzai.jp/',
+        image: 'nakamura.png',
+      },
+      codepenId: 'GRZxGmV',
+    },
   ],
 }
