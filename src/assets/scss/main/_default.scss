@@ -40,3 +40,8 @@ a {
   color: inherit;
   text-decoration: none;
 }
+
+[data-whatinput='mouse'] *:focus,
+[data-whatinput='touch'] *:focus {
+  outline: none;
+}

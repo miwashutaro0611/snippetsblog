@@ -12,6 +12,9 @@
 <script>
 import GlobalHeader from '~/components/header/'
 import GlobalFooter from '~/components/footer/'
+
+import 'what-input'
+
 export default {
   name: 'Layout',
   components: {
