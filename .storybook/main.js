@@ -1,8 +1,8 @@
 const {resolve} = require('path')
-const rootPath = resolve(__dirname, '../')
+const rootPath = resolve(__dirname, '../src/')
 
 module.exports = {
-  stories: ['../components/**/*.stories.js'],
+  stories: ['../src/components/**/*.stories.js'],
   addons: [
     '@storybook/addon-a11y/register',
     '@storybook/addon-actions',
@@ -28,7 +28,7 @@ module.exports = {
         {
           loader: 'sass-resources-loader',
           options: {
-            resources: ['./assets/scss/resource.scss'],
+            resources: ['./src/assets/scss/resource.scss'],
             include: resolve(__dirname, '../')
           }
         }

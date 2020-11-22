@@ -1,0 +1,31 @@
+@mixin colorsLight {
+  --color-background-body: #fff;
+  --color-body: #333;
+  --color-default: #333;
+  --color-default-reverse: #fff;
+  --color-card-title: #2c2e3180;
+  --color-card-mask: #636569;
+  --color-page-mask1: #555;
+  --color-page-mask2: #777;
+  --color-page-mask3: #333;
+  --color-btn-mask: #ffffff80;
+  --color-console-message: #2f3942;
+  --color-console-background: #ffffff;
+  --color-console-border: #eee;
+}
+
+@mixin colorsDark {
+  --color-background-body: #3a3a3a;
+  --color-body: #fff;
+  --color-default: #fff;
+  --color-default-reverse: #333;
+  --color-card-title: #e6e6e6c2;
+  --color-card-mask: #c3c5c9;
+  --color-page-mask1: #ccc;
+  --color-page-mask2: #999;
+  --color-page-mask3: #aaa;
+  --color-btn-mask: #00000080;
+  --color-console-message: #bdc7cf;
+  --color-console-background: #242425;
+  --color-console-border: #333;
+}

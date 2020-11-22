@@ -1,0 +1,9 @@
+@mixin MixinFontSize($fontSize, $lineHeight: default) {
+  $Mixinfont: ($fontSize / $fontSizeDefault);
+  font-size: #{$fontSize}px;
+  font-size: #{$Mixinfont}rem;
+  @if $lineHeight != default {
+    $MixinlineHeight: ($lineHeight / $fontSize);
+    line-height: $MixinlineHeight;
+  }
+}

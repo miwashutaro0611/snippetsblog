@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+  <style>
+    .path {
+        stroke: #333;
+    }
+    @media (prefers-color-scheme: dark) {
+        .path {
+            stroke: #fff;
+        }
+    }
+</style>
+  <g id="グループ_1" data-name="グループ 1" transform="translate(-2 -2)">
+    <g class="path" id="長方形_1" data-name="長方形 1" transform="translate(2 2)" fill="none" stroke-width="2">
+      <rect width="22" height="22" stroke="none"/>
+      <rect x="1" y="1" width="20" height="20" fill="none"/>
+    </g>
+    <g class="path" id="長方形_2" data-name="長方形 2" transform="translate(8 8)" fill="none" stroke-width="2">
+      <rect width="22" height="22" stroke="none"/>
+      <rect x="1" y="1" width="20" height="20" fill="none"/>
+    </g>
+  </g>
+</svg>
