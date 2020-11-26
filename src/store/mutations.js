@@ -213,7 +213,6 @@ export const state = {
       },
       codepenId: 'GRZxGmV',
     },
-
     {
       id: 21,
       title: 'Nakamura Recruitlink',
@@ -224,6 +223,17 @@ export const state = {
         image: 'nakamura.png',
       },
       codepenId: 'MWyGJEB',
+    },
+    {
+      id: 22,
+      title: 'AnpanmanFace cssOnly',
+      link: 'code22',
+      referencLink: {
+        name: '',
+        url: '',
+        image: '',
+      },
+      codepenId: 'abmoReG',
     },
   ],
 }
