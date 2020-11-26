@@ -1,5 +1,5 @@
 <template>
-  <router-link to="/">
+  <nuxt-link to="/">
     <div class="globalLogo" @mouseover="logoAnimeHide">
       <span class="globalLogoIcons" aria-hidden="true">
         <span class="globalLogoIcon" />
@@ -12,7 +12,7 @@
         <span ref="LogoTextLine" class="globalLogoTextLine" />
       </p>
     </div>
-  </router-link>
+  </nuxt-link>
 </template>
 
 <script>
