@@ -235,5 +235,16 @@ export const state = {
       },
       codepenId: 'abmoReG',
     },
+    {
+      id: 23,
+      title: 'NextjsconfTicket cssOnly',
+      link: 'code23',
+      referencLink: {
+        name: 'Medhat Dawoud’s Next.js Conf Ticket',
+        url: 'https://nextjs.org/conf/tickets/medhatdawoud',
+        image: 'nextconf.png',
+      },
+      codepenId: 'abmzRNv',
+    },
   ],
 }
