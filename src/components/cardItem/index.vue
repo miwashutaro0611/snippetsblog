@@ -51,16 +51,16 @@ export default {
     width: calc(100% - 20px);
     height: calc(100% - 20px);
     margin: -25px;
+    clip-path: inset(40px 0 0 40px round 10px);
     content: '';
     background: var(--color-card-mask);
     border-radius: 10px;
     transition: clip-path 0.3s ease 0.1s, background 0.3s;
-    clip-path: inset(40px 0 0 40px round 10px);
   }
   &:hover {
     &::before {
-      transition-delay: 0;
       clip-path: inset(0 0 0 0 round 10px);
+      transition-delay: 0;
     }
   }
 }
