@@ -70,10 +70,10 @@ $EASE_TITLE: cubic-bezier(0.205, 0.01, 0.075, 0.995);
 }
 
 .wordActive {
+  clip-path: polygon(0 -20%, 100% -20%, 100% 120%, 0 120%);
   background-color: white;
   transition: -webkit-clip-path 1.2s $EASE_TITLE 0.6s, clip-path 1.2s $EASE_TITLE 0.6s, transform 1s $EASE_TITLE 0.4s;
   transform: none;
-  clip-path: polygon(0 -20%, 100% -20%, 100% 120%, 0 120%);
 }
 
 .bar {
