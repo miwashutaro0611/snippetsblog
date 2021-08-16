@@ -246,5 +246,16 @@ export const state = {
       },
       codepenId: 'abmzRNv',
     },
+    {
+      id: 24,
+      title: 'Flower Base',
+      link: 'code24',
+      referencLink: {
+        name: '株式会社フラワーベース｜企画から製造までのすべてを国内自社工場で行なう「花器」メーカー',
+        url: 'https://www.flowervase.biz/',
+        image: 'flowervase.png',
+      },
+      codepenId: 'OJmGQJP',
+    },
   ],
 }
