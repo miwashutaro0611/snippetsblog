@@ -4,7 +4,7 @@
       <p class="flowerCard__headName">CUBE</p>
       <p class="flowerCard__headSubName">[キューブ]</p>
       <p class="flowerCard__headNote">design ｜ KEISUKE FUNAHASHI</p>
-      <span class="flowerCard__headIcon"></span>
+      <span class="flowerCard__headIcon">NEW</span>
     </div>
     <div class="flowerCard__imageWrapper">
       <div class="flowerCard__image is-normal"></div>
