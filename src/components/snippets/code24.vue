@@ -50,43 +50,43 @@ export default {
 }
 
 .flowerCard__headName {
+  padding: 5px 0;
   font-size: 36px;
   line-height: 32px;
-  padding: 5px 0;
   letter-spacing: 0.1em;
   word-wrap: break-word;
 }
 
 .flowerCard__headSubName {
+  margin-top: 4px;
   font-size: 14px;
   line-height: 16px;
   letter-spacing: 0.1em;
-  margin-top: 4px;
 }
 
 .flowerCard__headNote {
+  margin-top: 18px;
   font-size: 9px;
   line-height: 16px;
   letter-spacing: 0.1em;
-  margin-top: 18px;
 }
 
 .flowerCard__headIcon {
-  display: block;
-  height: 66px;
-  background-size: contain;
-  background-image: url('https://www.flowervase.biz/images/circle_bk.svg');
-  width: 66px;
-  background-position: 50%;
-  background-repeat: no-repeat;
   position: absolute;
   top: -32px;
   right: -10px;
+  z-index: 3;
+  display: block;
+  width: 66px;
+  height: 66px;
   font-size: 14px;
   line-height: 66px;
-  text-align: center;
-  z-index: 3;
   color: #000 !important;
+  text-align: center;
+  background-image: url('https://www.flowervase.biz/images/circle_bk.svg');
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-size: contain;
 }
 
 .flowerCard__imageWrapper {
@@ -94,16 +94,16 @@ export default {
   width: 100%;
   height: 420px;
   &::before {
-    content: '';
+    position: absolute;
+    top: 0;
+    bottom: auto;
+    left: 0;
+    z-index: 1;
     display: block;
     width: 100%;
     height: 0;
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: auto;
+    content: '';
     background-color: rgba(0, 0, 0, 0.2);
-    z-index: 1;
     transition: height 0.85s cubic-bezier(0.19, 1, 0.22, 1) 0.15s;
   }
 }
@@ -120,8 +120,8 @@ export default {
   }
   &.is-over {
     z-index: 2;
-    animation: itemOutAnim 1s cubic-bezier(0.19, 1, 0.22, 1) 0s 1 both;
     background: url('http://placehold.jp/24/9999cc/333399/300x420.png');
+    animation: itemOutAnim 1s cubic-bezier(0.19, 1, 0.22, 1) 0s 1 both;
   }
 }
 
