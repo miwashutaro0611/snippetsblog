@@ -117,7 +117,7 @@ const config: NuxtConfig = {
       },
     },
   },
-  buildModules: ['@nuxt/typescript-build'],
+  buildModules: ['@nuxt/typescript-build', '@nuxtjs/composition-api/module'],
   generate: {
     fallback: true,
     routes() {
