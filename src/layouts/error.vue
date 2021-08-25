@@ -1,8 +1,8 @@
 <template>
   <div class="errorContainer">
     <div class="errorContainer__left">
-      <h1 class="errorContainer__left__title" v-if="error.statusCode === 404">お探しのページが見つかりません。</h1>
-      <h1 class="errorContainer__left__title" v-else>エラーが発生しました</h1>
+      <h1 v-if="error.statusCode === 404" class="errorContainer__left__title">お探しのページが見つかりません。</h1>
+      <h1 v-else class="errorContainer__left__title">エラーが発生しました</h1>
       <p class="errorContainer__left__message">{{ error.message }}</p>
       <p v-if="error.statusCode === 404" class="errorContainer__left__text">
         あなたがアクセスしたページは、削除されたか<br />
@@ -69,7 +69,7 @@
       <Timeline
         id="jackmiwamiwa"
         class="twitter"
-        sourceType="profile"
+        source-type="profile"
         :options="{ theme: 'dark', height: twitterHeight }"
       />
     </div>
@@ -80,10 +80,10 @@
 import { Timeline } from 'vue-tweet-embed'
 export default {
   name: 'Error',
-  props: ['error'],
   components: {
     Timeline,
   },
+  props: ['error'],
   data() {
     return {
       twitterHeight: '400',

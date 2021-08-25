@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import particlesJS from 'particles.js' // eslint-disable-line no-unused-vars
+import particlesJS from 'particles.js' // eslint-disable-line @typescript-eslint/no-unused-vars
 import particlesData from '~/assets/js/particles.js'
 
 export default {

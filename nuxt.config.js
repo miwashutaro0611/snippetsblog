@@ -115,6 +115,7 @@ export default {
       },
     },
   },
+  buildModules: ['@nuxt/typescript-build'],
   generate: {
     fallback: true,
     routes() {

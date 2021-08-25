@@ -19,7 +19,7 @@
     <div class="codePen">
       <iframe
         height="265"
-        style="width: 100%;"
+        style="width: 100%"
         scrolling="no"
         :title="snippets[$route.params.id - 1].codepenId"
         :src="`https://codepen.io/miwashutaro0611/embed/${
