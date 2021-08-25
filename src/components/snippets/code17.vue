@@ -1,10 +1,11 @@
 <template>
   <button type="button" class="yt-btn u-is-none_style"></button>
 </template>
-<script>
-export default {
+<script lang="ts">
+import { defineComponent } from '@nuxtjs/composition-api'
+export default defineComponent({
   name: 'Code17',
-}
+})
 </script>
 
 <style lang="scss" scoped>

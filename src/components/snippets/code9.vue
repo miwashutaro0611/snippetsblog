@@ -9,15 +9,15 @@
   </div>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import { defineComponent } from '@nuxtjs/composition-api'
+export default defineComponent({
   name: 'Code9',
-  data() {
-    return {
-      textValue: 'R',
-    }
+  setup() {
+    const textValue = 'R'
+    return { textValue }
   },
-}
+})
 </script>
 
 <style lang="scss" scoped>

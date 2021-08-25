@@ -3,7 +3,7 @@
     <p>テキスト</p>
     <button type="button" @click="modalOpen">モーダルを開く</button>
     <transition name="fade">
-      <div v-if="!isHide" class="p-modal">
+      <div v-if="!state.isHide" class="p-modal">
         <div class="p-modal_over_lay" @click="modalClose" />
         <div class="p-modal_content">
           <p>ああああ</p>
@@ -15,23 +15,28 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: 'Code10',
-  data() {
-    return {
-      isHide: true,
-    }
-  },
-  methods: {
-    modalOpen() {
-      this.isHide = false
-    },
-    modalClose() {
-      this.isHide = true
-    },
-  },
+<script lang="ts">
+import { defineComponent, reactive } from '@nuxtjs/composition-api'
+
+type State = {
+  isHide: boolean
 }
+
+export default defineComponent({
+  name: 'Code10',
+  setup() {
+    const state = reactive<State>({
+      isHide: true,
+    })
+    const modalOpen = () => {
+      state.isHide = false
+    }
+    const modalClose = () => {
+      state.isHide = true
+    }
+    return { state, modalOpen, modalClose }
+  },
+})
 </script>
 
 <style lang="scss" scoped>

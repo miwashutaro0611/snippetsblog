@@ -13,20 +13,16 @@
     <input id="furigana2" name="furigana" />
   </div>
 </template>
-<script>
+<script lang="ts">
 import * as AutoKana from 'vanilla-autokana'
-
-export default {
+import { defineComponent, onMounted, reactive } from '@nuxtjs/composition-api'
+export default defineComponent({
   name: 'Code15',
-  data() {
-    return {
-      name: '',
-      furigana: '',
-    }
+  setup() {
+    onMounted(() => {
+      AutoKana.bind('#name', '#furigana')
+      AutoKana.bind('#name2', '#furigana2')
+    })
   },
-  mounted() {
-    AutoKana.bind('#name', '#furigana')
-    AutoKana.bind('#name2', '#furigana2')
-  },
-}
+})
 </script>

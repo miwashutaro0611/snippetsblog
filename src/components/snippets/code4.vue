@@ -7,10 +7,11 @@
   </div>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import { defineComponent } from '@nuxtjs/composition-api'
+export default defineComponent({
   name: 'Code4',
-}
+})
 </script>
 
 <style lang="scss" scoped>

@@ -1,41 +1,36 @@
 <template>
   <div>
-    <button type="button" @click="onClick(true)">START</button>
-    <button type="button" @click="onClick(false)">DELETE</button>
+    <button type="button" @click="changeFlg(true)">START</button>
+    <button type="button" @click="changeFlg(false)">DELETE</button>
     <p class="hubbleTitle">
-      <span class="hubbleTitle__ja">{{ jaText }}</span>
-      <span class="hubbleTitle__en" :class="{ isActive: isBool }">
-        <span v-for="(text, index) in splitText(enText)" :key="index" class="hubbleTitle__en__text">{{
-          text
-        }}</span></span
-      >
+      <span class="hubbleTitle__ja">{{ state.jaText }}</span>
+      <span class="hubbleTitle__en" :class="{ isActive: state.isBool }">
+        <span v-for="(text, index) in splitText" :key="index" class="hubbleTitle__en__text">{{ text }}</span>
+      </span>
     </p>
   </div>
 </template>
-<script>
-export default {
+<script lang="ts">
+import { computed, defineComponent, reactive } from '@nuxtjs/composition-api'
+
+export default defineComponent({
   name: 'Code19',
-  data() {
-    return {
+  setup() {
+    const state = reactive({
       jaText: '特徴と機能',
       enText: 'Feature',
       isBool: false,
+    })
+    const splitText = computed(() => {
+      const valueAry = state.enText.split('')
+      return valueAry
+    })
+    const changeFlg = (bool: boolean) => {
+      state.isBool = bool
     }
+    return { state, splitText, changeFlg }
   },
-  computed: {
-    splitText() {
-      return (value) => {
-        const valueAry = value.split('')
-        return valueAry
-      }
-    },
-  },
-  methods: {
-    onClick(bool) {
-      this.isBool = bool
-    },
-  },
-}
+})
 </script>
 
 <style lang="scss" scoped>

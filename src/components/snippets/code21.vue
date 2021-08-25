@@ -19,10 +19,11 @@
     <span class="recruitLink__icon" aria-hidden="hidden"></span>
   </div>
 </template>
-<script>
-export default {
+<script lang="ts">
+import { defineComponent } from '@nuxtjs/composition-api'
+export default defineComponent({
   name: 'Code21',
-}
+})
 </script>
 
 <style lang="scss" scoped>
