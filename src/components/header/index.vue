@@ -9,8 +9,8 @@
 
 <script lang="ts">
 import { defineComponent } from '@nuxtjs/composition-api'
-import Logo from '~/components/logo/'
-import toggleButton from '~/components/toggleButton/'
+import Logo from '../../components/logo/index.vue'
+import toggleButton from '../../components/toggleButton/index.vue'
 export default defineComponent({
   name: 'GlobalHeader',
   components: {
