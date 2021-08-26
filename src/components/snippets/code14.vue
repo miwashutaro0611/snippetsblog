@@ -1,26 +1,19 @@
 <template>
   <div class="GlobalParticlesWrapper">
     <div id="particles" class="GlobalParticles" aria-hidden="ture" />
-    <Particles id="particles" />
   </div>
 </template>
 
-<script lang="ts">
+<script>
 import { defineComponent, onMounted } from '@nuxtjs/composition-api'
 import particlesJS from 'particles.js' // eslint-disable-line @typescript-eslint/no-unused-vars
 import particlesData from '~/assets/js/particles.js'
-
-declare global {
-  interface Window {
-    particlesJS: any
-  }
-}
 
 export default defineComponent({
   name: 'Code14',
   setup() {
     onMounted(() => {
-      window.particlesJS.load('particles', particlesData)
+      window.particlesJS('particles', particlesData)
     })
   },
 })
