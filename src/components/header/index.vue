@@ -7,16 +7,17 @@
   </header>
 </template>
 
-<script>
+<script lang="ts">
+import { defineComponent } from '@nuxtjs/composition-api'
 import Logo from '~/components/logo/'
 import toggleButton from '~/components/toggleButton/'
-export default {
+export default defineComponent({
   name: 'GlobalHeader',
   components: {
     Logo,
     toggleButton,
   },
-}
+})
 </script>
 
 <style lang="scss" scoped>

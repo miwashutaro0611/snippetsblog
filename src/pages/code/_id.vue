@@ -58,10 +58,6 @@
 import { mapState } from 'vuex'
 export default {
   name: 'Code',
-  validate({ params }) {
-    // 数値でなければならない
-    return /^\d+$/.test(params.id)
-  },
   computed: {
     ...mapState({
       snippets: 'snippets',

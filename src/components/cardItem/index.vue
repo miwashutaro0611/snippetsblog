@@ -6,22 +6,26 @@
     <h2 class="cardTitle">
       <span>{{ code.title }}</span>
     </h2>
-    <nuxt-link :to="to(code.id)" class="cardLink">
+    <nuxt-link :to="toLink(code.id)" class="cardLink">
       <span>MORE</span>
     </nuxt-link>
   </article>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import { defineComponent } from '@nuxtjs/composition-api'
+export default defineComponent({
   name: 'CardItem',
-  props: ['code'],
-  methods: {
-    to(id) {
-      return `/code/${id}`
-    },
+  props: {
+    code: Object,
   },
-}
+  setup() {
+    const toLink = (id: number) => {
+      return `/code/${id}`
+    }
+    return { toLink }
+  },
+})
 </script>
 
 <style lang="scss" scoped>

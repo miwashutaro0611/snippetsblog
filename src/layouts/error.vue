@@ -78,20 +78,23 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
+import { NuxtError } from '@nuxt/types'
+import { defineComponent, PropType } from '@nuxtjs/composition-api'
 import { Timeline } from 'vue-tweet-embed'
-export default {
-  name: 'Error',
+export default defineComponent({
+  name: 'Code1',
   components: {
     Timeline,
   },
-  props: ['error'],
-  data() {
-    return {
-      twitterHeight: '400',
-    }
+  props: {
+    error: Object as PropType<NuxtError>,
   },
-}
+  setup() {
+    const twitterHeight = '400'
+    return { twitterHeight }
+  },
+})
 </script>
 
 <style lang="scss" scoped>
