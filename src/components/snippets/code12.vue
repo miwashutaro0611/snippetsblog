@@ -4,31 +4,36 @@
       <p>
         実行環境想定が画面全体を想定しているため、このサイト内ではうまく動かないです。動きについてはcodepenを参照ください。
       </p>
-      <a class="mt10" href="#id3">{{ text }}</a>
+      <a class="mt10" href="#id3">{{ state.text }}</a>
     </div>
     <div class="contentWrapper" />
     <div id="id3" class="contentWrapper" />
-    <button type="button" class="buttonIcon" :style="buttonStyle" @touchmove="onTouchMove($event)" @click="onClick" />
+    <button
+      type="button"
+      class="buttonIcon"
+      :style="state.buttonStyle"
+      @touchmove="onTouchMove($event)"
+      @click="onChangeText"
+    />
   </div>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import { defineComponent, reactive } from '@nuxtjs/composition-api'
+export default defineComponent({
   name: 'Code12',
-  data() {
-    return {
+  setup() {
+    const state = reactive({
       text: 'リンクエリアです。アイコンをクリックするとここの名前が変わります',
       buttonStyle: {
         transform: 'translate(calc(100vw - 100px - 60px), 20px)',
       },
-    }
-  },
-  methods: {
-    onTouchMove(e) {
-      e.preventDefault()
-      const touchObject = e.changedTouches[0]
-      const width = e.target.offsetWidth
-      const height = e.target.offsetHeight
+    })
+    const onTouchMove = (event: TouchEvent) => {
+      event.preventDefault()
+      const touchObject = event.changedTouches[0]
+      const width = (event.target as HTMLButtonElement).offsetWidth
+      const height = (event.target as HTMLButtonElement).offsetHeight
       let x, y
       if (touchObject.clientX < width / 2) {
         x = width / 2
@@ -44,13 +49,14 @@ export default {
       } else {
         y = touchObject.clientY
       }
-      this.buttonStyle.transform = `translate(${x - width / 2}px, ${y - height / 2}px)`
-    },
-    onClick() {
-      this.text = 'クリックされました'
-    },
+      state.buttonStyle.transform = `translate(${x - width / 2}px, ${y - height / 2}px)`
+    }
+    const onChangeText = () => {
+      state.text = 'クリックされました'
+    }
+    return { state, onTouchMove, onChangeText }
   },
-}
+})
 </script>
 
 <style lang="scss" scoped>

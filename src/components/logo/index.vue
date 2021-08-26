@@ -42,7 +42,9 @@ export default {
       this.width = window.innerWidth
     },
     logoAnimeHide() {
-      if (this.width < 768) return
+      if (this.width < 768) {
+        return
+      }
       const elemText = this.$refs.LogoTextInner
       const elemLine = this.$refs.LogoTextLine
       const elemTextLength = this.$refs.LogoTextInner.length

@@ -1,32 +1,32 @@
 <template>
   <div class="container">
-    <div v-for="i in 400" :key="i.id" class="trigger"></div>
+    <div v-for="i in 400" :key="i.id" class="trigger" />
     <div class="monitor">
       <div class="camera -x">
         <div class="camera -y">
           <div class="face">
             <div class="eyebrowsWrapper">
-              <div class="eyebrows eyebrows--left"></div>
-              <div class="eyebrows eyebrows--right"></div>
+              <div class="eyebrows eyebrows--left" />
+              <div class="eyebrows eyebrows--right" />
             </div>
             <div class="eyeWrapper">
               <div class="eye-x">
                 <div class="eye-y">
-                  <div class="eye eye--left"></div>
+                  <div class="eye eye--left" />
                 </div>
               </div>
               <div class="eye-x">
                 <div class="eye-y">
-                  <div class="eye eye--right"></div>
+                  <div class="eye eye--right" />
                 </div>
               </div>
             </div>
             <div class="noseWrapper">
-              <div class="nose nose--left"></div>
-              <div class="nose nose--center"></div>
-              <div class="nose nose--right"></div>
+              <div class="nose nose--left" />
+              <div class="nose nose--center" />
+              <div class="nose nose--right" />
             </div>
-            <div class="mouse"></div>
+            <div class="mouse" />
           </div>
         </div>
       </div>

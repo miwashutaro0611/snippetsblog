@@ -3,11 +3,11 @@
     <button type="button" @click="changeFlg(true)">START</button>
     <button type="button" @click="changeFlg(false)">DELETE</button>
     <div class="maskWrapper" :class="{ isActive: state.isBool }">
-      <div class="mask mask1"></div>
-      <div class="mask mask2"></div>
-      <div class="mask mask3"></div>
-      <div class="mask mask4"></div>
-      <div class="mask mask5"></div>
+      <div class="mask mask1" />
+      <div class="mask mask2" />
+      <div class="mask mask3" />
+      <div class="mask mask4" />
+      <div class="mask mask5" />
     </div>
   </div>
 </template>

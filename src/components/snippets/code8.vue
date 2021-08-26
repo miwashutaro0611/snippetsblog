@@ -1,24 +1,27 @@
 <template>
   <div>
     <div class="resultWrap">
-      <div class="resultWrapInner" :style="passBarStyle" />
+      <div class="resultWrapInner" :style="state.passBarStyle" />
     </div>
-    <div class="resultText" :style="textColorStyle">{{ scoreText }}</div>
+    <div class="resultText" :style="state.textColorStyle">
+      {{ state.scoreText }}
+    </div>
     <input
-      v-model="textValue"
+      v-model="state.textValue"
       type="text"
       placeholder="ここにテキスト"
       maxlength="20"
-      @keyup="scoreChangeText(textValue)"
+      @keyup="scoreChangeText(state.textValue)"
     />
   </div>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import { defineComponent, reactive } from '@nuxtjs/composition-api'
+export default defineComponent({
   name: 'Code8',
-  data() {
-    return {
+  setup() {
+    const state = reactive({
       textValue: '',
       scoreText: '',
       score: 0,
@@ -51,27 +54,62 @@ export default {
         transform: 'scaleX(0)',
         background: '#f00',
       },
+    })
+    const scoreChangeText = (password: string) => {
+      scoreReset()
+      repeatScore(password)
+      textTypeCheck(password)
+      setStyle(password)
     }
-  },
-  methods: {
-    scoreChangeText(password) {
-      this.scoreReset()
-      this.repeatScore(password)
-      this.textTypeCheck(password)
-      this.setStyle(password)
-    },
-    scoreReset() {
-      this.score = 0
-    },
-    repeatScore(password) {
+    const scoreReset = () => {
+      state.score = 0
+    }
+    const repeatScore = (password: string) => {
       const passLength = password.length
-      this.score += passLength * 4
-      this.score += (this.textRepeat(1, password) - passLength) * 1
-      this.score += (this.textRepeat(2, password) - passLength) * 1
-      this.score += (this.textRepeat(3, password) - passLength) * 1
-      this.score += (this.textRepeat(4, password) - passLength) * 1
-    },
-    textRepeat(pLen, password) {
+      state.score += passLength * 4
+      state.score += (textRepeat(1, password) - passLength) * 1
+      state.score += (textRepeat(2, password) - passLength) * 1
+      state.score += (textRepeat(3, password) - passLength) * 1
+      state.score += (textRepeat(4, password) - passLength) * 1
+    }
+    const textTypeCheck = (password: string) => {
+      if (password.match(/([a-z].*[A-Z])|([A-Z].*[a-z])/)) {
+        state.score += 5
+      }
+      if (password.match(/(.*[0-9].*[0-9].*[0-9])/)) {
+        state.score += 10
+      }
+      if (password.match(/([a-zA-Z])/) && password.match(/([0-9])/)) {
+        state.score += 15
+      }
+    }
+    const setStyle = (password: string) => {
+      const passLength = password.length
+      state.score = state.score > 100 ? 100 : state.score
+      state.passBarStyle.transform = `scaleX(${state.score / 100})`
+      if (passLength < 6) {
+        state.scoreText = state.contentStyleList[0].text
+        state.textColorStyle.color = state.contentStyleList[0].color
+        state.passBarStyle.background = state.contentStyleList[0].color
+      } else if (password.length >= 6 && state.score < 34) {
+        state.scoreText = state.contentStyleList[1].text
+        state.textColorStyle.color = state.contentStyleList[1].color
+        state.passBarStyle.background = state.contentStyleList[1].color
+      } else if (state.score < 68) {
+        state.scoreText = state.contentStyleList[2].text
+        state.textColorStyle.color = state.contentStyleList[2].color
+        state.passBarStyle.background = state.contentStyleList[2].color
+      } else if (state.score < 100) {
+        state.scoreText = state.contentStyleList[3].text
+        state.textColorStyle.color = state.contentStyleList[3].color
+        state.passBarStyle.background = state.contentStyleList[3].color
+      } else if (state.score === 100) {
+        state.scoreText = state.contentStyleList[4].text
+        state.textColorStyle.color = '#333'
+        state.passBarStyle.background = state.contentStyleList[4].color
+      }
+    }
+    const textRepeat = (pLen: number, password: string) => {
       const passLength = password.length
       let res = ''
       for (let i = 0; i < passLength; i++) {
@@ -80,7 +118,9 @@ export default {
         for (j = 0; j < pLen && j + i + pLen < passLength; j++) {
           repeated = repeated && password.charAt(j + i) === password.charAt(j + i + pLen)
         }
-        if (j < pLen) repeated = false
+        if (j < pLen) {
+          repeated = false
+        }
         if (repeated) {
           i += pLen - 1
           repeated = false
@@ -89,46 +129,10 @@ export default {
         }
       }
       return res.length
-    },
-    textTypeCheck(password) {
-      if (password.match(/([a-z].*[A-Z])|([A-Z].*[a-z])/)) {
-        this.score += 5
-      }
-      if (password.match(/(.*[0-9].*[0-9].*[0-9])/)) {
-        this.score += 10
-      }
-      if (password.match(/([a-zA-Z])/) && password.match(/([0-9])/)) {
-        this.score += 15
-      }
-    },
-    setStyle(password) {
-      const passLength = password.length
-      this.score = this.score > 100 ? 100 : this.score
-      this.passBarStyle.transform = `scaleX(${this.score / 100})`
-      if (passLength < 6) {
-        this.scoreText = this.contentStyleList[0].text
-        this.textColorStyle.color = this.contentStyleList[0].color
-        this.passBarStyle.background = this.contentStyleList[0].color
-      } else if (password.length >= 6 && this.score < 34) {
-        this.scoreText = this.contentStyleList[1].text
-        this.textColorStyle.color = this.contentStyleList[1].color
-        this.passBarStyle.background = this.contentStyleList[1].color
-      } else if (this.score < 68) {
-        this.scoreText = this.contentStyleList[2].text
-        this.textColorStyle.color = this.contentStyleList[2].color
-        this.passBarStyle.background = this.contentStyleList[2].color
-      } else if (this.score < 100) {
-        this.scoreText = this.contentStyleList[3].text
-        this.textColorStyle.color = this.contentStyleList[3].color
-        this.passBarStyle.background = this.contentStyleList[3].color
-      } else if (this.score === 100) {
-        this.scoreText = this.contentStyleList[4].text
-        this.textColorStyle.color = '#333'
-        this.passBarStyle.background = this.contentStyleList[4].color
-      }
-    },
+    }
+    return { state, scoreChangeText }
   },
-}
+})
 </script>
 
 <style lang="scss" scoped>

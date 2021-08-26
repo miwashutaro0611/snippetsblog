@@ -16,7 +16,7 @@
         </span>
       </span>
     </p>
-    <span class="recruitLink__icon" aria-hidden="hidden"></span>
+    <span class="recruitLink__icon" aria-hidden="hidden" />
   </div>
 </template>
 <script lang="ts">

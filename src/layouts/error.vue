@@ -3,13 +3,15 @@
     <div class="errorContainer__left">
       <h1 v-if="error.statusCode === 404" class="errorContainer__left__title">お探しのページが見つかりません。</h1>
       <h1 v-else class="errorContainer__left__title">エラーが発生しました</h1>
-      <p class="errorContainer__left__message">{{ error.message }}</p>
+      <p class="errorContainer__left__message">
+        {{ error.message }}
+      </p>
       <p v-if="error.statusCode === 404" class="errorContainer__left__text">
         あなたがアクセスしたページは、削除されたか<br />
         URLが変更されているため表示することができません。<br />
         エラー報告などのご連絡については製作者のTwitterのDMへお願いいたします。
       </p>
-      <nuxt-link to="/" class="errorContainer__left__link">トップページへ</nuxt-link>
+      <nuxt-link to="/" class="errorContainer__left__link"> トップページへ </nuxt-link>
       <div class="errorContainer__left__hiddenfunc">
         <h2 class="errorContainer__left__subtitle">隠し機能について</h2>
         <p class="errorContainer__left__subtext">

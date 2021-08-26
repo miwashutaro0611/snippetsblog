@@ -1,5 +1,5 @@
 <template>
-  <button type="button" class="yt-btn u-is-none_style"></button>
+  <button type="button" class="yt-btn u-is-none_style" />
 </template>
 <script lang="ts">
 import { defineComponent } from '@nuxtjs/composition-api'

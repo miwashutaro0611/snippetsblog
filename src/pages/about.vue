@@ -1,7 +1,7 @@
 <template>
   <div>
     <p>about</p>
-    <nuxt-link to="/">TOPへ</nuxt-link>
+    <nuxt-link to="/"> TOPへ </nuxt-link>
   </div>
 </template>
 

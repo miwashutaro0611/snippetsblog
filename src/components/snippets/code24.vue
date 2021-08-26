@@ -7,8 +7,8 @@
       <span class="flowerCard__headIcon">NEW</span>
     </div>
     <div class="flowerCard__imageWrapper">
-      <div class="flowerCard__image is-normal"></div>
-      <div class="flowerCard__image is-over"></div>
+      <div class="flowerCard__image is-normal" />
+      <div class="flowerCard__image is-over" />
     </div>
   </a>
 </template>

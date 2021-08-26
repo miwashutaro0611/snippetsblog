@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper">
-    <div class="wrapper__mask"></div>
+    <div class="wrapper__mask" />
     <div class="wrapper__content">
       <p>INTRO<br />DUCTION</p>
       <h3>会社概要</h3>
