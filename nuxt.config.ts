@@ -106,7 +106,7 @@ const config: NuxtConfig = {
       { rel: 'apple-touch-icon', href: '/img/icons/icon-144x144.png' },
     ],
   },
-  plugins: ['@/plugins/code-snippets'],
+  plugins: ['@/plugins/code-snippets', '@/plugins/particles'],
   build: {
     loaders: {
       scss: {

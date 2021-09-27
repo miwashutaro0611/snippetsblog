@@ -1,20 +1,23 @@
 <template>
   <div class="GlobalParticlesWrapper">
     <div id="particles" class="GlobalParticles" aria-hidden="ture" />
+    <Particles
+      id="particles"
+      :particles-init="particlesInit"
+      :particles-loaded="particlesLoaded"
+      :options="particlesData"
+    />
   </div>
 </template>
 
-<script>
-import { defineComponent, onMounted } from '@nuxtjs/composition-api'
-import particlesJS from 'particles.js' // eslint-disable-line @typescript-eslint/no-unused-vars
+<script lang="ts">
+import { defineComponent } from '@nuxtjs/composition-api'
 import particlesData from '~/assets/js/particles.js'
 
 export default defineComponent({
   name: 'Code14',
   setup() {
-    onMounted(() => {
-      window.particlesJS('particles', particlesData)
-    })
+    return { particlesData }
   },
 })
 </script>

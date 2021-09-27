@@ -15,7 +15,7 @@
 </template>
 <script lang="ts">
 import * as AutoKana from 'vanilla-autokana'
-import { defineComponent, onMounted, reactive } from '@nuxtjs/composition-api'
+import { defineComponent, onMounted } from '@nuxtjs/composition-api'
 export default defineComponent({
   name: 'Code15',
   setup() {

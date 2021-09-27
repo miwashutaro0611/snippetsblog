@@ -141,8 +141,8 @@ export const state = {
       title: 'Particles',
       link: 'code14',
       referencLink: {
-        name: 'particles.js',
-        url: 'https://vincentgarreau.com/particles.js/',
+        name: 'tsparticles.js',
+        url: 'https://particles.js.org/',
         image: 'particles.png',
       },
       codepenId: 'dLmzbK',
