@@ -1,23 +1,24 @@
 <template>
   <div class="container">
-    <div v-for="i in 400" :key="i.id" class="trigger"></div>
+    <div v-for="i in 400" :key="i.id" class="trigger" />
     <div class="monitor">
       <div class="camera -x">
         <div class="camera -y">
           <div class="ticket-visual_visual">
-            <div class="left"></div>
-            <div class="right"></div>
-            <div class="ticket-visual-wrapper"></div>
+            <div class="left" />
+            <div class="right" />
+            <div class="ticket-visual-wrapper" />
           </div>
         </div>
       </div>
     </div>
   </div>
 </template>
-<script>
-export default {
+<script lang="ts">
+import { defineComponent } from '@nuxtjs/composition-api'
+export default defineComponent({
   name: 'Code23',
-}
+})
 </script>
 
 <style lang="scss" scoped>

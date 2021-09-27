@@ -2,10 +2,11 @@
   <div class="loading-circle" />
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import { defineComponent } from '@nuxtjs/composition-api'
+export default defineComponent({
   name: 'Code11',
-}
+})
 </script>
 
 <style lang="scss" scoped>

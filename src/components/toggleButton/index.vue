@@ -1,47 +1,50 @@
 <template>
   <div class="toggleSwitch">
-    <input id="toggle" v-model="darkmode" class="toggleSwitch-input" type="checkbox" @change="modeChange(darkmode)" />
+    <input
+      id="toggle"
+      v-model="state.darkmode"
+      class="toggleSwitch-input"
+      type="checkbox"
+      @change="modeChange(state.darkmode)"
+    />
     <label for="toggle" class="toggleSwitch-label">
-      <fa v-if="darkmode" :icon="faMoon" class="toggleSwitch-label-icon" />
-      <fa v-else :icon="faSun" class="toggleSwitch-label-icon" />
+      <fa v-if="state.darkmode" :icon="faMoonIcon" class="toggleSwitch-label-icon" />
+      <fa v-else :icon="faSunIcon" class="toggleSwitch-label-icon" />
     </label>
   </div>
 </template>
 
-<script>
+<script lang="ts">
+import { defineComponent, reactive, computed, onMounted } from '@nuxtjs/composition-api'
 import { faMoon, faSun } from '@fortawesome/free-solid-svg-icons'
-export default {
+export default defineComponent({
   name: 'ToggleButton',
-  data() {
-    return {
+  setup() {
+    const state = reactive({
       darkmode: window.matchMedia('(prefers-color-scheme: dark)').matches,
-    }
-  },
-  computed: {
-    faMoon() {
-      return faMoon
-    },
-    faSun() {
-      return faSun
-    },
-  },
-  mounted() {
-    if (this.darkmode) {
-      document.documentElement.setAttribute('data-mode', 'dark')
-    } else {
-      document.documentElement.setAttribute('data-mode', 'light')
-    }
-  },
-  methods: {
-    modeChange(mode) {
+    })
+    const faMoonIcon = computed(() => faMoon)
+    const faSunIcon = computed(() => faSun)
+
+    onMounted(() => {
+      if (state.darkmode) {
+        document.documentElement.setAttribute('data-mode', 'dark')
+      } else {
+        document.documentElement.setAttribute('data-mode', 'light')
+      }
+    })
+
+    const modeChange = (mode: boolean) => {
       if (mode) {
         document.documentElement.setAttribute('data-mode', 'dark')
       } else {
         document.documentElement.setAttribute('data-mode', 'light')
       }
-    },
+    }
+
+    return { state, faMoonIcon, faSunIcon, modeChange }
   },
-}
+})
 </script>
 
 <style lang="scss" scoped>

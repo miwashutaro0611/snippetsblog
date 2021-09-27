@@ -1,19 +1,25 @@
 <template>
   <div class="GlobalParticlesWrapper">
-    <div id="particles" class="GlobalParticles" araa-hidden="ture" />
+    <div id="particles" class="GlobalParticles" aria-hidden="ture" />
+    <Particles
+      id="particles"
+      :particles-init="particlesInit"
+      :particles-loaded="particlesLoaded"
+      :options="particlesData"
+    />
   </div>
 </template>
 
-<script>
-import particlesJS from 'particles.js' // eslint-disable-line no-unused-vars
+<script lang="ts">
+import { defineComponent } from '@nuxtjs/composition-api'
 import particlesData from '~/assets/js/particles.js'
 
-export default {
+export default defineComponent({
   name: 'Code14',
-  mounted() {
-    window.particlesJS('particles', particlesData.data)
+  setup() {
+    return { particlesData }
   },
-}
+})
 </script>
 
 <style lang="scss" scoped>

@@ -5,9 +5,22 @@ module.exports = {
     node: true,
   },
   parserOptions: {
-    parser: 'babel-eslint',
+    parser: '@typescript-eslint/parser',
   },
-  extends: ['prettier', 'prettier/vue', 'eslint:recommended', 'plugin:nuxt/recommended', 'plugin:prettier/recommended'],
+  extends: [
+    '@nuxtjs/eslint-config-typescript',
+    'prettier',
+    'prettier/vue',
+    'eslint:recommended',
+    'plugin:@typescript-eslint/eslint-recommended',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:nuxt/recommended',
+    'plugin:prettier/recommended',
+  ],
   parser: 'vue-eslint-parser',
-  plugins: ['prettier'],
+  plugins: ['prettier', '@typescript-eslint'],
+  rules: {
+    'no-unused-vars': 'off',
+    '@typescript-eslint/no-unused-vars': ['warn'],
+  },
 }

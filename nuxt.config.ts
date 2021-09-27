@@ -1,12 +1,14 @@
+import { NuxtConfig } from '@nuxt/types'
+
 import Sass from 'sass'
 import Fiber from 'fibers'
 
 import codeNumberFile from './data/codeList.json'
 
-export default {
+const config: NuxtConfig = {
   srcDir: 'src',
   mode: 'spa',
-  css: [{ src: '~/assets/scss/main.scss' }],
+  css: ['~/assets/scss/main.scss'],
   modules: [
     '@nuxtjs/style-resources',
     'nuxt-fontawesome',
@@ -104,7 +106,7 @@ export default {
       { rel: 'apple-touch-icon', href: '/img/icons/icon-144x144.png' },
     ],
   },
-  plugins: ['@/plugins/code-snippets'],
+  plugins: ['@/plugins/code-snippets', '@/plugins/particles'],
   build: {
     loaders: {
       scss: {
@@ -115,12 +117,15 @@ export default {
       },
     },
   },
+  buildModules: ['@nuxt/typescript-build', '@nuxtjs/composition-api/module'],
   generate: {
     fallback: true,
     routes() {
-      return codeNumberFile.ids.map((id) => {
+      return codeNumberFile.ids.map((id: number) => {
         return `code/${id}`
       })
     },
   },
 }
+
+export default config

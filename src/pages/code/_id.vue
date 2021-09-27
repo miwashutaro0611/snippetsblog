@@ -1,6 +1,8 @@
 <template>
   <div class="codePage">
-    <h1 class="codeTitle">{{ snippets[$route.params.id - 1].title }}</h1>
+    <h1 class="codeTitle">
+      {{ snippets[$route.params.id - 1].title }}
+    </h1>
     <div class="codeWrap">
       <component :is="snippets[$route.params.id - 1].link" />
     </div>
@@ -19,7 +21,7 @@
     <div class="codePen">
       <iframe
         height="265"
-        style="width: 100%;"
+        style="width: 100%"
         scrolling="no"
         :title="snippets[$route.params.id - 1].codepenId"
         :src="`https://codepen.io/miwashutaro0611/embed/${
@@ -41,7 +43,7 @@
         <span class="toTopLinkArrow toTopLinkNextArrow">Next</span>
         <span class="toTopLinkTitle">{{ snippets[(snippets.length + $route.params.id) % snippets.length].title }}</span>
       </nuxt-link>
-      <nuxt-link to="/" class="toTopLinkBtn">GO TO LIST</nuxt-link>
+      <nuxt-link to="/" class="toTopLinkBtn"> GO TO LIST </nuxt-link>
       <nuxt-link :to="toPrev($route.params.id)" class="toTopLinkPrev">
         <span class="toTopLinkArrow toTopLinkPrevArrow">Prev</span>
         <span class="toTopLinkTitle">{{
@@ -56,10 +58,6 @@
 import { mapState } from 'vuex'
 export default {
   name: 'Code',
-  validate({ params }) {
-    // 数値でなければならない
-    return /^\d+$/.test(params.id)
-  },
   computed: {
     ...mapState({
       snippets: 'snippets',
