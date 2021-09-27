@@ -1,32 +1,37 @@
 <template>
   <div>
-    <button type="button" class="button" @click="onClick(true)">START</button>
-    <button type="button" class="button" @click="onClick(false)">DELETE</button>
+    <button type="button" class="button" @click="changeFlg(true)">START</button>
+    <button type="button" class="button" @click="changeFlg(false)">DELETE</button>
     <h2 class="title">
       <span class="cmnTitle">
         <span class="cmnTitle__inner">
-          <span class="word" :class="{ wordActive: isBool }"> TITLENAME </span>
-          <span class="bar" :class="{ barActive: isBool }" />
+          <span class="word" :class="{ wordActive: state.isBool }"> TITLENAME </span>
+          <span class="bar" :class="{ barActive: state.isBool }" />
         </span>
       </span>
     </h2>
   </div>
 </template>
 
-<script>
-export default {
-  name: 'Code2',
-  data() {
-    return {
-      isBool: false,
-    }
-  },
-  methods: {
-    onClick(bool) {
-      this.isBool = bool
-    },
-  },
+<script lang="ts">
+import { defineComponent, reactive } from '@nuxtjs/composition-api'
+
+type State = {
+  isBool: boolean
 }
+
+export default defineComponent({
+  name: 'Code2',
+  setup() {
+    const changeFlg = (bool: boolean) => {
+      state.isBool = bool
+    }
+    const state = reactive<State>({
+      isBool: false,
+    })
+    return { state, changeFlg }
+  },
+})
 </script>
 
 <style lang="scss" scoped>

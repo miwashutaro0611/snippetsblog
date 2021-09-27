@@ -19,15 +19,15 @@
   </a>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import { defineComponent } from '@nuxtjs/composition-api'
+export default defineComponent({
   name: 'Code13',
-  data() {
-    return {
-      imageUrl: 'https://source.unsplash.com/400x400/?dog',
-    }
+  setup() {
+    const imageUrl = 'https://source.unsplash.com/400x400/?dog'
+    return { imageUrl }
   },
-}
+})
 </script>
 
 <style lang="scss" scoped>

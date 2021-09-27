@@ -1,11 +1,11 @@
 <template>
   <a class="btn-outline" href="#">
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
+    <span />
+    <span />
+    <span />
+    <span />
+    <span />
+    <span />
     <p>
       ボタンテキスト
       <svg
@@ -18,15 +18,16 @@
         height="7.4px"
         viewBox="0 0 9.4 7.4"
       >
-        <polygon points="5.7,0 4.3,1.4 5.6,2.7 0,2.7 0,4.7 5.6,4.7 4.3,6 5.7,7.4 9.4,3.7 "></polygon>
+        <polygon points="5.7,0 4.3,1.4 5.6,2.7 0,2.7 0,4.7 5.6,4.7 4.3,6 5.7,7.4 9.4,3.7 " />
       </svg>
     </p>
   </a>
 </template>
-<script>
-export default {
+<script lang="ts">
+import { defineComponent } from '@nuxtjs/composition-api'
+export default defineComponent({
   name: 'Code18',
-}
+})
 </script>
 
 <style lang="scss" scoped>

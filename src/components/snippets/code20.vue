@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper">
-    <div class="wrapper__mask"></div>
+    <div class="wrapper__mask" />
     <div class="wrapper__content">
       <p>INTRO<br />DUCTION</p>
       <h3>会社概要</h3>
@@ -10,10 +10,11 @@
     </div>
   </div>
 </template>
-<script>
-export default {
+<script lang="ts">
+import { defineComponent } from '@nuxtjs/composition-api'
+export default defineComponent({
   name: 'Code20',
-}
+})
 </script>
 
 <style lang="scss" scoped>

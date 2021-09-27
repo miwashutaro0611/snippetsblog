@@ -7,15 +7,16 @@
       <span class="flowerCard__headIcon">NEW</span>
     </div>
     <div class="flowerCard__imageWrapper">
-      <div class="flowerCard__image is-normal"></div>
-      <div class="flowerCard__image is-over"></div>
+      <div class="flowerCard__image is-normal" />
+      <div class="flowerCard__image is-over" />
     </div>
   </a>
 </template>
-<script>
-export default {
+<script lang="ts">
+import { defineComponent } from '@nuxtjs/composition-api'
+export default defineComponent({
   name: 'Code24',
-}
+})
 </script>
 
 <style lang="scss" scoped>

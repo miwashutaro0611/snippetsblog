@@ -16,13 +16,14 @@
         </span>
       </span>
     </p>
-    <span class="recruitLink__icon" aria-hidden="hidden"></span>
+    <span class="recruitLink__icon" aria-hidden="hidden" />
   </div>
 </template>
-<script>
-export default {
+<script lang="ts">
+import { defineComponent } from '@nuxtjs/composition-api'
+export default defineComponent({
   name: 'Code21',
-}
+})
 </script>
 
 <style lang="scss" scoped>
