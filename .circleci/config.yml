@@ -38,15 +38,15 @@ jobs:
           name: Lint
           command: yarn lint
       - save_npm
-  build:
+  generate:
     executor:
       name: default
     steps:
       - checkout
       - restore_npm
       - run:
-          name: Build
-          command: yarn build
+          name: Generate
+          command: yarn generate
       - save_npm
 workflows:
   pull-request:
@@ -55,6 +55,6 @@ workflows:
       - lint:
           requires:
             - setup
-      - build:
+      - generate:
           requires:
             - lint
