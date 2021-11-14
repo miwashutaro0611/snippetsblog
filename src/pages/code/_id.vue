@@ -75,7 +75,8 @@ export default {
       return `/code/${id}`
     },
     toNext(id) {
-      id = (this.snippets.length + parseInt(id, 10) + 1) % this.snippets.length
+      const linkId = (this.snippets.length + parseInt(id, 10) + 1) % this.snippets.length
+      id = linkId === 0 ? this.snippets.length : linkId
       return `/code/${id}`
     },
   },
