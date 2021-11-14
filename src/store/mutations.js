@@ -257,5 +257,16 @@ export const state = {
       },
       codepenId: 'OJmGQJP',
     },
+    {
+      id: 25,
+      title: 'GSAP Random Animation',
+      link: 'code25',
+      referencLink: {
+        name: '',
+        url: '',
+        image: '',
+      },
+      codepenId: 'qBXJYaJ',
+    },
   ],
 }
