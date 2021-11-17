@@ -1,7 +1,7 @@
 <template>
   <article class="card">
-    <div class="cardCode">
-      <component :is="code.link" />
+    <div ref="wrapperRef" class="cardCode">
+      <component :is="code.link" ref="componentRef" :style="`zoom: ${state.zoom};`" />
     </div>
     <h2 class="cardTitle">
       <span>{{ code.title }}</span>
@@ -13,17 +13,36 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from '@nuxtjs/composition-api'
+import { defineComponent, ref, onMounted, reactive } from '@nuxtjs/composition-api'
 export default defineComponent({
   name: 'CardItem',
   props: {
     code: Object,
   },
   setup() {
+    const componentRef = ref()
+    const wrapperRef = ref<HTMLElement>()
+    const state = reactive({
+      zoom: 1,
+    })
+    const setZoomSize = (elemComponent: HTMLElement, elemWrapper: HTMLElement) => {
+      const largeComponentType = elemComponent.clientWidth > elemComponent.clientHeight ? 'width' : 'height'
+      const elemComponentSize = largeComponentType === 'width' ? elemComponent.clientWidth : elemComponent.clientHeight
+      const elemWrapperSize = largeComponentType === 'width' ? elemWrapper.clientWidth : elemWrapper.clientHeight
+      const zoomSize =
+        elemComponentSize > elemWrapperSize ? Math.round((elemWrapperSize / elemComponentSize) * 100) / 100 : 1
+      return zoomSize
+    }
+    onMounted(() => {
+      const elemComponent = componentRef.value.$el
+      const elemWrapper = wrapperRef.value
+      if (!elemComponent || !elemWrapper) return
+      state.zoom = setZoomSize(elemComponent, elemWrapper)
+    })
     const toLink = (id: number) => {
       return `/code/${id}`
     }
-    return { toLink }
+    return { state, toLink, componentRef, wrapperRef }
   },
 })
 </script>

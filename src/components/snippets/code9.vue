@@ -28,6 +28,8 @@ $time: 3s;
 .textWrap {
   position: relative;
   display: block;
+  width: 100%;
+  height: 100%;
 }
 
 .textContent {
