@@ -4,7 +4,7 @@
       {{ snippets[$route.params.id - 1].title }}
     </h1>
     <div class="codeWrap">
-      <component :is="snippets[$route.params.id - 1].link" />
+      <iframe class="cardCodeIframe" :src="`/iframe/${snippets[$route.params.id - 1].id}/`" frameborder="0"></iframe>
     </div>
     <section v-if="snippets[$route.params.id - 1].referencLink.name" class="referencLink">
       <h2 class="referencLinkTitle">Reference link</h2>
@@ -97,6 +97,7 @@ export default {
   font-family: $fontFamilyCourgette;
 }
 .codeWrap {
+  position: relative;
   width: 100%;
   min-height: 300px;
   padding: 20px;
@@ -106,6 +107,13 @@ export default {
   background: #fff;
   border: 2px solid #2c2e31;
   border-radius: 5px;
+}
+.cardCodeIframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 .referencLinkTitle {
   margin-top: 20px;
