@@ -1,43 +1,44 @@
-# miwa-snippets
+# スニペットブログ集
 
-## site
+![このプロジェクトのissuesの数](https://img.shields.io/github/issues/miwashutaro0611/snippetsblog)
+![このプロジェクトのコードサイズ](https://img.shields.io/github/languages/code-size/miwashutaro0611/snippetsblog)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/2697ff5c-81a7-4dd5-aebd-ee5387a3ba37/deploy-status)](https://app.netlify.com/sites/snippetsblog-miwa/deploys)
+
+## このプロジェクトについて
+
+- [Nuxt.js](https://nuxtjs.org/ja/)で制作した、個人で気になったwebでのインタラクションをまとめたwebサイト
+- [Vue.js](https://jp.vuejs.org/index.html) + インタクションの勉強用
+
+## Site URL
 
 https://snippetsblog-miwa.netlify.com/
 
-## Build Setup
+## 環境構築
 
-``` bash
-# install dependencies
-$ yarn install
+| アプリケーション名 | バージョン | 補足 |
+| --- | --- | --- |
+| [Node.js](https://nodejs.org/ja/) | 14.17.0 | |
+| [Visual Studio Code](https://code.visualstudio.com/) | | [webstorm](https://www.jetbrains.com/ja-jp/webstorm/)などの他のエディタでも可 |
 
-# serve with hot reload at localhost:3000
-$ yarn dev
+## scriptsについて
 
-# build for production and launch server
-$ yarn build
-$ yarn start
+https://nuxtjs.org/ja/docs/get-started/commands/
 
-# generate static project
-$ yarn generate
+| script名 | description |
+| --- | --- |
+| dev | 開発サーバーを起動 |
+| build | 本番用の webpack を使用してアプリケーションをビルドおよび最適化 |
+| start | (`nuxt build`を実行した後に)本番サーバーを起動します。Heroku や Digital Ocean などの Node.js ホスティングに使用します。 |
+| generate | アプリケーションをビルドし、すべてのルートを HTML ファイルとして生成し、dist/ ディレクトリに静的にエクスポート(静的ホスティングに使用) |
+| lint | コードのlintチェック |
+
+
+## analyzeについて
+
+https://nuxtjs.org/ja/docs/configuration-glossary/configuration-build/#analyze
+
 ```
-
-# eslint v7 変更点
-
-https://qiita.com/mysticatea/items/0931a7d910fcb91733ee
-
-# nuxt + typescript
-
-https://qiita.com/itouuuuuuuuu/items/51fc4f3edbfcd71548a5
-
-https://typescript.nuxtjs.org/ja/guide/setup.html#%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB
-
-# analyze
-
-```console
 $ yarn build --analyze
 ```
 
-## 参考リンク
 
-- https://nuxtjs.org/api/configuration-build/#analyze
-- https://ja.nuxtjs.org/api/configuration-build/#analyze
