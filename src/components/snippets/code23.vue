@@ -23,6 +23,7 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
+@use 'sass:math';
 $size: 1;
 $background: #fff;
 $color1: #d25778;
@@ -55,10 +56,10 @@ $color4: #56a8c6;
         &:hover ~ .monitor {
           .camera {
             &.-x {
-              transform: rotateY((-($j - 1) * (10 / 20) + 5) * 3deg);
+              transform: rotateY((-($j - 1) * math.div(10, 20) + 5) * 3deg);
             }
             &.-y {
-              transform: rotateX((($i - 1) * (5 / 20) - 2.5) * 3deg);
+              transform: rotateX((($i - 1) * math.div(5, 20) - 2.5) * 3deg);
             }
           }
         }

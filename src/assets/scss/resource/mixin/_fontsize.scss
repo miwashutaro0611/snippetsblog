@@ -1,9 +1,11 @@
+@use '~/assets/scss/resource/variables' as variable;
+@use 'sass:math';
 @mixin MixinFontSize($fontSize, $lineHeight: default) {
-  $Mixinfont: ($fontSize / $fontSizeDefault);
+  $Mixinfont: math.div($fontSize, variable.$fontSizeDefault);
   font-size: #{$fontSize}px;
   font-size: #{$Mixinfont}rem;
   @if $lineHeight != default {
-    $MixinlineHeight: ($lineHeight / $fontSize);
+    $MixinlineHeight: math.div($lineHeight, $fontSize);
     line-height: $MixinlineHeight;
   }
 }

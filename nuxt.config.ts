@@ -9,16 +9,7 @@ const config: NuxtConfig = {
   srcDir: 'src',
   mode: 'spa',
   css: ['~/assets/scss/main.scss'],
-  modules: [
-    '@nuxtjs/style-resources',
-    'nuxt-fontawesome',
-    '@nuxtjs/pwa',
-    '@nuxtjs/google-analytics',
-    'nuxt-webfontloader',
-  ],
-  styleResources: {
-    scss: ['~/assets/scss/resource.scss'],
-  },
+  modules: ['nuxt-fontawesome', '@nuxtjs/pwa', '@nuxtjs/google-analytics', 'nuxt-webfontloader'],
   fontawesome: {
     component: 'fa',
   },

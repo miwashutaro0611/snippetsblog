@@ -99,10 +99,12 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
+@use '~/assets/scss/resource' as global;
+
 .errorContainer {
   max-width: 1000px;
   margin: 0 auto;
-  @include md {
+  @include global.md {
     display: flex;
     justify-content: space-between;
   }
@@ -141,7 +143,7 @@ export default defineComponent({
   border: 2px solid var(--color-default);
   border-radius: 25px;
   transition: all 0.2s ease-in-out;
-  @include md {
+  @include global.md {
     width: 240px;
     height: 60px;
     font-size: 16px;
@@ -177,14 +179,14 @@ export default defineComponent({
 }
 .errorContainer__left__hiddenfunc {
   display: none;
-  @include md {
+  @include global.md {
     display: block;
   }
 }
 .twitter {
   width: 300px;
   margin: 30px auto 0;
-  @include md {
+  @include global.md {
     margin-top: 0;
   }
 }

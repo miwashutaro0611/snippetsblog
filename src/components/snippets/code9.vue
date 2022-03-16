@@ -22,6 +22,7 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
+@use 'sass:math';
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@700&display=swap');
 
 $time: 3s;
@@ -225,7 +226,7 @@ $time: 3s;
 @keyframes rectBefore {
   $steps: 10;
   @for $i from 0 through $steps {
-    #{percentage($i*(1/$steps))} {
+    #{percentage($i*(math.div(1, $steps)))} {
       clip: rect(random(200) + px, 9999px, random(200) + px, 0);
     }
   }
@@ -234,7 +235,7 @@ $time: 3s;
 @keyframes rectAfter {
   $steps: 10;
   @for $i from 0 through $steps {
-    #{percentage($i*(1/$steps))} {
+    #{percentage($i*(math.div(1, $steps)))} {
       clip: rect(random(200) + px, 9999px, random(200) + px, 0);
     }
   }

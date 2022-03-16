@@ -1,19 +1,27 @@
+@use '~/assets/scss/resource' as global;
+@use 'sass:math';
+
+:root {
+  @include global.colorsLight;
+}
+
 [data-mode='light'] {
-  @include colorsLight;
+  @include global.colorsLight;
 }
 
 [data-mode='dark'] {
-  @include colorsDark;
+  @include global.colorsDark;
 }
 
 body {
-  font-family: $fontFamilyDefault;
-  font-size: (16 / $fontSizeDefault * 100%);
+  $fontSizeBody: percentage(math.div(16, global.$fontSizeDefault));
+  font-family: global.$fontFamilyDefault;
+  font-size: $fontSizeBody;
   color: var(--color-body);
   letter-spacing: 0.05em;
   background: var(--color-background-body);
-  text-rendering: optimizeLegibility;
   transition: 0.3s;
+  text-rendering: optimizeLegibility;
 }
 
 h1,

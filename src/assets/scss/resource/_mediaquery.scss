@@ -1,41 +1,43 @@
+@use '~/assets/scss/resource/variables' as variable;
+
 @mixin xlg($minmax: min) {
-  @media screen and (#{$minmax}-width: $sizeXlg) {
+  @media screen and (#{$minmax}-width: variable.$sizeXlg) {
     @content;
   }
 }
 
 @mixin lg($minmax: min) {
-  @media screen and (#{$minmax}-width: $sizeLg) {
+  @media screen and (#{$minmax}-width: variable.$sizeLg) {
     @content;
   }
 }
 
 @mixin md($minmax: min) {
-  @media screen and (#{$minmax}-width: $sizeMd) {
+  @media screen and (#{$minmax}-width: variable.$sizeMd) {
     @content;
   }
 }
 
 @mixin sm($minmax: min) {
-  @media screen and (#{$minmax}-width: $sizeSm) {
+  @media screen and (#{$minmax}-width: variable.$sizeSm) {
     @content;
   }
 }
 
 @mixin lgOnly {
-  @media screen and (min-width: $sizeLg) and (max-width: $sizeXlg) {
+  @media screen and (min-width: variable.$sizeLg) and (max-width: variable.$sizeXlg) {
     @content;
   }
 }
 
 @mixin mdOnly {
-  @media screen and (min-width: $sizeMd) and (max-width: $sizeLg) {
+  @media screen and (min-width: variable.$sizeMd) and (max-width: variable.$sizeLg) {
     @content;
   }
 }
 
 @mixin smOnly {
-  @media screen and (min-width: $sizeSm) and (max-width: $sizeMd) {
+  @media screen and (min-width: variable.$sizeSm) and (max-width: variable.$sizeMd) {
     @content;
   }
 }

@@ -50,23 +50,25 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
+@use '~/assets/scss/resource' as global;
+@use 'sass:math';
 .card {
   position: relative;
   display: block;
   width: 100%;
   padding: 10px 0 25px;
   border-color: #333;
-  @include sm {
-    width: (100% / 2);
+  @include global.sm {
+    width: math.div(100%, 2);
   }
-  @include md {
-    width: (100% / 3);
+  @include global.md {
+    width: math.div(100%, 3);
   }
-  @include lg {
-    width: (100% / 4);
+  @include global.lg {
+    width: math.div(100%, 4);
   }
-  @include xlg {
-    width: (100% / 5);
+  @include global.xlg {
+    width: math.div(100%, 5);
   }
   &::before {
     position: absolute;
@@ -110,10 +112,10 @@ export default defineComponent({
   max-width: calc(100% - 220px);
   padding-right: 20px;
   margin-left: 45px;
-  font-family: $fontFamilyCourgette;
+  font-family: global.$fontFamilyCourgette;
   color: var(--color-default-reverse);
   transition: 0.3s;
-  @include sm {
+  @include global.sm {
     max-width: calc(100% - 110px);
   }
   &::after {
@@ -153,9 +155,9 @@ $actionTime: 0.4s;
   overflow: hidden;
   background: $btnBack;
   border: 2px solid $btnColor;
-  border-radius: ($btnSize / 2);
+  border-radius: math.div($btnSize, 2);
   transition: width $actionTime;
-  @include sm {
+  @include global.sm {
     bottom: 30px;
     width: $btnSize;
   }
@@ -181,8 +183,8 @@ $actionTime: 0.4s;
     line-height: ($btnSize - 4);
     color: $textColor;
     opacity: 1;
-    transition: opacity ($actionTime / 2);
-    @include sm {
+    transition: opacity math.div($actionTime, 2);
+    @include global.sm {
       opacity: 0;
     }
   }
@@ -197,7 +199,7 @@ $actionTime: 0.4s;
     }
     > span {
       opacity: 1;
-      transition: opacity ($actionTime / 2) ($actionTime / 4);
+      transition: opacity math.div($actionTime, 2) math.div($actionTime, 4);
     }
   }
 }

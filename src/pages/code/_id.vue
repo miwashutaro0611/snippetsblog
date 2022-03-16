@@ -90,12 +90,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@use '~/assets/scss/resource' as global;
 .codePage {
   max-width: 1000px;
   margin: 0 auto;
 }
 .codeTitle {
-  font-family: $fontFamilyCourgette;
+  font-family: global.$fontFamilyCourgette;
 }
 .codeWrap {
   position: relative;
@@ -118,7 +119,7 @@ export default {
 }
 .referencLinkTitle {
   margin-top: 20px;
-  font-family: $fontFamilyCourgette;
+  font-family: global.$fontFamilyCourgette;
 }
 .referencLinkContent {
   display: block;
@@ -128,19 +129,19 @@ export default {
   background: #fff;
   border: 2px solid #000;
   border-radius: 5px;
-  @include sm {
+  @include global.sm {
     display: flex;
     align-items: center;
   }
 }
 .referencLinkText {
-  @include sm {
+  @include global.sm {
     flex-basis: 100%;
   }
 }
 .referencLinkImage {
   margin-top: 15px;
-  @include sm {
+  @include global.sm {
     flex-basis: 200px;
     flex-shrink: 1;
     margin-top: 0;
@@ -164,7 +165,7 @@ export default {
   padding: 10px 0;
   text-align: right;
   transition: all 0.3s ease-in-out;
-  @include md {
+  @include global.md {
     width: 200px;
     padding: 10px 15px;
     border: 2px solid var(--color-default);
@@ -186,7 +187,7 @@ export default {
   display: block;
   width: 100px;
   padding: 10px 0;
-  @include md {
+  @include global.md {
     width: 200px;
     padding: 10px 15px;
     border: 2px solid var(--color-default);
@@ -238,10 +239,10 @@ export default {
 }
 .toTopLinkTitle {
   display: none;
-  @include md {
+  @include global.md {
     display: block;
     overflow: hidden;
-    font-family: $fontFamilyCourgette;
+    font-family: global.$fontFamilyCourgette;
     font-size: 18px;
     font-weight: bold;
     text-overflow: ellipsis;
@@ -263,7 +264,7 @@ export default {
   border: 2px solid var(--color-default);
   border-radius: 25px;
   transition: all 0.2s ease-in-out;
-  @include md {
+  @include global.md {
     width: 240px;
     height: 60px;
     font-size: 16px;

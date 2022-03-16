@@ -1,4 +1,4 @@
-@import './resource/variables';
-@import './resource/mediaquery';
-@import './resource/mixin/colors';
-@import './resource/mixin/fontsize';
+@forward './resource/variables';
+@forward './resource/mediaquery';
+@forward './resource/mixin/colors';
+@forward './resource/mixin/fontsize';

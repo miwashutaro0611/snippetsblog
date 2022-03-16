@@ -97,14 +97,16 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
+@use '~/assets/scss/resource' as global;
+@use 'sass:math';
 $logoSize: 40px;
 $logoBorderColor: var(--color-default);
 $logoTime: 2s;
 .globalLogo {
   display: flex;
   align-items: center;
-  font-family: $fontFamilyCourgette;
-  @include sm {
+  font-family: global.$fontFamilyCourgette;
+  @include global.sm {
     &:hover {
       .globalLogoIcon::before,
       .globalLogoIcon::after {
@@ -116,9 +118,9 @@ $logoTime: 2s;
 .globalLogoIcons {
   position: relative;
   display: block;
-  width: ($logoSize * 3 / 4);
-  height: ($logoSize * 3 / 4);
-  @include sm {
+  width: math.div($logoSize * 3, 4);
+  height: math.div($logoSize * 3, 4);
+  @include global.sm {
     width: $logoSize;
     height: $logoSize;
   }
@@ -126,11 +128,11 @@ $logoTime: 2s;
 .globalLogoIcon {
   position: absolute;
   display: block;
-  width: ($logoSize * 3 / 4 * 3 / 4);
-  height: ($logoSize * 3 / 4 * 3 / 4);
-  @include sm {
-    width: ($logoSize * 3 / 4);
-    height: ($logoSize * 3 / 4);
+  width: math.div($logoSize * 3, 4) * math.div(3, 4);
+  height: math.div($logoSize * 3, 4) * math.div(3, 4);
+  @include global.sm {
+    width: math.div($logoSize * 3, 4);
+    height: math.div($logoSize * 3, 4);
   }
   &::before,
   &::after {
@@ -174,7 +176,7 @@ $logoTime: 2s;
   margin-left: 5px;
   font-size: 15px;
   font-weight: 600;
-  @include sm {
+  @include global.sm {
     margin-left: 15px;
     font-size: 25px;
   }
@@ -193,11 +195,7 @@ $logoTime: 2s;
   transform-origin: left;
 }
 @keyframes lineAnime {
-  0% {
-    width: 0;
-    height: 0;
-    border-color: transparent;
-  }
+  0%,
   10% {
     width: 0;
     height: 0;
@@ -211,11 +209,7 @@ $logoTime: 2s;
     height: 0;
     border-color: $logoBorderColor;
   }
-  50% {
-    width: 100%;
-    height: 100%;
-    border-color: $logoBorderColor;
-  }
+  50%,
   100% {
     width: 100%;
     height: 100%;
@@ -223,11 +217,7 @@ $logoTime: 2s;
   }
 }
 @keyframes lineAnime2 {
-  0% {
-    width: 0;
-    height: 0;
-    border-color: transparent;
-  }
+  0%,
   50% {
     width: 0;
     height: 0;
@@ -241,11 +231,7 @@ $logoTime: 2s;
     height: 0;
     border-color: $logoBorderColor;
   }
-  90% {
-    width: 100%;
-    height: 100%;
-    border-color: $logoBorderColor;
-  }
+  90%,
   100% {
     width: 100%;
     height: 100%;

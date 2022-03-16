@@ -137,6 +137,7 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
+@use 'sass:math';
 $barWidth: 200px;
 $barHeight: 8px;
 
@@ -145,7 +146,7 @@ $barHeight: 8px;
   height: $barHeight;
   overflow: hidden;
   background: #e4e4e4;
-  border-radius: $barHeight / 2;
+  border-radius: math.div($barHeight, 2);
 }
 
 .resultWrapInner {
