@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "nuxt-ts",
-    "build": "nuxt-ts build",
-    "start": "nuxt-ts start",
-    "generate": "nuxt-ts generate",
+    "dev": "nuxi dev",
+    "build": "nuxi dev",
+    "start": "nuxi preview",
+    "generate": "nuxi generate",
     "stylelint": "stylelint --fix '**/*.{vue,scss}' --ignore-path .gitignore",
     "eslint": "eslint --fix --ext .ts,.js,.vue --ignore-path .gitignore .",
     "lint": "yarn stylelint && yarn eslint"
@@ -19,7 +19,7 @@
     "@nuxtjs/composition-api": "^0.27.0",
     "@nuxtjs/pwa": "^3.0.0-beta.20",
     "gsap": "^3.4.2",
-    "nuxt": "^2.13.3",
+    "nuxt-edge": "latest",
     "nuxt-fontawesome": "^0.4.0",
     "nuxt-webfontloader": "^1.1.0",
     "particles.vue": "^2.18.2",
@@ -30,6 +30,7 @@
     "what-input": "^5.2.10"
   },
   "devDependencies": {
+    "@nuxt/bridge": "npm:@nuxt/bridge-edge",
     "@nuxt/types": "^2.15.8",
     "@nuxt/typescript-build": "^2.1.0",
     "@nuxtjs/eslint-config-typescript": "^6.0.1",
