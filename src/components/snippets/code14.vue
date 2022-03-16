@@ -12,7 +12,7 @@
 
 <script lang="ts">
 import { defineComponent } from '@nuxtjs/composition-api'
-import particlesData from '~/assets/js/particles.js'
+import particlesData from '~/assets/js/particles'
 
 export default defineComponent({
   name: 'Code14',

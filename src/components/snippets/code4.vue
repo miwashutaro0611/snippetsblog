@@ -9,12 +9,14 @@
 
 <script lang="ts">
 import { defineComponent } from '@nuxtjs/composition-api'
+
 export default defineComponent({
   name: 'Code4',
 })
 </script>
 
 <style lang="scss" scoped>
+@use 'sass:math';
 $logoSize: 40px;
 $logoBorderColor: #444;
 $logoTime: 2s;
@@ -37,8 +39,8 @@ $logoTime: 2s;
 .globalLogoIcon {
   position: absolute;
   display: block;
-  width: ($logoSize * 3 / 4);
-  height: ($logoSize * 3 / 4);
+  width: math.div($logoSize * 3, 4);
+  height: math.div($logoSize * 3, 4);
   &::before,
   &::after {
     position: absolute;
@@ -70,7 +72,7 @@ $logoTime: 2s;
     bottom: 0;
     &::before,
     &::after {
-      animation-delay: ($logoTime / 4);
+      animation-delay: math.div($logoTime, 4);
     }
   }
 }
@@ -89,18 +91,18 @@ $logoTime: 2s;
     border-color: $logoBorderColor;
   }
   30% {
-    width: ($logoSize * 3 / 4);
+    width: math.div($logoSize * 3, 4);
     height: 0;
     border-color: $logoBorderColor;
   }
   50% {
-    width: ($logoSize * 3 / 4);
-    height: ($logoSize * 3 / 4);
+    width: math.div($logoSize * 3, 4);
+    height: math.div($logoSize * 3, 4);
     border-color: $logoBorderColor;
   }
   100% {
-    width: ($logoSize * 3 / 4);
-    height: ($logoSize * 3 / 4);
+    width: math.div($logoSize * 3, 4);
+    height: math.div($logoSize * 3, 4);
     border-color: $logoBorderColor;
   }
 }
@@ -119,18 +121,18 @@ $logoTime: 2s;
     border-color: $logoBorderColor;
   }
   70% {
-    width: ($logoSize * 3 / 4);
+    width: math.div($logoSize * 3, 4);
     height: 0;
     border-color: $logoBorderColor;
   }
   90% {
-    width: ($logoSize * 3 / 4);
-    height: ($logoSize * 3 / 4);
+    width: math.div($logoSize * 3, 4);
+    height: math.div($logoSize * 3, 4);
     border-color: $logoBorderColor;
   }
   100% {
-    width: ($logoSize * 3 / 4);
-    height: ($logoSize * 3 / 4);
+    width: math.div($logoSize * 3, 4);
+    height: math.div($logoSize * 3, 4);
     border-color: $logoBorderColor;
   }
 }

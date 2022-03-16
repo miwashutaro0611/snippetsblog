@@ -23,12 +23,12 @@ type State = {
 export default defineComponent({
   name: 'Code2',
   setup() {
-    const changeFlg = (bool: boolean) => {
-      state.isBool = bool
-    }
     const state = reactive<State>({
       isBool: false,
     })
+    const changeFlg = (bool: boolean) => {
+      state.isBool = bool
+    }
     return { state, changeFlg }
   },
 })

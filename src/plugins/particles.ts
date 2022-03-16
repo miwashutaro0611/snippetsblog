@@ -1,4 +1,4 @@
-import Vue from 'vue'
 import Particles from 'particles.vue'
+import Vue from 'vue'
 
 Vue.use(Particles)

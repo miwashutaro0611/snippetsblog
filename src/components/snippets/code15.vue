@@ -14,8 +14,9 @@
   </div>
 </template>
 <script lang="ts">
-import * as AutoKana from 'vanilla-autokana'
 import { defineComponent, onMounted } from '@nuxtjs/composition-api'
+import * as AutoKana from 'vanilla-autokana'
+
 export default defineComponent({
   name: 'Code15',
   setup() {

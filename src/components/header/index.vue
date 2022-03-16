@@ -9,8 +9,9 @@
 
 <script lang="ts">
 import { defineComponent } from '@nuxtjs/composition-api'
-import Logo from '../../components/logo/index.vue'
-import toggleButton from '../../components/toggleButton/index.vue'
+import Logo from '~/components/logo/index.vue'
+import toggleButton from '~/components/toggleButton/index.vue'
+
 export default defineComponent({
   name: 'GlobalHeader',
   components: {
@@ -20,7 +21,9 @@ export default defineComponent({
 })
 </script>
 
+<
 <style lang="scss" scoped>
+@use '~/assets/scss/resource' as global;
 .globalHeader {
   padding: 20px 0;
   margin-bottom: 40px;
@@ -35,23 +38,6 @@ export default defineComponent({
 }
 .globalLogo {
   font-size: 15px;
-  @include MixinFontSize(32);
-}
-.globalNav {
-}
-.globalNavList {
-  display: flex;
-  align-items: center;
-}
-.globalNavItem {
-  & + & {
-    margin-left: 10px;
-  }
-}
-.globalNavLink {
-  color: #0ff;
-  &.router-link-exact-active {
-    color: #f00;
-  }
+  @include global.MixinFontSize(32);
 }
 </style>

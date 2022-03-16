@@ -6,12 +6,14 @@
 
 <script lang="ts">
 import { defineComponent } from '@nuxtjs/composition-api'
+
 export default defineComponent({
   name: 'Code5',
 })
 </script>
 
 <style lang="scss" scoped>
+@use 'sass:math';
 $svgImage: 'https://contents-one.co.jp/assets/imgs/assets/icn_btn_arrow-navy.svg';
 
 $baseColor: #285c76;
@@ -61,7 +63,7 @@ $easeAction: cubic-bezier(0.785, 0.135, 0.15, 0.86);
     width: 19px;
     height: 7px;
     background: url($svgImage) no-repeat center;
-    transition: transform $easeTime $easeAction ($easeTime * 2 / 10);
+    transition: transform $easeTime $easeAction math.div($easeTime * 2, 10);
     will-change: transform;
   }
 

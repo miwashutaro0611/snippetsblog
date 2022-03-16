@@ -9,6 +9,7 @@
 <script lang="ts">
 import { defineComponent, ref, onMounted } from '@nuxtjs/composition-api'
 import { gsap } from 'gsap'
+
 export default defineComponent({
   name: 'Code25',
   setup() {

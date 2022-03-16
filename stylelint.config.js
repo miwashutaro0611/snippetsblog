@@ -1,6 +1,7 @@
 module.exports = {
   // add your custom config here
   // https://stylelint.io/user-guide/configuration
+  customSyntax: 'postcss-jsx',
   plugins: [
     'stylelint-declaration-block-no-ignored-properties',
     'stylelint-no-unsupported-browser-features',

@@ -20,6 +20,7 @@
 
 <script lang="ts">
 import { defineComponent, reactive } from '@nuxtjs/composition-api'
+
 export default defineComponent({
   name: 'Code12',
   setup() {
@@ -34,7 +35,8 @@ export default defineComponent({
       const touchObject = event.changedTouches[0]
       const width = (event.target as HTMLButtonElement).offsetWidth
       const height = (event.target as HTMLButtonElement).offsetHeight
-      let x, y
+      let x
+      let y
       if (touchObject.clientX < width / 2) {
         x = width / 2
       } else if (touchObject.clientX > window.innerWidth - width / 2) {
@@ -60,6 +62,7 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
+@use 'sass:math';
 $size: 60px;
 $iconBackColor: #ddd;
 $iconLineColor: #333;
@@ -77,17 +80,17 @@ $iconLineSize: 4px;
   border-radius: 50%;
   &::before {
     display: block;
-    width: ($size / 2);
-    height: ($size / 2);
+    width: math.div($size, 2);
+    height: math.div($size, 2);
     content: '';
     background: linear-gradient(
       $iconLineColor,
       $iconLineColor $iconLineSize,
       transparent $iconLineSize,
-      transparent calc(50% - #{$iconLineSize} / 2),
-      $iconLineColor calc(50% - #{$iconLineSize} / 2),
-      $iconLineColor calc(50% + #{$iconLineSize} / 2),
-      transparent calc(50% + #{$iconLineSize} / 2),
+      transparent calc(50% - calc($iconLineSize / 2)),
+      $iconLineColor calc(50% - calc($iconLineSize / 2)),
+      $iconLineColor calc(50% + calc($iconLineSize / 2)),
+      transparent calc(50% + calc($iconLineSize / 2)),
       transparent calc(100% - #{$iconLineSize}),
       $iconLineColor calc(100% - #{$iconLineSize}),
       $iconLineColor

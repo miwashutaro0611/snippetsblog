@@ -56,6 +56,7 @@
 
 <script>
 import { mapState } from 'vuex'
+
 export default {
   name: 'Code',
   computed: {
@@ -71,13 +72,13 @@ export default {
     },
     toPrev(id) {
       const linkId = (this.snippets.length + id - 1) % this.snippets.length
-      id = linkId === 0 ? this.snippets.length : linkId
-      return `/code/${id}`
+      const changeLinkId = linkId === 0 ? this.snippets.length : linkId
+      return `/code/${changeLinkId}`
     },
     toNext(id) {
       const linkId = (this.snippets.length + parseInt(id, 10) + 1) % this.snippets.length
-      id = linkId === 0 ? this.snippets.length : linkId
-      return `/code/${id}`
+      const changeLinkId = linkId === 0 ? this.snippets.length : linkId
+      return `/code/${changeLinkId}`
     },
   },
   head() {
@@ -89,12 +90,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@use '~/assets/scss/resource' as global;
 .codePage {
   max-width: 1000px;
   margin: 0 auto;
 }
 .codeTitle {
-  font-family: $fontFamilyCourgette;
+  font-family: global.$fontFamilyCourgette;
 }
 .codeWrap {
   position: relative;
@@ -117,7 +119,7 @@ export default {
 }
 .referencLinkTitle {
   margin-top: 20px;
-  font-family: $fontFamilyCourgette;
+  font-family: global.$fontFamilyCourgette;
 }
 .referencLinkContent {
   display: block;
@@ -127,19 +129,19 @@ export default {
   background: #fff;
   border: 2px solid #000;
   border-radius: 5px;
-  @include sm {
+  @include global.sm {
     display: flex;
     align-items: center;
   }
 }
 .referencLinkText {
-  @include sm {
+  @include global.sm {
     flex-basis: 100%;
   }
 }
 .referencLinkImage {
   margin-top: 15px;
-  @include sm {
+  @include global.sm {
     flex-basis: 200px;
     flex-shrink: 1;
     margin-top: 0;
@@ -163,7 +165,7 @@ export default {
   padding: 10px 0;
   text-align: right;
   transition: all 0.3s ease-in-out;
-  @include md {
+  @include global.md {
     width: 200px;
     padding: 10px 15px;
     border: 2px solid var(--color-default);
@@ -185,7 +187,7 @@ export default {
   display: block;
   width: 100px;
   padding: 10px 0;
-  @include md {
+  @include global.md {
     width: 200px;
     padding: 10px 15px;
     border: 2px solid var(--color-default);
@@ -237,10 +239,10 @@ export default {
 }
 .toTopLinkTitle {
   display: none;
-  @include md {
+  @include global.md {
     display: block;
     overflow: hidden;
-    font-family: $fontFamilyCourgette;
+    font-family: global.$fontFamilyCourgette;
     font-size: 18px;
     font-weight: bold;
     text-overflow: ellipsis;
@@ -262,7 +264,7 @@ export default {
   border: 2px solid var(--color-default);
   border-radius: 25px;
   transition: all 0.2s ease-in-out;
-  @include md {
+  @include global.md {
     width: 240px;
     height: 60px;
     font-size: 16px;

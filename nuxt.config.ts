@@ -1,7 +1,7 @@
 import { NuxtConfig } from '@nuxt/types'
 
-import Sass from 'sass'
 import Fiber from 'fibers'
+import Sass from 'sass'
 
 import codeNumberFile from './data/codeList.json'
 
@@ -9,16 +9,7 @@ const config: NuxtConfig = {
   srcDir: 'src',
   mode: 'spa',
   css: ['~/assets/scss/main.scss'],
-  modules: [
-    '@nuxtjs/style-resources',
-    'nuxt-fontawesome',
-    '@nuxtjs/pwa',
-    '@nuxtjs/google-analytics',
-    'nuxt-webfontloader',
-  ],
-  styleResources: {
-    scss: ['~/assets/scss/resource.scss'],
-  },
+  modules: ['nuxt-fontawesome', '@nuxtjs/pwa', '@nuxtjs/google-analytics', 'nuxt-webfontloader'],
   fontawesome: {
     component: 'fa',
   },
