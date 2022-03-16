@@ -13,11 +13,13 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref, onMounted, reactive } from '@nuxtjs/composition-api'
+import { defineComponent, ref, reactive, onMounted } from '@nuxtjs/composition-api'
+import type { PropType } from '@nuxtjs/composition-api'
+import { SnippetData } from '~/types/snippetData'
+
 export default defineComponent({
-  name: 'CardItem',
   props: {
-    code: Object,
+    code: Object as PropType<SnippetData>,
   },
   setup() {
     const componentRef = ref()
@@ -42,7 +44,7 @@ export default defineComponent({
     const toLink = (id: number) => {
       return `/code/${id}`
     }
-    return { state, toLink, componentRef, wrapperRef }
+    return { state, componentRef, wrapperRef, toLink }
   },
 })
 </script>

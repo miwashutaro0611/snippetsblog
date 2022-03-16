@@ -18,6 +18,7 @@
 
 <script lang="ts">
 import { defineComponent, reactive } from '@nuxtjs/composition-api'
+
 export default defineComponent({
   name: 'Code8',
   setup() {
@@ -55,14 +56,29 @@ export default defineComponent({
         background: '#f00',
       },
     })
-    const scoreChangeText = (password: string) => {
-      scoreReset()
-      repeatScore(password)
-      textTypeCheck(password)
-      setStyle(password)
-    }
     const scoreReset = () => {
       state.score = 0
+    }
+    const textRepeat = (pLen: number, password: string): number => {
+      const passLength = password.length
+      let res = ''
+      for (let i = 0; i < passLength; i += 1) {
+        let repeated = true
+        let j
+        for (j = 0; j < pLen && j + i + pLen < passLength; j += 1) {
+          repeated = repeated && password.charAt(j + i) === password.charAt(j + i + pLen)
+        }
+        if (j < pLen) {
+          repeated = false
+        }
+        if (repeated) {
+          i += pLen - 1
+          repeated = false
+        } else {
+          res += password.charAt(i)
+        }
+      }
+      return res.length
     }
     const repeatScore = (password: string) => {
       const passLength = password.length
@@ -109,26 +125,11 @@ export default defineComponent({
         state.passBarStyle.background = state.contentStyleList[4].color
       }
     }
-    const textRepeat = (pLen: number, password: string) => {
-      const passLength = password.length
-      let res = ''
-      for (let i = 0; i < passLength; i++) {
-        let repeated = true
-        let j
-        for (j = 0; j < pLen && j + i + pLen < passLength; j++) {
-          repeated = repeated && password.charAt(j + i) === password.charAt(j + i + pLen)
-        }
-        if (j < pLen) {
-          repeated = false
-        }
-        if (repeated) {
-          i += pLen - 1
-          repeated = false
-        } else {
-          res += password.charAt(i)
-        }
-      }
-      return res.length
+    const scoreChangeText = (password: string) => {
+      scoreReset()
+      repeatScore(password)
+      textTypeCheck(password)
+      setStyle(password)
     }
     return { state, scoreChangeText }
   },

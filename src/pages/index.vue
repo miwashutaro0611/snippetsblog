@@ -6,7 +6,7 @@
 
 <script>
 import { mapState } from 'vuex'
-import cardItem from '~/components/cardItem/'
+import cardItem from '~/components/cardItem/index.vue'
 
 export default {
   name: 'Index',

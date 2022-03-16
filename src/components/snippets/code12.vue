@@ -20,6 +20,7 @@
 
 <script lang="ts">
 import { defineComponent, reactive } from '@nuxtjs/composition-api'
+
 export default defineComponent({
   name: 'Code12',
   setup() {
@@ -34,7 +35,8 @@ export default defineComponent({
       const touchObject = event.changedTouches[0]
       const width = (event.target as HTMLButtonElement).offsetWidth
       const height = (event.target as HTMLButtonElement).offsetHeight
-      let x, y
+      let x
+      let y
       if (touchObject.clientX < width / 2) {
         x = width / 2
       } else if (touchObject.clientX > window.innerWidth - width / 2) {

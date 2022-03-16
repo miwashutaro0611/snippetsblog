@@ -56,6 +56,7 @@
 
 <script>
 import { mapState } from 'vuex'
+
 export default {
   name: 'Code',
   computed: {
@@ -71,13 +72,13 @@ export default {
     },
     toPrev(id) {
       const linkId = (this.snippets.length + id - 1) % this.snippets.length
-      id = linkId === 0 ? this.snippets.length : linkId
-      return `/code/${id}`
+      const changeLinkId = linkId === 0 ? this.snippets.length : linkId
+      return `/code/${changeLinkId}`
     },
     toNext(id) {
       const linkId = (this.snippets.length + parseInt(id, 10) + 1) % this.snippets.length
-      id = linkId === 0 ? this.snippets.length : linkId
-      return `/code/${id}`
+      const changeLinkId = linkId === 0 ? this.snippets.length : linkId
+      return `/code/${changeLinkId}`
     },
   },
   head() {

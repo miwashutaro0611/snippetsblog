@@ -1,7 +1,7 @@
 import { NuxtConfig } from '@nuxt/types'
 
-import Sass from 'sass'
 import Fiber from 'fibers'
+import Sass from 'sass'
 
 import codeNumberFile from './data/codeList.json'
 

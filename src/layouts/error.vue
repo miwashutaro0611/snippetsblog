@@ -82,6 +82,7 @@
 import { NuxtError } from '@nuxt/types'
 import { defineComponent, PropType } from '@nuxtjs/composition-api'
 import { Timeline } from 'vue-tweet-embed'
+
 export default defineComponent({
   name: 'Code1',
   components: {

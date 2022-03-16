@@ -15,8 +15,9 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, reactive, computed, onMounted } from '@nuxtjs/composition-api'
 import { faMoon, faSun } from '@fortawesome/free-solid-svg-icons'
+import { defineComponent, reactive, computed, onMounted } from '@nuxtjs/composition-api'
+
 export default defineComponent({
   name: 'ToggleButton',
   setup() {

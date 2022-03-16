@@ -10,8 +10,8 @@
 </template>
 
 <script>
-import GlobalHeader from '~/components/header/'
-import GlobalFooter from '~/components/footer/'
+import GlobalFooter from '~/components/footer/index.vue'
+import GlobalHeader from '~/components/header/index.vue'
 
 import 'what-input'
 
@@ -36,7 +36,11 @@ export default {
   },
   watch: {
     isOpen() {
-      this.isOpen ? this.remove() : this.paging()
+      if (this.isOpen) {
+        this.remove()
+      } else {
+        this.paging()
+      }
     },
   },
   created() {
